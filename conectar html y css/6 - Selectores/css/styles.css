@@ -1,0 +1,59 @@
+/* SELECTORES */
+
+/* 
+    selectores simples: Los selectores simples son los elementos más básicos de CSS que apuntan directamente a una etiqueta HTML por su nombre, su clase, su ID o sus atributos universales. No combinan otras etiquetas ni dependen de relaciones familiares (como padres o hijos) en el código.
+
+        Selector Universal (*): Apunta a todos los elementos de la página sin excepción.
+        * {
+            box-sizing: border-box;
+        }
+
+        Selector de Tipo o Etiqueta: Selecciona los elementos por el nombre de su etiqueta HTML.
+        button {
+            background-color: blue;
+        }
+
+        Selector de Clase (.): Apunta a cualquier elemento que tenga el atributo class coincidente.
+        .alerta {
+            color: red;
+        }
+        
+        Selector de ID (#): Selecciona un único elemento en toda la página usando el atributo id.
+        #boton-enviar {
+            cursor: pointer;
+        }
+
+        Selector de Atributo: Encuentra elementos basándose en la presencia o el valor de un atributo HTML.
+        input[type="text"] {
+            border: 1px solid black;
+        }
+
+
+    selectores compuestos: Los selectores compuestos (también conocidos como selectores combinados) se forman al unir dos o más selectores simples. Sirven para crear reglas de diseño mucho más específicas, basándose en cómo se relacionan las etiquetas dentro de la estructura de tu código HTML.
+
+        Selector de intersección (sin espacios): Une dos selectores simples para apuntar a un elemento que cumple ambas condiciones a la vez.
+            p.advertencia { 
+                color: orange; 
+            } /* Solo los <p> que tienen la clase advertencia *
+
+        Selector descendente (espacio): Apunta a un elemento que se encuentra en cualquier nivel de profundidad dentro de un elemento padre.
+            nav a { 
+                color: black; 
+            } /* Todos los enlaces <a> que estén dentro de un <nav> *
+        
+       Selector de hijos directos (>): Selecciona únicamente a los hijos inmediatos de un elemento padre, ignorando a los nietos.
+            ul > li { 
+                list-style: none; 
+            } /* Solo los <li> directamente dentro de un <ul> *
+
+        Selector de hermano adyacente (+): Apunta al elemento que está inmediatamente después de otro, compartiendo el mismo padre.
+            h1 + p { 
+                font-size: 1.2rem; 
+            } /* Solo el primer <p> colocado justo después de un <h1> *
+        
+        Selector general de hermanos (~): Selecciona todos los elementos hermanos que siguen a un elemento, sin importar si hay otros en medio.
+            h2 ~ p { 
+                color: gray; 
+            } /* Todos los <p> que aparezcan después de un <h2> *
+        
+ */
