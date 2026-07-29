@@ -56,4 +56,92 @@
                 color: gray; 
             } /* Todos los <p> que aparezcan después de un <h2> *
         
- */
+        pseudoclases - pseudoelementos
+
+/* * selector universal *
+ *{
+    background-color: lightcoral;
+ }
+
+ * selector de etiqueta *
+
+ h1{
+    background-color: lightcyan;
+ }
+
+ p{
+    background-color: lightgreen;
+ }
+
+ ul{
+    background-color: red;
+ }
+
+ li{
+    background-color: blue;
+ } 
+ * selectores de atributos id= no dar estilos nunca*
+ #title{
+    background-color:lightgreen ;
+ } 
+    
+ *selectores de clases*
+ .title{
+    backgroun-color:lightsalmon;
+ }
+    
+ .text{
+    background-color:limegreen;
+ }
+    
+ *selector de atributos*
+ [atributo]
+ [atributo=valor]
+ [atributo^=valor](^ACENTO CIRCUNFLEJO)
+ [atributo*=valor] 
+ [atibuto$=valor]
+ [atributo|=valor](barra pipe fn+tecla.ordinal=|)
+ 
+ [href]{
+    background-color: mediumorchid;
+ }
+ [href="https://google.com"]{
+    background-color:orangered ;
+ }
+ [href^="color"]{
+    background-color: red;
+ }
+ [href*="modo"]{
+    background-color:green ;
+ }
+[href$="azul"]{
+    background-color:steelblue;
+}
+[lang|="en"]{
+    background-color: magenta;
+}
+*selectores compuestos* 
+
+.text,
+.text-2,
+.text-3,
+.text-4{
+    background-color: steelblue; 
+}
+*selectores combinadores*
+*selector decendiente* */
+
+div .title-2{
+    /* background-color: teal; */
+}
+
+/* *selector de hermano siguiente +* */
+.text-2 + h2{
+    background-color: tomato;
+}
+
+/* *selector de hermanos siguientes ~ (virgulilla:alt gr más +) */
+
+.text-2 ~ .text span{
+    background-color:teal ;
+}
