@@ -129,19 +129,29 @@
     background-color: steelblue; 
 }
 *selectores combinadores*
-*selector decendiente* */
+*selector decendiente* 
 
 div .title-2{
-    /* background-color: teal; */
+     background-color: teal; 
 }
 
-/* *selector de hermano siguiente +* */
+ *selector de hermano siguiente +* 
 .text-2 + h2{
     background-color: tomato;
 }
 
-/* *selector de hermanos siguientes ~ (virgulilla:alt gr más +) */
+ *selector de hermanos siguientes ~ (virgulilla:alt gr más +) 
 
 .text-2 ~ .text span{
     background-color:teal ;
 }
+
+*selector de hijo directo*
+
+.container p{
+        background-color: tomato;
+}
+
+.container > p{
+    background-color: tomato;
+}*/
