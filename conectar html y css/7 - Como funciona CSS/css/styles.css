@@ -8,7 +8,21 @@
         !important GANA A TODO Y NO SE USA NUNCA!
     Cascada -> Funciona siempre que la especificidad sobre el elemento sea la misma
     Herencia
-    *Siempre usar clases para que la cascada no se vea afectada 
+    *Siempre usar clases para que la cascada no se vea afectada.
+
+    * Herencia:es el mecanismo por el cual ciertas propiedades aplicadas a un elemento padre se transmiten automáticamente a sus elementos hijos. Esto evita tener que repetir el mismo código para cada etiqueta de la página.
+    1. Propiedades que se heredan automáticamente
+    Texto y Tipografía: Propiedades como font-family, font-size, font-weight y line-height.
+    Color: La propiedad color (color del texto) siempre se transmite a los descendientes.
+    Estilos de lista: Propiedades como list-style-type o list-style-position para viñetas.Alineación: La propiedad text-align para centrar o justificar contenido escrito.
+    2. Propiedades que NO se heredanModelo de Caja: 
+    Los márgenes (margin), rellenos (padding) y bordes (border) no se transmiten.
+    Dimensiones: El ancho (width) y el alto (height) pertenecen exclusivamente al contenedor contenedor.
+    Posicionamiento: Propiedades como position, top, left, display, flex o grid no afectan la estructura interna del hijo de forma directa.
+    3. Palabras clave para controlar la herencia
+    inherit: Fuerza a un elemento hijo a adoptar el valor de su padre (ej. border: inherit;).
+    initial: Rompe la herencia y restablece la propiedad al valor por defecto del navegador.
+    unset: Actúa como inherit si la propiedad se hereda por naturaleza, o como initial si no lo hace.
     
 
     h1{
@@ -33,4 +47,33 @@
 
     h1.title#title{
         background-color: tomato;
-    }*/
+    }
+     #h1{
+        background-color: red;
+    }
+    Herencia*/
+
+    body{
+        background-color:lightblue;
+    }
+
+    .title{
+        color:cyan;
+        font-size: 10px;
+    }
+
+    .text{
+        color:green;
+    }
+
+    .link{
+        color: inherit;
+    }
+
+    .list{
+        color:indianred
+    }
+
+    .list-item-extra{
+        color: initial;
+    }
