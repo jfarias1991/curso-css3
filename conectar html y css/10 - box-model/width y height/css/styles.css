@@ -1,0 +1,32 @@
+body{
+    background-color: #333;
+    color: #fff;
+}
+
+.block{
+    background-color: purple;
+    width: 200px;
+    height: 200px;
+}
+
+.inline{
+    background-color: lightcoral;
+    color:inherit;
+     width: 200px; /*no hace nada los elementos en linea no tienen medidas*/
+    height: 200px; /*no hace nada los elementos en linea no tienen medidas*/
+}
+/*La propiedad width en CSS sirve para definir el ancho horizontal de un elemento, aceptando valores comunes como píxeles (px), porcentajes (%) y auto. Su sintaxis y comportamiento básicos se complementan con límites de tamaño para adaptar los diseños a diferentes pantallas. 
+Valores principales de width
+auto: El navegador calcula el ancho de forma automática.
+Medidas fijas (px, rem): Asignan un tamaño exacto que no cambia.
+Porcentajes (%): Ocupan una porción proporcional respecto al elemento padre.
+Propiedades relacionadas
+min-width: Asegura que el elemento no sea más pequeño que un límite.
+max-width: Impide que un elemento rebase un ancho dado, permitiendo que se reduzca en pantallas pequeñas */
+
+/* La propiedad height en CSS define la altura vertical de un elemento, aplicando las mismas unidades y lógicas que la propiedad de ancho.
+Valores principales de height
+auto: El navegador calcula la altura automáticamente según el contenido interno.
+Medidas fijas (px, rem): Determinan un tamaño vertical exacto e inmutable.Porcentajes (%): Ocupan una porción de la altura del elemento padre directo.Propiedades relacionadas
+min-height: Establece una altura mínima obligatoria para que el elemento no se colapse.
+max-height: Restringe la altura máxima, ideal para añadir barras de desplazamiento en textos largos. */
