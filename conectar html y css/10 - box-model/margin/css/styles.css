@@ -1,0 +1,157 @@
+/*La propiedad margin en CSS crea un espacio vacío alrededor de los elementos, empujando y separando sus bordes de los componentes vecinos.
+Formas de escribir margin
+Individual: margin-top, margin-right, margin-bottom, margin-left para lados específicos.
+Shorthand (4 valores): margin: 10px 20px 30px 40px; (Arriba, Derecha, Abajo, Izquierda).
+Shorthand (2 valores): margin: 20px 10px; (Arriba/Abajo, Izquierda/Derecha).
+Usos comunes
+margin: 0 auto;: Centra un elemento de forma horizontal dentro de su contenedor.
+Colapso de márgenes: Los márgenes verticales de dos elementos contiguos se fusionan en uno solo.
+margin: es la propiedad que nos permite generar espacio entre elementos.
+un shorthand (propiedad abreviada) que controla los 4 lados posibles a los que dar márgenes.
+margin-top: margen superior
+margin-right: margen derecho
+marin-bottom: margen inferior
+margin-left: margen izquierdo 
+admíte hasta 4 valores que van en el orden de las agujas del reloj.
+4 valores-> margin: top right bottom left;
+3 valores-> margin: top left|right bottom;
+2 valores-> margin: top/bottom left/right;
+1 valor->margin:top/right/bottom/left;
+
+margin-top
+La margin-top propiedad CSS establece el área de espaciado exterior en la parte superior de un elemento HTML, alejándolo de los elementos vecinos o de su contenedor principal.
+Ejemplo de sintaxis rápida
+
+.box {
+  margin-top: 20px;
+}
+
+Valores aceptadosLongitud: Tamaños fijos comopx ,em ,rem , opt (p. ej.,margin-top: 1.5rem; ).
+Porcentaje: Calculado en relación con el ancho (tamaño en línea) del bloque contenedor (p. ej.,margin-top: 5%; ).
+Palabra clave auto: permite al navegador calcular y seleccionar un margen adecuado.
+Valores negativos: tira del elemento hacia arriba en lugar de empujarlo hacia abajo (por ejemplo, margin-top: -10px;).
+Alternativas abreviadas
+En lugar de escribir margin-top individualmente, puedes definirlo usando la margin propiedad abreviada:
+4 valores (arriba, derecha, abajo, izquierda): margin: 20px 10px 15px 5px;
+2 valores (arriba/abajo, izquierda/derecha): margin: 20px 10px;
+Entendido: Colapso de margen
+En CSS, los márgenes verticales (margin-top y margin-bottom ) de elementos de bloque adyacentes a veces se combinan en un solo margen. El navegador aplicará solo el valor de margen más grande en lugar de sumarlos.
+
+margin-right
+
+La margin-right propiedad CSS establece el tamaño del área de margen en el lado derecho de un elemento. Crea espacio fuera del borde definido del elemento, empujando los elementos vecinos más hacia la derecha.
+Sintaxis y valores comunesPuedes definir esta propiedad usando longitudes, porcentajes o palabras clave:
+.element {
+  margin-right: 20px;
+  margin-right: 1.5rem;
+  margin-right: 10%;
+  margin-right: auto;
+  margin-right: -10px; 
+}
+
+Valores clave explicados 
+Unidades de longitud: define el espaciado fijo o relativo (por ejemplo, , , , ). El valor predeterminado es px, em, rem, vh 0
+Porcentajes (%): Calculados en relación con el ancho (tamaño en línea) del contenedor principal.
+auto: El navegador calcula automáticamente el margen derecho. Cuando se combina con margin-left: auto un elemento a nivel de bloque con un ancho fijo, centra el elemento dentro de su contenedor.
+Valores negativos: en lugar de crear espacio, un margen derecho negativo (-15px) atrae elementos vecinos sobre el límite del elemento, lo que hace que se superpongan.
+La alternativa de la taquigrafía 
+En lugar de apuntar solo al lado derecho, puede configurar todos los lados utilizando la propiedad abreviada margin. Cuando se utilizan varios valores en la abreviatura, se aplican en el sentido de las agujas del reloj comenzando desde arriba:
+
+top | right | bottom | left 
+margin: 10px 20px 15px 5px; 
+
+top/bottom | left/right
+margin: 10px 20px;
+
+Comportamiento contextual
+Elementos en línea: en elementos en línea no reemplazados (como<span> o<a> ),margin-right agrega espaciado horizontal pero no afecta el diseño vertical ni la altura de la línea.
+Flexbox & Grid: en diseños modernos,margin-right: auto se puede usar en un elemento flexible para empujar todos los elementos posteriores completamente hacia el extremo derecho del contenedor.
+
+margin-bottom
+
+La margin-bottom propiedad CSS establece el área de margen en la parte inferior de un elemento, creando espacio fuera de sus bordes definidos
+Sintaxis y valores
+.element {
+  margin-bottom: 20px;
+}
+Puede definir esta propiedad utilizando varios tipos de valores:
+Longitud: Espaciado fijo usando unidades como px ,em ,rem , o vh 
+(p. ej.,margin-bottom: 1.5rem; ).
+Porcentaje: Calculado en relación con el ancho (tamaño en línea) del bloque contenedor (p. ej.,margin-bottom: 10%; ).
+Palabra clave (auto): El navegador calcula automáticamente un margen inferior adecuado.
+Valores negativos: acerca los elementos sucesivos o los superpone (p. ej.,margin-bottom: -10px; ).
+Alternativa de taquigrafía
+En lugar de apuntar solo a la parte inferior, puede utilizar la propiedad de margin abreviatura global. Cuando se utilizan cuatro valores, se aplican en el sentido de las agujas del reloj: arriba, derecha, abajo, izquierda.
+
+ css
+ Top: 10px | Right: 0px | Bottom: 20px | Left: 0px 
+ margin: 10px 0 20px 0;
+
+Gotchas comunes
+Elementos en línea: margin-bottom no tiene ningún efecto sobre elementos en línea no reemplazados como <span> o <a>. Debes cambiar su tipo de pantalla ainline-block oblock .
+Colapso de márgenes: los márgenes verticales adyacentes a veces colapsan en un solo margen. Si a un elemento con un margen inferior le sigue un elemento con un margen superior, el navegador a menudo aplicará solo el mayor de los dos márgenes en lugar de sumarlos.
+
+margin-left
+
+La margin-left propiedad CSS establece el espacio adicional requerido en el lado izquierdo de un elemento, alejándolo aún más de sus elementos vecinos o del contenedor principal. Afecta el área fuera del borde del elemento.
+Sintaxis y valores aceptados 
+Puedes definir margin-left usando varios tipos de unidades:
+css
+.example {
+  margin-left: 20px;        Fixed length (pixels) 
+  margin-left: 2rem;        Relative to root font size 
+  margin-left: 10%;         Percentage of the parent container's width
+  margin-left: auto;        Browser calculates the space automatically
+  margin-left: -15px;       Negative values pull the element closer
+}
+
+Casos de uso comunes
+Espaciado fijo: empujar un elemento a una distancia distinta de un vecino del lado izquierdo (como agregar espacio entre un ícono y una etiqueta de texto).
+Empujar elementos hacia la derecha: aplica margin-left: autoarlo a un elemento de caja flexible o bloque lo obligará a ocupar todo el espacio horizontal restante, empujando el elemento completamente hacia el lado derecho de su contenedor.
+Bloques de centrado: combinado con un ancho fijo, establece ambos margin-left: auto y margin-right: auto centra un elemento a nivel de bloque horizontalmente dentro de su elemento principal.
+Superposición: el uso de valores negativos (por ejemplo, margin-left: -20px ) tira del elemento hacia la izquierda, lo que resulta útil para crear diseños de diseño superpuestos.
+Alternativa de propiedad abreviada
+En lugar de escribir margin-left individualmente, puedes utilizar la propiedad de margin taquigrafía. Los márgenes se aplican en el sentido de las agujas del reloj (arriba, derecha, abajo, izquierda): 
+
+ css
+ Top | Right | Bottom | Left 
+ margin: 10px 20px 15px 40px;
+ Left margin is 40px
+
+ Top & Bottom | Left & Right
+ margin: 10px auto; Horizontal auto-centering.
+
+Rendimiento y limitaciones
+Elementos en línea: no tiene ningún efecto sobre elementos en línea no reemplazados, como <span> etiquetas genéricas, a menos que se cambie su comportamiento de visualización a inline-block o block.
+Alternativa lógica: en los sistemas de diseño CSS modernos (como Flexbox o Grid) que manejan texto multilingüe de derecha a izquierda (RTL), los desarrolladores a menudo prefieren la propiedad lógica margin-inline-start en lugar de la física margin-left.
+*/
+
+body{
+    background-color: #333;
+    color: #fff;
+}
+.title{
+    background-color: lightcoral;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.block{
+    background-color: purple;
+    width: 200px;
+    height: 200px;
+    /* margin: 100px 50px 10px 200px; se pueden usar los cuatro margenes */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom:10px;
+}
+
+.inline{
+    background-color: lightcoral;
+    color: inherit;
+    /* solo funcionan elementos de márgenes right y left */
+    margin-right: 50px;
+    margin-left: 80px;
+}
