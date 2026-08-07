@@ -1,0 +1,88 @@
+body{
+    background-color: #333;
+    color: #fff;
+    margin: 0;
+}
+
+.header{
+    background-color: steelblue;
+}
+
+.title{
+    width: 300px;
+}
+
+.block{
+    background-color: purple;
+    width: 200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;    
+}
+
+.inline{
+    background-color: lightcoral;
+    color: inherit;
+}
+
+.buttons{
+    background-color: steelblue;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 30px;
+}
+
+.button{
+    margin-left: 90px;
+    padding: 25px 50px;
+    border: 20px solid red;
+    border-width: 20px;
+    border-style: solid;
+    border-color: red;
+}
+
+
+
+
+
+
+/* La propiedad border en CSS permite definir el grosor, el estilo y el color del borde de un elemento. Puedes usar la forma abreviada en una sola línea (ej. border: 2px solid red;) o modificar lados específicos y propiedades individuales como border-width, border-style y border-radius.
+Propiedades principales
+border-width: Define el grosor del borde (ej. 1px, medium, thick).
+border-style: Define la forma de la línea (ej. solid, dashed, dotted, double).
+border-color: Define el color del borde (ej. #000, red, transparent).
+border-radius: Redondea las esquinas del borde (ej. 8px, 50%).
+Bordes en lados específicos
+Puedes apuntar a un solo lado del elemento cambiando la palabra clave:
+border-top (arriba)
+border-right (derecha)
+border-bottom (abajo)
+border-left (izquierda)
+
+border-top-width
+border-right-width
+border-bottom-width
+border-left-width
+
+border-top-style
+border-right-style
+border-bottom-style
+border-left-style
+
+border-top-color
+border-right-color
+border-bottom-color
+border-left-color
+
+listado de valores para style:
+none
+hidden
+dotted
+dashed
+solid
+double
+groove
+ridge
+inset
+outset
+*/
