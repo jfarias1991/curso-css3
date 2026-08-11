@@ -1,0 +1,66 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #333;
+    color: #fff;
+}
+
+.box{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    background-color: lightcyan;
+    width: 300px;
+    height: 300px;
+    color: #000;
+    border-radius: 50px;
+    overflow: hidden;
+    /* overflow-y: scroll; */
+}
+
+.box-1,
+.box-2{
+    padding: 20px;
+    background-color: lightcoral;
+}
+.text{
+    /* width: 350px; */
+    margin: 0;
+}
+
+/*Decimos que el contenido se desborda cuando la caja es más pequeña que el contenedor.
+Overflow:
+    Es la propiedad que controla qué debe hacer la caja cuando su contenido se desborda del contenedor.
+    Es un shorthand que engloba overflow-x y overflow-y.
+Tiene 4 posibles valore:
+    visible-> Es el valor por defecto el contenido no se recorta y se dibuja fuera del contenedor - el texto o imágenes invaden los elementos adyacentes.
+    hidden-> El contenido que se desborde no se verá. Si aplicamos esta propiedad en un solo eje, el otro se pondra automáticamente en el valor scroll - no se muestran barras de desplazamiento.
+    scroll-> Aparecerán barras de scroll en el eje asignado (x , y o ambas) - se muestran barras de desplazamiento de forma permanente, haya desbordamiento o no.
+    auto-> Aparecerán barras de scroll en el caso de que hicieran falta - las barras de scroll aparecen únicamente si el contenido no cabe.
+    clip-> El contenido se recorta estrictamente en el límite del borde de la caja - prohibe cualquier tipo de desplazamiento automático o programático.
+
+La propiedad CSS overflow determina cómo se comporta el contenido de un elemento cuando excede las dimensiones fijas (ancho o alto) de su caja contenedora. Es una propiedad abreviada que configura simultáneamente el comportamiento horizontal (overflow-x) y vertical (overflow-y).
+
+Requisitos Importantes
+Para que la propiedad overflow tenga un efecto visible (distinto de visible), el elemento contenedor debe cumplir con alguna de estas condiciones de restricción de tamaño:
+Tener una altura fija definida (height o max-height).
+Tener un ancho fijo definido (width o max-width).
+Bloquear el salto de línea en textos mediante white-space: nowrap;.
+
+ejemplos:
+Control independiente por ejes
+.tarjeta-texto {
+  width: 100%;
+  height: 200px;
+  overflow-x: hidden; Evita el scroll horizontal
+  overflow-y: scroll;  Fuerza el scroll vertical 
+}
+
+Aplicación básica en ambas direcciones
+.contenedor-scroll {
+  width: 300px;
+  height: 150px;
+  overflow: auto; Scroll automático solo si es necesario 
+}
+ */
