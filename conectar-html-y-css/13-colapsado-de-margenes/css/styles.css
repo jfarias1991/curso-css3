@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #333;
+    color: #fff;
+    margin: 0;
+}
+
+.header{
+    background-color: lightcoral;
+    height: 100px;
+    margin-bottom: 20px;
+    /*overflow: hidden; quita el margen encima del header*/ 
+    /* padding-top: 0.1px; */
+    /* border-top: 0.1px solid lightcoral; */
+}
+.title{
+    margin: 0;
+    margin-top: 30px;
+}
+
+.box-1,
+.box-2{
+    margin-left: auto;
+    margin-right: auto;
+    /* margin-bottom: 20px; */
+    background-color: lightcyan;
+    width: 300px;
+    height: 300px;
+}
+
+.box-1{
+    margin-bottom: 30px;
+
+}
+
+/* *LOS MARGENES VERTICALES COLAPSAN*
+El colapso de márgenes en CSS ocurre cuando los márgenes verticales (superior e inferior) de dos o más bloques se juntan y se combinan en uno solo. En lugar de sumarse, el navegador usa únicamente el valor del margen más grande. Esto solo pasa con los márgenes verticales en el flujo normal. 
+¿Cuándo pasa el colapso de márgenes?Elementos hermanos: Si un elemento tiene un margen inferior de 20px y el que está abajo tiene un margen superior de 30px, el espacio final entre ellos no es de 50px, sino de 30px (gana el mayor).
+Contenedor padre e hijo: Si un elemento padre no tiene bordes ni relleno (padding), el margen superior de su primer hijo (o el inferior del último) se sale y se junta con el margen del padre, moviendo a todo el contenedor.
+Elementos vacíos: Si un bloque no tiene contenido, altura, bordes ni relleno, su margen superior e inferior colapsan entre sí.
+¿Cómo evitar o solucionar el colapso de márgenes?
+Usar solo una dirección de margen (por ejemplo, aplicar siempre margin-bottom a todos los elementos y evitar los margin-top).
+Agregar un borde delgado o un relleno (padding) al elemento padre para separar los márgenes internos de los externos.
+Cambiar el modelo de caja usando Flexbox (display: flex) o Grid (display: grid), ya que en estos modos los márgenes no colapsan.
+Usar propiedades como overflow: hidden o padding en el contenedor para aislar los márgenes de los hijos. */
