@@ -1,0 +1,79 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #333;
+    color: #fff;
+}
+
+.text{
+    text-align: center;
+}
+
+.box{
+    background-color: #666;
+    width: 100px;
+    padding: 10px 0;
+    margin: 20px 0;
+    border: 2px solid lightcoral;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.link{
+    color: #fff;
+    background-color: #666;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    display: block;
+    text-align: center; /* no funciona en el estado de inline ni con inline-block solo con display: block*/
+    margin-bottom: 20px;
+
+
+}
+
+.img-container{
+    text-align: center;
+}
+.img{
+    /* display: block; cuando esta dentro de un div no puedes usar display porque no se centrara */
+    width: 300px;
+    height: 300px;
+    /* margin-left: auto;
+    margin-right: auto;  */
+}
+
+/* 
+text-align es la propiedad que nos permite alinear horizontalmente el contenido de un elemento de bloque siempre que el contenido no tenga ancho declarado.
+acepta 4 posibles valores.
+    text-align:left;-> alinea el contenido a la izquierda.
+    text-align:right;-> alinea el contenido a la derecha.
+    text-align:center;-> alinea el contenido al centro
+    text-align:justify;-> alinea el contenido de forma justificada. no es recomendable usarlo.
+
+La propiedad CSS text-align controla la alineación horizontal del contenido en línea (como texto e imágenes) dentro de un elemento a nivel de bloque.
+Valores comunes 
+text-align: left; – Alinea el texto con el borde izquierdo.
+text-align: right; – Alinea el texto con el borde derecho.
+text-align: center; – Centra el texto horizontalmente.
+text-align: justify; – Estira las líneas para llenar todo el ancho del contenedor.Propiedades lógicas modernas
+En lugar de codificar izquierda/derecha, utilice propiedades lógicas para una mejor compatibilidad con sitios web multilingües/de derecha a izquierda (RTL):
+text-align: start; – Se alinea con el comienzo de la dirección del texto (izquierda para inglés, derecha para árabe).
+text-align: end; – Se alinea con el final de la dirección del texto (derecha para inglés, izquierda para árabe).
+Ejemplo de código rápido
+
+css
+.center-heading {
+  text-align: center;
+}
+
+.justified-paragraph {
+  text-align: justify;
+}
+Regla importante
+La propiedad debe aplicarse al contenedor principal (como a <div> o <p>), no directamente a elementos en línea como <span> o <a>. 
+También sólo alinea el contenido horizontalmente; no centra el texto verticalmente.*/

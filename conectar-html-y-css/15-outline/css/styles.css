@@ -20,7 +20,7 @@ body{
 }
 
 .outline{
-    outline: 3px inset lightcoral;
+    outline: 3px inset lightgreen;
     outline-offset: -13px;
     border: 2px solid lightcoral;
 }
