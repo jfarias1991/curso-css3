@@ -1,0 +1,76 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #333;
+    color: #fff;
+}
+
+.border,
+.outline{
+    background-color: #666;
+    width: 100px;
+    padding: 10px 20px;
+    margin: 50px 100px;
+}
+
+.border{
+    border: 2px solid lightcoral;
+}
+
+.outline{
+    outline: 3px inset lightcoral;
+    outline-offset: -13px;
+    border: 2px solid lightcoral;
+}
+
+
+/* 
+outline es la propiedad que nos permite dibujar un borde por fuera del modelo de caja.
+es un shorthand que engloba:
+    outline-width -> controla el ancho del outline.
+    outline-style-> controla el estilo del outline.
+    outline-color-> controla el color del outline.
+
+Tiene las mismas propiedades y sintaxis que border, pero con algunas diferencias.
+    no ocupa sitio, ya que no ocupa espacio del box-model.
+    no se redondea.
+    no se pueden controlar los lados de forma independiente.
+
+tambien cuenta con la propiedad outline-offset, que nos permite aumentar o disminuir la distacia del outline respecto a la caja a la que pertenece.
+
+La propiedad CSS outline dibuja una línea alrededor de un elemento, directamente fuera de su borde. A diferencia de los bordes, los contornos no ocupan espacio en el diseño del documento, lo que significa que nunca alteran las dimensiones del elemento ni hacen que los elementos vecinos se desplacen.
+La propiedad taquigráfica outline La propiedad es una abreviatura utilizada para establecer outline-width ,outline-style , youtline-color en una sola declaración.
+
+css 
+Syntax: 
+width style color
+.element {
+  outline: 3px solid #ff0000;
+}
+
+Subpropiedades individuales 
+outline-style: Define el aspecto de la línea (p. ej.,solid ,dashed ,dotted ,double ). El valor predeterminado es none , por lo que debes declarar un estilo para que el contorno se vuelva visible.
+outline-width: Establece el espesor utilizando valores como thin ,medium ,thick , o unidades exactas como px o em.
+outline-color: Establece el color de la línea utilizando nombres de colores estándar, códigos hexadecimales, RGB o la palabra claveauto .
+outline-offset: Cambia el espacio entre el contorno y el borde del elemento. Entre ellos queda un espacio transparente. Un número positivo lo mueve más hacia afuera, mientras que un número negativo lo mueve dentro del elemento. 
+Casos de uso comunes 
+Accesibilidad ():focus: Los navegadores web estándar utilizan esquemas de forma predeterminada para resaltar elementos interactivos (como botones y enlaces) cuando los usuarios del teclado los presionan. Evite la configuración outline: none sin proporcionar un estilo de enfoque alternativo.
+Depuración de diseño: debido a que los contornos no afectan el modelo de caja CSS ni el flujo de diseño, los desarrolladores con frecuencia aplican outline: 1px solid red límites de elementos traza sin romper las estructuras de diseño
+
+Principales diferencias: esquema vs. Frontera
+
+Caracteristica: Impacto del diseño
+outline: Ocupa cero espacios, puede superponerse al contenido.
+border: Agrega ancho / alto total, cambia el contenido.
+
+Caracteristica: Control lateral
+outline: Todo o nada, no puede apuntar a lados específicos.
+border: Puede apuntar a lados separados (por ejemplo: border-bottom).
+
+Caracteristica: Formas de los bordes
+outline: Sigue al elemento, pero no puede ser rectangular.
+border: Se ajusta explícitamente a las cajas rectangulares estándar.  
+
+*/

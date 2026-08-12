@@ -9,12 +9,30 @@ body{
 
 .text{
     background-color: lightcoral;
+    /* display: none; 
+    display: inline;
+    width: 200px;
+    margin-bottom: 100px;*/
 }
 
 .link{
     background-color: #fff;
+    display: inline-block;
+    width: 100px;
+    margin-top: 50px;
+    /* display: block;
+    width: 100px;
+    margin-bottom: 20px; */
 }
-/* La propiedad display  en CSS controla cómo se muestra un elemento y cómo se organiza la página, siendo sus valores principales
+/* 
+La propiedad display nos sirve para cambiar el contexto de los elementos dentro del navegador.
+Admite varios valore:
+    none-> Hace que el elemento no se muestre, pero sigue cargandose.
+    block-> Hace que el elemento sea de bloque.
+    inline-> Hace que elemento sea de línea.
+    inline-block-> Hace que el elemento sea de línea pero admite medidas y márgenes verticales. 
+
+La propiedad display  en CSS controla cómo se muestra un elemento y cómo se organiza la página, siendo sus valores principales
 block ,inline  y flex.}
 
 Valores principales de display
