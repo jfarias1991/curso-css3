@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #333;
+    color: #fff;
+}
+
+.text{
+    background-color: lightcoral;
+}
+
+.link{
+    background-color: #fff;
+}
+/* La propiedad display  en CSS controla cómo se muestra un elemento y cómo se organiza la página, siendo sus valores principales
+block ,inline  y flex.}
+
+Valores principales de display
+
+block: El elemento ocupa todo el ancho disponible y fuerza un salto de línea antes y después (como<div>  o<p> ).
+inline: El elemento solo ocupa el espacio de su contenido y se pone al lado de otros sin saltar de línea (como <span> o <a> ); no acepta alto ni ancho personalizados.
+inline-block: Mezcla ambos; se pone al lado de otros elementos, pero sí permite cambiar su ancho y alto.
+flex: Cree un contenedor flexible para alinear elementos fácilmente en filas y columnas.
+grid: Crea una cuadrícula para organizar elementos en columnas y filas complejas.
+none: Oculta el elemento por completo y borra su espacio en la página. */
