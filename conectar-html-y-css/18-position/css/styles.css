@@ -1,0 +1,103 @@
+*{ 
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+/* 
+la propiedad position nos permite posicionar los elementos. hay algunos conceptos que debemos conocer para entender position.
+
+flujo renderizado-> por norma general los elementos se dibujan de izquierda a derecha y de arriba a abajo. el punto 0,0 de los elementos, por norma general, es la esquina superior izquierda.
+
+espacio reservado-> es el espacio que tiene un elemento asignado en el navegador.
+
+elemento posicionado-> esto significa que el elemento tiene la propiedad position con un valor distinto de "static", que es el valor que tiene esta propiedad por defecto.
+
+stackin context-> contexto de apilamiento->. es el orden en el que se apilaran las cajas que se superponen.
+
+al posicionar un elemento se habilitan 5 propiedades que podemos utilizar para mover los elementos en los 3 ejes.
+    top-> el elemento se movera desde la parte superior la distancia que le hayamos indicado.
+    right-> el elemento se movera desde la parte derecha la distacia que le hayamos indicado.
+    bottom-> el elemento se movera desde la parte inferior la distacia que le hayamos indicado.
+    left-> el elemento se movera desde la parte izquierda la distacia que le hayamos indicado.
+    z-index-> nos permite mover el elemento en el contexto de apilamiento (eje z).
+    nota: si a un elemento le declaramos la propiedad top o left, las propiedades bottom y right no funcionan.
+
+los posibles valores que le podemos dar a position son.
+    static, relative, absolute, fixed y sticky.
+
+
+La propiedad CSS position define cómo se coloca un elemento en un documento. Una vez declarado, se utilizan las propiedades de desplazamiento direccional (top,bottom ,left ,right ) y z-index para mover el elemento.
+A continuación se presenta una descripción general rápida de los 5 valores fundamentales:
+
+
+valor: static
+permanece en el flujo de documentos:si
+punto de referencia: Diseño normal del navegador
+caso de uso comun: Comportamiento predeterminado para todos los elementos
+
+valor: relative
+permanece en el flujo de documentos:si
+punto de referencia: Su propia posición original
+caso de uso comun: Contenedor principal para elementos absolutos
+
+valor: absolute
+permanece en el flujo de documentos:no (eliminado)
+punto de referencia: Ancestro ubicado más cerca
+caso de uso comun: Ventanas emergentes, botones de cierre, menús desplegables
+
+valor: fixed
+permanece en el flujo de documentos: no (eliminado)
+punto de referencia: La ventana gráfica del navegador
+caso de uso comun: Barras de navegación persistentes o widgets de chat
+
+valor: sticky
+permanece en el flujo de documentos: si (hasta que se active)
+punto de referencia: Desplácese por el borde del contenedor
+caso de uso comun: Encabezados que se quedan pegados al desplazarse por ellos
+
+Desglose detallado
+1. Estático (predeterminado)Los elementos siguen el flujo natural de la página. Los desplazamientos direccionales (top,left , etc.) no tienen ningún efecto.
+css
+.element {
+  position: static;
+}
+
+2. Relativo El elemento permanece en el flujo normal, pero puedes desplazarlo de su lugar predeterminado sin afectar a los elementos circundantes.
+css
+.element {
+  position: relative;
+  top: 20px;   Pushes the element 20px down from its original top edge
+  left: 10px;   Pushes the element 10px right from its original left edge
+}
+
+3. Absoluto El elemento se elimina por completo del flujo de diseño de la página. Otros elementos se comportan como si no existieran. Se posiciona en relación con su ancestro más cercano que tiene una posición distinta astatic (generalmenterelative ). Si no existe ningún ancestro posicionado, el valor predeterminado es el cuerpo del documento.
+css
+.parent {
+  position: relative; /* Acts as the anchor point
+}
+.child {
+  position: absolute;
+  top: 0;
+  right: 0; /* Anchors the child tightly to the top-right corner of the parent 
+}
+
+4. Fijo Al igual que el posicionamiento absoluto, el elemento se elimina del flujo normal. Sin embargo, se ancla directamente a la ventana gráfica (la ventana del navegador). Permanece fijado exactamente en el mismo lugar incluso cuando un usuario se desplaza por la página.
+css
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* Spans across the entire top edge of the screen 
+}
+
+5. PegadizoY valor híbrido. El elemento actúa como hasta que el usuario se desplaza hasta un umbral específico, donde se convierte en un elemento y se "pega" a la pantalla. Debes especificar al menos una propiedad directa (como) para que funcione.relativefixedtopcss.sticky-header {
+  position: sticky;
+  top: 0;  Sticks to the very top edge of its scrollable container
+}
+*/
