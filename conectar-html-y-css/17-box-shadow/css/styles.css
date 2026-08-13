@@ -1,0 +1,78 @@
+*{
+    box-sizing: border-box;
+}
+
+.box{
+    background-color: darkcyan;
+    width: 200px;
+    padding: 50px;
+    color: red;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    /* border-radius: 30px; */
+    /*box-shadow: -100px; va hacia la derecha con 10px y hacia la izquierda con -10px*/
+    /* box-shadow: 5px -60px; con el segundo px el cuadro sube con -60px y baja con 200px*/
+    /* box-shadow: 0 30px 0px -20px #111; */
+    /* box-shadow: inset -5px -5px 10px 0 #111;*/
+    box-shadow: 5px 5px red, 10px 10px blue, 15px 15px purple;
+}  
+    
+
+
+
+
+
+
+/* La propiedad CSS box-shadow aplica uno o más efectos de sombra al marco de un elemento. Se utiliza universalmente para crear diseños de interfaz de usuario en profundidad, elevación y 3D.
+Desglose de sintaxis 
+css 
+box-shadow: [inset] offset-x offset-y [blur-radius] [spread-radius] [color];
+offset-x(Requerido): Mueve la sombra horizontalmente. Los valores positivos lo empujan hacia la derecha; los valores negativos lo empujan hacia la izquierda.
+offset-y(Requerido): Mueve la sombra verticalmente. Los valores positivos lo empujan hacia abajo; los valores negativos lo empujan hacia arriba.
+blur-radius (Opcional): Establece la suavidad. Los valores altos producen una sombra más borrosa y grande. Los bordes afilados tienen como valor predeterminado 0 .
+spread-radius(Opcional): Expande o encoge la sombra. Lo positivo se expande; lo negativo se contrae.
+color (Opcional): Establece el color de la sombra. El valor predeterminado es el color del texto del elemento. Los valores semitransparentes (rgba) producen resultados realistas.
+inset(Opcional): Cambia la sombra de un brillo exterior a una sombra interior.
+Ejemplos comunes de implementación
+1. Sombra suave básica 
+Una decoración de diseño estándar y versátil, perfecta para tarjetas y botones.
+
+css
+.card {
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+}
+2. Esquema sólido y nítidoAl establecer compensaciones y desenfoque en cero se crea un efecto de contorno igual que omite las restricciones del modelo de caja normal.
+css
+.outline {
+  box-shadow: 0px 0px 0px 4px #ff5722;
+}
+3. Sombra de inserciónEmpuja la sombra dentro del límite para emular un estado insertado o presionado.
+css
+.pressed-button {
+  box-shadow: inset 0px 4px 6px rgba(0, 0, 0, 0.4);
+}
+4. Apilado / Múltiples sombrasEncadene múltiples perfiles de sombra separados por comas para diseñar gradientes de capa avanzados y ultrasuaves.
+css
+.layered-depth {
+  box-shadow: 
+    0 1px 3px rgba(0,0,0,0.12), 
+    0 1px 2px rgba(0,0,0,0.24);
+}
+Referencia de configuraciones interactivas
+estilo de efecto: Gota sutil
+ejemplo de declaracion de propiedad: 0 2px 5px rgba(0,0,0,0.1)
+caso de uso práctico: Diseños de tarjetas de interfaz de usuario planas
+
+estilo de efecto: Alta elevación
+ejemplo de declaracion de propiedad:0 19px 38px rgba(0,0,0,0.3)
+caso de uso práctico:Superposiciones, modales y ventanas emergentes
+
+estilo de efecto: Efecto de brillo
+ejemplo de declaracion de propiedad: 0 0 15px rgba(74,144,226,0.6)
+caso de uso práctico: Campos de entrada activos / enfocados
+
+Consejos técnicos
+Seguimiento del radio del borde: si el contenedor objetivo presenta una sombra específica border-radius, la sombra aplicada imita automáticamente esas esquinas curvas idénticas.
+Optimización del rendimiento: los radios de desenfoque grandes o las sombras en capas excesivas requieren un procesamiento adicional de la GPU durante la pintura de la pantalla. Mantenga las sombras optimizadas en contenedores con mucho desplazamiento.
+Ordenamiento por capas: al compilar cadenas de múltiples sombras, la primera entrada declarada se superpone a la visibilidad más alta y se apila secuencialmente hasta la declaración final del activo. */
