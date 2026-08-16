@@ -18,7 +18,7 @@ espacio reservado-> es el espacio que tiene un elemento asignado en el navegador
 
 elemento posicionado-> esto significa que el elemento tiene la propiedad position con un valor distinto de "static", que es el valor que tiene esta propiedad por defecto.
 
-stackin context-> contexto de apilamiento->. es el orden en el que se apilaran las cajas que se superponen.
+stackin context-> contexto de apilamiento->. es el orden en el que se apilaran las cajas que se superponen, dentro del mismo contenedor.
 
 al posicionar un elemento se habilitan 5 propiedades que podemos utilizar para mover los elementos en los 3 ejes.
     top-> el elemento se movera desde la parte superior la distancia que le hayamos indicado.

@@ -1,0 +1,35 @@
+*{ 
+    box-sizing: border-box;
+}
+
+body{
+  background-color: #333;
+}
+
+.box{
+  width: 100px;
+  height: 100px;
+}
+
+.box-1{
+  background-color: lightcoral;
+  position: relative;
+  /* left: 100px;
+  top: 100px; */
+  /* top: 50px; con esto hacemos apilamiento 
+  top: 50px;
+  bottom: 25px; no se puede usar bottom si ya tienes top declarado*/
+  /*left: 50px;
+  right: 25px; tampoco se pueden usar ambas porque no esta permitido*/
+  /*top: 200px;
+  bottom: -200px; tiene la misma funcion*/
+  /*border-radius: 50px;
+  top: 100px;
+  left: 100px; el cuadrado se convierte en circulo pero sigue manteniendo su propiedad de cuadrado.*/
+}
+
+.box-2{
+  background-color: lightgreen;
+  position: relative;
+  /* top: 100px; */
+}
