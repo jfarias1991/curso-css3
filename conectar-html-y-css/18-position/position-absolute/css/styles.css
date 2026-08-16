@@ -1,0 +1,83 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background-color: #333;
+}
+
+.box{
+    text-align: center;
+    width: 100px;
+    height: 100px;
+}
+
+.container{
+    /* background-color: lightskyblue; */
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    margin-left: 100px;
+    
+}
+
+.box-1{
+    background-color: lightcoral;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.link-1{
+    background-color: lightgray;
+    position: absolute;
+    width: 200px;
+    height: 20px;
+    top: 300px;
+}
+
+.link-2{
+    background-color: black;
+    position: absolute;
+    top: 330px;
+    color: #666;
+}
+
+.box-2{
+    background-color: lightgreen;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+
+/* position: absolute; pierde automaticamente sus medidas (el tamaño original del div) pero si le damos un width y un height pareceria que no a pasado nada pero el elemento ya esta posicionado y ademas esta posicionado de manera absoluta*/
+/*bottom: 0;
+  right: 0; se coloca abajo a la esquina de la derecha solo se puede usar dos direcciones a la vez no se puede usar left y right al mismo tiempo puede ser top y left o top right o bottom left o bottom right si se usa se estiraria la informacion dentro del div*/
+
+/* El primer div no se ha perdido ni ha desaparecido del documento; simplemente quedó oculto exactamente detrás del segundo div.
+Al aplicar position: absolute a ambos, se superponen en el mismo espacio por el orden de apilamiento nativo del navegador.
+Por qué se ocultan
+Mismo punto de partida: Ambos elementos buscan el mismo contenedor de referencia (el body) y se alinean por defecto en la esquina superior izquierda (top: 0; left: 0;).
+Orden en el código (HTML): El navegador dibuja los elementos en orden secuencial. El segundo div se renderiza después del primero.
+Capa superior: Al procesarse al final, el segundo div se coloca en una capa visual superior y tapa por completo al primero.
+Cómo solucionarlo o ver ambos
+Cambia la posición: Usa propiedades como top, bottom, left o right en el segundo div para desplazarlo y separarlo del primero.
+Controla las capas: Usa la propiedad z-index (por ejemplo, z-index: 2; en el primer div) para decidir manualmente cuál se muestra adelante. 
+
+La regla de oro en Position Absolute
+Cuando un elemento absoluto no tiene una altura definida (height), colocar top y bottom al mismo tiempo estira el elemento como si fuera un elástico.
+Si aumentas el valor de bottom, empujas el borde inferior del cuadro hacia arriba (lo achicas).
+Si disminuyes el valor de bottom, dejas que el borde inferior caiga más cerca del suelo (lo estiras).
+
+Al aplicar position: absolute a un elemento en línea, este se convierte de forma automática en un elemento de bloque. Su tamaño ya no depende de su contenido interno, se sale del flujo normal de la página y se posiciona tomando como referencia su ancestro posicionado más cercano.
+Cambios principales
+Bloque automático: El elemento pasa a comportarse como un bloque (display: block o inline-block), lo que permite asignarle un ancho (width) y alto (height) personalizados.
+Pérdida de dimensiones naturales: Si no le defines un ancho, su tamaño se encogerá para ajustarse solo a su contenido, en lugar de ocupar toda la línea.
+Fuera del flujo: Los demás elementos de la página ignoran su presencia y ocupan su espacio anterior.
+Comportamiento del posicionamiento
+Referencia: Se ubica usando las propiedades top, right, bottom y left.
+Ancestro: Busca al padre más cercano que tenga un posicionamiento distinto a static (como relative, absolute o fixed).
+Ventana: Si no encuentra ningún ancestro con posición definida, se posiciona respecto al documento (la ventana del navegador).
+Superposición: Puede solaparse con otros elementos si no ajustas bien sus coordenadas.*/
