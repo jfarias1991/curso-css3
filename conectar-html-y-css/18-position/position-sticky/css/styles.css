@@ -1,0 +1,79 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background-color: #333;
+    color:#fff;
+    /* padding: 70px; */
+}
+
+.img{
+    width: 100%;
+    display: block;
+}
+
+.header{
+    text-align: center;
+    /* padding: 25px 0; */
+    background-color: lightskyblue;
+    color: orangered;
+    /* position: sticky;
+    top: 0;
+    width: 100%; */
+    height: 400px;
+    overflow: hidden;
+}
+
+.menu{
+    position: sticky;
+    top: 0;
+}
+
+article{
+    outline: 3px solid red;
+   /* overflow: scroll; semanticamente se veria mal porque tendria un scroll en cada parrafo de forma vertical y de horizontal
+     overflow: visible; funciona con position: sticky;
+    overflow: hidden; si lo declaramos dejaria de funcionar en el hijo */
+} 
+
+.article-title{
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    margin: 0;
+}
+
+/*
+es una mezcla de position relative y fixed. con este tipo de posicionamiento los valores top, left, bottom, right no sirven para mover el elemento, si no para indicarle en qué punto pasará a tener un comportamiento de posicionamiento similar a fixed, hasta llegar a ese punto se comportará como si no tuviera posicionamiento, aunque si contará como posicionado se necesitaramos colocar otro elemento respecto a él (absolute) 
+
+La propiedad position: sticky en CSS permite que un elemento se comporte como un elemento con posicionamiento relativo (relative) hasta que el usuario hace scroll y alcanza un umbral definido, momento en el cual se queda fijo ("pegado") en la pantalla como un elemento con posicionamiento fijo (fixed).
+Es la solución ideal para crear menús de navegación superiores, barras laterales que te acompañan durante la lectura o encabezados de listas alfabéticas.
+Código de Ejemplo Esencial Para que un elemento sea sticky, debes asignarle la propiedad position: sticky y definir al menos un umbral de posición (como top, bottom, left o right).
+css
+.mi-menu-sticky {
+  position: sticky;
+  top: 0; Se quedará pegado justo en el borde superior de la pantalla
+  z-index: 100; Evita que otros elementos se superpongan encima 
+  background-color: #ffffff; Evita que el texto de fondo se traslape de forma ilegible 
+}
+por qué no funciona mi position: sticky? (Errores comunes)
+Si has aplicado la propiedad pero el elemento sigue desplazándose de forma normal con el scroll, suele deberse a alguna de las siguientes tres razones:
+Falta el umbral de posición: Si pones position: sticky; pero olvidas declarar top: 0; (u otra coordenada), el navegador no sabrá dónde fijar el elemento y no hará nada.
+Propiedades de overflow en los padres: Esta es la causa más común. Si cualquier elemento ancestro (padre, abuelo, etc.) tiene declarada la propiedad overflow: hidden;, overflow: auto; o overflow: scroll;, romperá de inmediato el comportamiento sticky.
+El contenedor padre no tiene altura: Un elemento sticky solo puede flotar e interactuar dentro de los límites de su contenedor padre inmediato. Si el elemento padre mide exactamente lo mismo que el elemento sticky, este no tendrá espacio físico para desplazarse y parecerá que no funciona.
+Diferencias Clave: sticky vs fixed
+
+caracteristicas: Flujo del documento
+sticky: Respeta el flujo original del diseño y ocupa su espacio correspondiente hasta el scroll.
+fixed: Se extrae por completo del flujo del documento, lo que puede encimar elementos subyacentes.
+
+caracteristicas: Límite de movimiento
+sticky: Se queda bloqueado dentro de los márgenes de su elemento padre.
+fixed: Se ancla permanentemente respecto a la ventana del navegador (viewport).
+
+caracteristicas: Uso principal
+sticky: Cabeceras internas, barras laterales de artículos y títulos de listas dinámicas.
+fixed: Chatbots flotantes, botones de "ir arriba" y barras de navegación globales.
+ */
