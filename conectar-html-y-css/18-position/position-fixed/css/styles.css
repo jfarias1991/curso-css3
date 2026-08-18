@@ -1,0 +1,55 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background-color: #333;
+    color: #fff;
+    padding-top: 70px;
+}
+
+.header{
+    padding: 25px 0;
+    background-color: lightskyblue;
+    color: orangered;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.link{
+    background-color: lightcoral;
+    position:fixed;
+    width: 200px;
+}
+
+
+
+/* 
+Fixed-> el elemento perdera sus medidas y su espacio reservado. si lo movemos usará el elemento html de referencia, y además se quedará fijo en esa posición aunque hagamos scroll
+
+La propiedad position: fixed en CSS remueve un elemento del flujo normal del documento y lo posiciona de forma fija respecto a la ventana gráfica (viewport) del navegador. Esto significa que el elemento permanecerá visible en el mismo lugar exacto de la pantalla incluso cuando el usuario haga scroll vertical u horizontal.Características principales
+Fuera de flujo: No deja espacio en la estructura; los elementos circundantes ocupan su lugar original.
+Referencia global: Se orienta respecto al viewport, ignorando las posiciones de sus elementos padres (Nota: A menos que un ancestro tenga aplicadas propiedades de transformación como transform, filter o perspective).
+Propiedades de ubicación: Utiliza top, bottom, left y right para establecer la distancia exacta desde los bordes del navegador.
+Capas: Puede requerir el uso de z-index para controlar qué elementos quedan arriba o debajo.
+Ejemplo de uso común (Barra de navegación fija)
+El siguiente código fija un menú en la parte superior de la pantalla ocupando todo el ancho:
+css
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  z-index: 1000; Asegura que se mantenga sobre otros elementos
+}
+Casos de uso típicos
+Menús superiores que no desaparecen al bajar por la página.
+Botones de contacto rápidos o de "Ir arriba" en la esquina inferior derecha.
+Ventanas emergentes (Modales) y avisos de cookies que bloquean la pantalla central.
+Anuncios laterales publicitarios fijos. */
