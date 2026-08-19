@@ -1,0 +1,93 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background-color: #333;
+    color: #fff;
+}
+
+.container{
+    width: 200px;
+    height: 200px;
+    background-color: #555;
+    position: relative;
+    /*z-index: ;  al padre para que el hijo vaya detras no se le puede colocar z-index:*/
+
+}
+.box{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    color: #333;
+
+}
+
+.box-1{
+    background-color: lightcoral;
+    position: relative;
+    left: 150px;
+    z-index: -1; /* se usa para que el hijo vaya destras del padre o */
+}
+
+.box-1-2{
+    background-color: aquamarine;
+    position: relative;
+    left: 150px;
+    top: -25px;
+    z-index: -2;  /* sirve para colocar a un hijo y hermano detras del padre y detras del primer hijo */
+}
+
+.box-2{
+    background-color: lightgreen;
+    position: relative;
+    top: 50px;
+    z-index: 20;
+}
+
+.box-3{
+    background-color: lightseagreen;
+    position: relative;
+    z-index: 10;
+}
+
+/* z-index: es la propiedad que nos permite ordenar los elementos superpuestos para controlar cual se coloca por delante y cual por detras nunca colocar z-index seguido 1,2,3,4,5 porque siempre la app crece y puede ocacionar muchos problemas que luego tienes que corregir. se pueden usar de 10 en 10 o de 100 en 100.
+
+La propiedad z-index de CSS controla el orden de apilamiento vertical de los elementos que se superponen en una página web. Determina qué elemento se dibuja encima o debajo de los demás a lo largo del eje Z ficticio de la pantalla.
+
+El Requisito Clave
+
+El error más común es aplicar z-index y que este no funcione. z-index solo funciona en elementos posicionados (aquellos con un valor de position diferente a static, como relative, absolute, fixed o sticky) o en elementos hijos directos de un contenedor con display: flex o display: grid.
+
+css
+/* Esto NO funcionará *
+.caja-inutil {
+  z-index: 10; 
+}
+
+/* Esto SÍ funcionará 
+.caja-correcta {
+  position: relative; /* Activa la propiedad* 
+  z-index: 10;
+}
+
+Sintaxis y Valores
+
+auto: El elemento sigue el orden por defecto del flujo HTML (el valor inicial).
+
+Número entero: Valores numéricos positivos, negativos o cero (ej. -1, 0, 100, 9999). Un número mayor se coloca al frente de un número menor.
+
+Reglas de Prioridad por Defecto
+
+Si no asignas ningún z-index, el navegador decide el orden basándose en dos reglas:
+
+Orden en el HTML: Las etiquetas escritas más abajo en el código se superponen por encima de las que aparecen primero.
+
+Estatus de posición: Un elemento posicionado (position: relative) siempre se pintará por encima de un elemento no posicionado (position: static), sin importar su orden en el código HTML.
+
+El Contexto de Apilamiento (Stacking Context)
+
+A veces, un elemento con z-index: 9999 queda por detrás de uno con z-index: 1. Esto ocurre por el contexto de apilamiento local.
+
+Piensa en los contextos de apilamiento como carpetas. Si un contenedor padre genera un contexto de apilamiento (por ejemplo, al tener opacity menor a 1, transformaciones CSS, o su propio z-index), todos sus elementos hijos quedan limitados a competir únicamente dentro de ese contenedor. Ningún hijo podrá salir de esa "carpeta" para sobrepasar a elementos externos de capas superiores. */
