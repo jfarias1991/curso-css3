@@ -76,4 +76,14 @@ fixed: Se ancla permanentemente respecto a la ventana del navegador (viewport).
 caracteristicas: Uso principal
 sticky: Cabeceras internas, barras laterales de artículos y títulos de listas dinámicas.
 fixed: Chatbots flotantes, botones de "ir arriba" y barras de navegación globales.
+Ejemplos comunes de uso
+Barras de navegación superiores (Headers) que permanecen visibles para no perder el menú de vista mientras lees.
+Encabezados de tablas o listas (como los meses en un historial de transacciones o letras en una agenda) que se quedan arriba mientras deslizas la sección.
+Barras laterales de publicidad o widgets que te acompañan a lo largo de un artículo extenso.
+
+Requisitos obligatorios para que funcione
+Si aplicas la propiedad y notas que no se queda pegada, suele deberse a que no cumple alguna de estas tres reglas de oro:
+Definir un umbral físico: Si no incluyes top: 0, bottom: 10px, etc., el navegador no sabrá en qué punto exacto congelar el elemento.
+Cuidado con el overflow del padre: Ningún elemento contenedor (padre, abuelo, etc.) puede tener las propiedades overflow: hidden, overflow: auto o overflow: scroll. Si las tiene, el efecto se rompe por completo.
+Límite del contenedor contenedor: Un elemento sticky solo flota dentro de su elemento padre. Si el contenedor padre termina y desaparece de la pantalla al hacer scroll, el elemento pegajoso se irá con él. El padre necesita tener una altura mayor que el hijo.
  */

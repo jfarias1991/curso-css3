@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+    color: #fff;
+    margin: 0;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    color: #333;
+}
+
+.box-1 {
+    background-color: lightcoral;
+    position: relative;
+    z-index: 1;
+}
+
+.box-2 {
+    background-color: lightgreen;
+    position: relative;
+    margin-top: -50px;
+}
+
+.box-3 {
+    background-color: lightseagreen;
+}
+
+.container {
+    background-color: mediumslateblue;
+    color: #333;
+    margin-top: -50px;
+    position: relative;
+   
+}
+
+.title {
+    margin: 0;
+    background-color: #ccc;
+    position: relative;
+    z-index: 10;
+    opacity: 0.75;
+}
+
+.text {
+    margin: 0;
+    margin-top: -30px;
+}
+
+
+
+/* El stacking context o el contexto de apilamiento es el espacio donde nuestros elementos se van a ir apilando para que unos queden por detras y otros por delante.
+El orden del stacking context es: (de delante a atrás):
+    elementos pocisionados con un z-index de 1 o más
+    elementos pocisionados sin z-index declarado o z-index:auto.
+    elementos no pocisionados
+    elementos con z-index negativo 
+
+
+El contexto de apilamiento (stacking context) es la estructura tridimensional conceptual en la que el navegador renderiza los elementos HTML a lo largo del eje Z (hacia adelante o hacia atrás respecto al usuario).
+Su regla de oro es que los elementos hijos quedan atrapados dentro del contexto de su elemento padre, lo que significa que un z-index sumamente alto no servirá de nada si el contenedor padre está en una capa inferior del diseño global.
+
+Reglas por defecto de apilamiento (Sin z-index)
+
+Si ningún elemento tiene propiedades de posicionamiento ni capas especiales, el navegador apila los elementos de abajo hacia arriba en este estricto orden:
+
+Fondo y bordes del elemento raíz.
+Bloques no posicionados en el orden en que aparecen en el código (HTML normal).
+Elementos flotantes (float).
+Elementos en línea (texto, imágenes).
+Elementos posicionados (absolute, relative, fixed, sticky).
+
+¿Cómo se crea un contexto de apilamiento?
+Un nuevo contexto de apilamiento se genera de forma automática en el documento raíz (<html>), o cuando un elemento del DOM recibe cualquiera de las siguientes propiedades de CSS:
+Posición + Z-Index: Elementos con position: absolute o relative que además tengan un z-index numérico (diferente de auto).
+Posición Fija o Sticky: Cualquier elemento con position: fixed o position: sticky.
+Flexbox y Grid: Hijos directos de un contenedor Flexbox o Grid que tengan un z-index numérico.
+Opacidad: Elementos con un valor de opacity menor a 1.
+Efectos modernos: Elementos que apliquen transform, filter, perspective, clip-path, mask o mix-blend-mode con valores distintos de none.
+Aislamiento explícito: El uso de isolation: isolate (la forma más limpia de encapsular capas sin romper layouts).
+El efecto "Carpeta": El gran dolor de cabeza Piensa en los contextos de apilamiento como carpetas físicas llenas de papeles. El navegador primero ordena las carpetas entre sí. Una vez definida la prioridad de las carpetas, el orden de las hojas que están dentro solo importa dentro de esa misma carpeta
+.html
+<!-- Carpeta A (Nivel inferior) -->
+<div class="padre-A" style="position: relative; z-index: 1;">
+  <div class="hijo-A" style="position: absolute; z-index: 9999;">Hijo A</div>
+</div>
+
+<!-- Carpeta B (Nivel superior) -->
+<div class="padre-B" style="position: relative; z-index: 2;">
+  <div class="hijo-B" style="position: absolute; z-index: 1;">Hijo B</div>
+</div>
+
+Resultado visual: Hijo B se renderizará por encima de Hijo A, a pesar de que el primero tiene z-index: 1 y el segundo un exagerado z-index: 9999. Esto se debe a que padre-B (z-index: 2) está por encima de padre-A (z-index: 1).
+Herramientas para depurar capas
+Cuando un elemento no se posicione correctamente en pantalla, puedes utilizar herramientas integradas para detectar el problema:Edge 3D View / Layers de Firefox: Permiten rotar la página en un plano tridimensional para observar los bloques que componen el documento.
+Extensiones DevTools: Extensiones como CSS Stacking Context Inspector añaden una pestaña dedicada a revelar qué propiedades crearon el contexto en un elemento específico.
+
+El stacking context (contexto de apilamiento) en CSS sirve para organizar cómo se superponen los elementos en una página web en el eje Z (profundidad). Agrupa elementos para que sus valores de z-index compitan solo entre ellos, evitando que un elemento hijo se salga de su contenedor y tape cosas que no debe.
+Para qué sirve y funciones principales
+Controlar el orden visual: Define qué elemento se ve arriba y cuál queda atrás.
+Aislar elementos: Impide que el z-index de un hijo interfiera con elementos de otro grupo o sección de la página.
+Mover bloques como unidad: Hace que todo el contenido dentro del contexto se comporte como una sola capa frente al resto del documento.
+Cuándo se crea un nuevo contexto
+En el elemento raíz de la página (<html>).
+Con elementos posicionados (position: absolute o relative) que tienen un z-index distinto de auto.
+Con elementos que usan propiedades modernas como opacity menor a 1, transform, filter o flex/grid en ciertos casos.*/
