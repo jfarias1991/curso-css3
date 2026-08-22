@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #333;
+    color: lightcoral; 
+}
+
+.header {
+    background-color: lightskyblue;
+    text-align: center;
+}
+
+.title {
+    background-color: #333;
+    text-align: center;
+}
+
+.box {
+    width: 300px;
+    height: 230px;
+    background-color: lightgreen;
+}
+
+.box-children {
+    /* position: relative, fixed, sticky; va a trabajar desde la caja contenedora*/
+    /* position: aboslute va a trabajar con la medida del viewport*/
+    width: 50%;
+    height: 50%;
+    background-color: lightgrey;
+}
+/* 
+height:
+    %: cuando estemos dentro de un contenedor, este tiene que tener un alto declarado, si no no podrá calcular el porcentaje. Si se le aplica una medida con porcentaje se sustituirá automaticamente por auto.
+
+    auto: cuando utilizamos auto el alto lo calculará el navegador en base al contenido del elemento.
+
+nota: height es una propiedad que tenéis que usar con mucho cuidado. Si no es necesario establecer un alto, dejad que el contenido sea el que decida el alto del elemento.    
+
+La principal diferencia radica en la referencia que toma el navegador para calcular el tamaño: height: % depende del contenedor padre, mientras que height: auto depende del contenido del propio elemento.  
+
+Resumen de diferencias
+Propiedad	¿De qué depende su altura?	Comportamiento si no hay contenido
+height: [porcentaje]%	Del bloque contenedor (elemento padre).	Mantiene la proporción asignada respecto al padre.
+height: auto	De los hijos (contenido interno).	Colapsa a 0 píxeles de alto.
+
+Explicación detallada
+1. Porcentaje (height: 100%, 50%, etc.)
+Regla de oro: Para que un porcentaje funcione, el contenedor padre debe tener una altura definida (ya sea en px, vh u otra unidad fija).
+El problema común: Si pones height: 100% a un elemento cuyo padre tiene height: auto, el porcentaje no sabrá qué calcular y el elemento colapsará o medirá solo lo que mida su contenido. 
+
+2. Automático (height: auto)
+Comportamiento predeterminado: Es el valor inicial de HTML para los elementos de bloque.
+Flexibilidad: El contenedor se estira verticalmente de forma automática a medida que añades más texto, imágenes o elementos dentro de él.
+Riesgo: Si no especificas la altura y dejas auto en un contenedor vacío, visualmente desaparecerá porque su altura calculada será cero. */
