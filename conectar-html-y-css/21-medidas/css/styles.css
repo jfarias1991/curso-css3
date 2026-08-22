@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+  background-color: #333;
+
+}
+
+
+
+/* En CSS, dominar las unidades de medida y la gestión de fuentes es fundamental para crear diseños web adaptables, accesibles y estéticamente atractivos.
+Unidades de Medida en CSS
+Las unidades se dividen principalmente en dos grandes categorías según su comportamiento:
+1. Unidades Relativas (Recomendadas) Estas unidades cambian su valor en función de otro elemento del diseño (como el tamaño de fuente del padre o el tamaño de la pantalla), lo que las hace ideales para el diseño responsivo.
+rem: Relativa al tamaño de fuente del elemento raíz (<html>). Por defecto, 1rem = 16px. Es la unidad más segura para tipografía escalable.
+em: Relativa al tamaño de fuente del elemento padre. Si se usa en márgenes o espaciados, se calcula respecto a la tipografía del propio elemento.
+vw: 1% del ancho total de la ventana gráfica (viewport width).
+vh: 1% de la altura total de la ventana gráfica (viewport height).
+%: Relativa al tamaño del elemento contenedor directo.
+2. Unidades AbsolutasEstas unidades mantienen un tamaño fijo sin importar el dispositivo, resolución o configuración del usuario.
+px: Píxeles de pantalla. Es la unidad absoluta estándar en desarrollo web, aunque se desaconseja para textos por motivos de accesibilidad.
+pt / pc: Puntos y picas, utilizados tradicionalmente en tipografía impresa.
+cm / mm / in: Centímetros, milímetros y pulgadas.
+Propiedades de Fuentes en CSS
+Para controlar el aspecto del texto, se utiliza el grupo de propiedades font-*. Las más importantes son:1. font-familyDefine la tipografía o una lista de tipografías de respaldo en caso de que la primera opción no esté disponible en el sistema del usuario.
+css
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+2. font-sizeEstablece el tamaño de la letra utilizando las unidades explicadas anteriormente.
+
+css
+h1 {
+  font-size: 2.5rem; /* Escalable y accesible 
+}
+
+3. font-weight
+Define el grosor de los trazos de las letras. Puede usar palabras clave (normal, bold) o valores numéricos correlativos del 100 al 900.
+css
+p.destacado {
+  font-weight: 700; /* Equivalente a negrita gruesa 
+}
+
+4. font-style Modifica la inclinación del texto. Sus valores principales son normal, italic (cursiva basada en el diseño de la fuente) y oblique (texto inclinado artificialmente).
+Métodos para Cargar Fuentes Externas
+Si deseas usar fuentes personalizadas que no están en el sistema del usuario (como Google Fonts), tienes dos alternativas principales:Carga remota (HTML/CSS): Añadiendo una etiqueta <link> en tu HTML o usando @import en tu hoja de estilos para traer la fuente desde un servidor externo.
+Carga local (@font-face): Almacenando físicamente los archivos de la fuente (.woff2) en tu servidor y declarándolos manualmente para un control total del rendimiento.
+
+css
+@font-face {
+  font-family: 'MiFuentePersonalizada';
+  src: url('/fonts/mifuente.woff2') format('woff2');
+}
+  
+
+La principal diferencia entre las unidades en CSS es que las medidas absolutas tienen un tamaño fijo predecible que no cambia según el entorno, mientras que las medidas relativas se adaptan dinámicamente al tamaño del texto, del contenedor o de la pantalla del usuario.
+
+Unidades Absolutas
+Tienen un valor físico exacto definido por el sistema métrico. Son ideales para configuraciones donde las dimensiones de salida no varían (como documentos impresos) o para detalles milimétricos donde necesitas un tamaño rígido. Si el tamaño de la pantalla cambia, estas medidas permanecen idénticas, lo que puede provocar problemas de desborde de contenido.
+px (Píxeles): La unidad reina en pantallas tradicionales (1px equivale a la 1/96 parte de una pulgada).
+cm / mm: Centímetros y milímetros físicos.
+in: Pulgadas (1 pulgada = 2.54 cm = 96 píxeles).
+pt / pc: Puntos y picas (usados históricamente en imprenta; 1pt = 1/72 de pulgada).
+
+Unidades Relativas
+Son el pilar del diseño web adaptable (responsive design). Su tamaño real se calcula en el momento de renderizar según variables del entorno del navegador.Se dividen principalmente en tres subcategorías:
+1. Relativas a la tipografía em: Relativa al tamaño de fuente (font-size) del elemento actual o de su contenedor padre. Si el padre mide 16px, 2em equivalen a 32px. Su uso excesivo en cascada puede ser difícil de calcular.
+rem: Relativa únicamente al tamaño de fuente del elemento raíz (<html>). Por defecto, la mayoría de los navegadores configuran la raíz a 16px, por lo que 1rem = 16px de forma consistente en todo el sitio, eliminando el problema de la cascada de em.
+ch: Basada en el ancho del carácter "0" de la tipografía activa, ideal para limitar el ancho de párrafos y mejorar la lectura.
+
+2. Relativas al Viewport (Pantalla del dispositivo)
+vw: 1% del ancho total de la ventana del navegador (Viewport Width).
+vh: 1% del alto total de la ventana del navegador (Viewport Height).
+vmin: 1% de la dimensión más pequeña entre el ancho y el alto del viewport.
+vmax: 1% de la dimensión más grande entre el ancho y el alto del viewport.
+
+3. Relativas al contenedor %: Expresa un tamaño proporcional al espacio asignado del elemento contenedor inmediatamente superior.
+
+
+Ejemplo práctico en código
+
+css
+html {
+  font-size: 16px; /* Raíz *
+}
+
+.contenedor {
+  width: 80%;       /* Ocupará el 80% del ancho disponible 
+  max-width: 1200px; /* No crecerá más allá de 1200 píxeles físicos 
+  padding: 2rem;    /* 2 * 16px = 32px de espaciado interno uniforme 
+}
+
+.titulo {
+  font-size: 2.5rem; /* 2.5 * 16px = 40px. Si el usuario escala su navegador, esto escala. *
+  border-bottom: 2px solid black; /* El borde siempre mantendrá 2px exactos *
+}
+
+.hero-seccion {
+  height: 100vh;    /* Ocupará exactamente el 100% de la altura de la pantalla actual 
+} 
+  
+En CSS, dominar las unidades de medida y la gestión de fuentes es fundamental para crear diseños web adaptables, accesibles y estéticamente atractivos. 
+
+Unidades de Medida en CSS
+Las unidades se dividen principalmente en dos grandes categorías según su comportamiento: 
+
+1. Unidades Relativas (Recomendadas)
+Estas unidades cambian su valor en función de otro elemento del diseño (como el tamaño de fuente del padre o el tamaño de la pantalla), lo que las hace ideales para el diseño responsivo. 
+
+rem: Relativa al tamaño de fuente del elemento raíz (<html>). Por defecto, 1rem = 16px. Es la unidad más segura para tipografía escalable.
+em: Relativa al tamaño de fuente del elemento padre. Si se usa en márgenes o espaciados, se calcula respecto a la tipografía del propio elemento.
+vw: 1% del ancho total de la ventana gráfica (viewport width).
+vh: 1% de la altura total de la ventana gráfica (viewport height).
+%: Relativa al tamaño del elemento contenedor directo. 
+
+2. Unidades Absolutas
+Estas unidades mantienen un tamaño fijo sin importar el dispositivo, resolución o configuración del usuario. 
+
+px: Píxeles de pantalla. Es la unidad absoluta estándar en desarrollo web, aunque se desaconseja para textos por motivos de accesibilidad.
+pt / pc: Puntos y picas, utilizados tradicionalmente en tipografía impresa.
+cm / mm / in: Centímetros, milímetros y pulgadas. 
+
+Propiedades de Fuentes en CSS
+Para controlar el aspecto del texto, se utiliza el grupo de propiedades font-*. Las más importantes son: 
+
+1. font-family Define la tipografía o una lista de tipografías de respaldo en caso de que la primera opción no esté disponible en el sistema del usuario. 
+
+css
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+2. font-size Establece el tamaño de la letra utilizando las unidades explicadas anteriormente. 
+
+css
+h1 {
+  font-size: 2.5rem; /* Escalable y accesible *
+}
+
+3. font-weight Define el grosor de los trazos de las letras. Puede usar palabras clave (normal, bold) o valores numéricos correlativos del 100 al 900. 
+
+css
+p.destacado {
+  font-weight: 700; /* Equivalente a negrita gruesa *
+}
+
+4. font-style Modifica la inclinación del texto. Sus valores principales son normal, italic (cursiva basada en el diseño de la fuente) y oblique (texto inclinado artificialmente). 
+
+Métodos para Cargar Fuentes Externas
+Si deseas usar fuentes personalizadas que no están en el sistema del usuario (como Google Fonts), tienes dos alternativas principales: 
+
+Carga remota (HTML/CSS): Añadiendo una etiqueta <link> en tu HTML o usando @import en tu hoja de estilos para traer la fuente desde un servidor externo. 
+
+Carga local (@font-face): Almacenando físicamente los archivos de la fuente (.woff2) en tu servidor y declarándolos manualmente para un control total del rendimiento. 
+
+@font-face {
+  font-family: 'MiFuentePersonalizada';
+  src: url('/fonts/mifuente.woff2') format('woff2');
+}*/
