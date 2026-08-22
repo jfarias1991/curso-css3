@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+    color: lightcoral;
+}
+
+.title {
+    font-size: 2rem; /* tamaño de las letras siempre trabajar con rem*/
+}
+
+.link {
+    background-color: lightcoral; /* color del cuadro */
+    color: #333; /* color de las letras */
+    padding: 16px 32px; /* temaño de la caja padding: 1em 2em;*/
+    border-radius: 8px;  /* borde redondo border-radius: 0.5em; */
+    font-size: 2rem;  /* siempre usar rem para las fuentes */
+}
+
+
+/* rem: corresponde a la medida de la "m" de la raíz del documento (html).
+16px = 1rem 
+para tamaños de fuentes siempre usar rem sin excepcion
+
+em: corresponde a la medida "m" del contexto donde nos encontremos. 
+10px = 1em
+El estándar del tamaño de fuente por defecto en la raiz del documento de 16px, y no es recomendable modificarlo.
+
+nota: tanto "em" como "rem" se calcula en base a la propiedad font-size (tamaño de fuente) */
