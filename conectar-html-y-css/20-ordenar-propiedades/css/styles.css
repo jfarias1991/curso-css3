@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+}
+
+.btn-primary {
+  /* 1. Posicionamiento */
+  position: relative;
+  z-index: 10;
+
+  /* 2. Display y modelo de caja flexible (Flex/Grid) */
+  display: flex;
+
+  /* 3. Dimensiones y modelo de caja (espaciado) */
+  width: 200px;
+  margin: 10px 0;
+  padding: 12px 24px;
+
+  /* 4. Borde y fondo */
+  border: none;
+  border-radius: 8px;
+  background: blue;
+
+  /* 5. Tipografía y texto */
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+
+  /* 6. Visuales (efectos, animaciones, etc.) */
+  transition: opacity 0.3s;
+}
+
+.card {
+  /* 1. Posicionamiento y Estructura */
+  display: flex;
+  position: relative;
+  z-index: 10;
+
+  /* 2. Modelo de caja */
+  width: 100%;
+  max-width: 300px;
+  padding: 20px;
+  margin: 0 auto;
+
+  /* 3. Tipografía */
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #333333;
+
+  /* 4. Estética */
+  background-color: #ffffff;
+  border-radius: 8px;
+
+  /* 5. Efectos */
+  transition: transform 0.3s ease;
+}
+/* ordenar las propiedades es importante, no existe ninguna norma ni especificacion sobre como hacerlo, pero la mayoria de expertos coinciden en los mismos puntos.
+    1->propiedades de posicionamiento
+    2->propiedades del box model
+    3->propiedades de texto
+    4->propiedades visuales
+    5->el resto
+
+Para ordenar tus propiedades CSS de manera limpia y mantenible, la industria utiliza principalmente dos metodologías: el orden por categorías (funcional) o el orden alfabético. Aunque a los navegadores no les importa el orden para renderizar, mantener un estándar facilita la lectura del código y evita duplicaciones.
+A continuación, se detallan los dos métodos principales y cómo automatizar este proceso.
+1. Orden por Categorías (Concéntrico / Fuera hacia Adentro)
+Es el sistema más recomendado por guías de estilo reconocidas como la Code Guide de Mark Otto. Consiste en agrupar las propiedades según su impacto en el diseño, desde la estructura externa hasta los detalles visuales internos:
+Estructura y Posicionamiento: display, position, top, z-index, flex-direction. (Determina cómo se ubica el elemento en el flujo).
+Modelo de Caja (Box Model): width, height, margin, padding, border, box-sizing. (Define las dimensiones y distancias).
+Tipografía y Texto: font-size, font-family, line-height, text-align, color.
+Estética Visual: background-color, box-shadow, opacity, cursor.
+Efectos Avanzados: transition, animation, transform.
+
+
+Ejemplo estructurado:
+css
+.card {
+  /* 1. Posicionamiento y Estructura 
+  display: flex;
+  position: relative;
+  z-index: 10;
+
+  /* 2. Modelo de caja 
+  width: 100%;
+  max-width: 300px;
+  padding: 20px;
+  margin: 0 auto;
+
+  /* 3. Tipografía 
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #333333;
+
+  /* 4. Estética 
+  background-color: #ffffff;
+  border-radius: 8px;
+
+  5. Efectos 
+  transition: transform 0.3s ease;
+}
+
+2. Orden Alfabético
+Es el sistema preferido en proyectos grandes y con muchos desarrolladores según debates comunitarios en plataformas como Reddit. Elimina las dudas sobre a qué categoría pertenece cada propiedad.Ejemplo idéntico al anterior bajo criterio alfabético:css.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  color: #333333;
+  display: flex;
+  font-family: sans-serif;
+  font-size: 16px;
+  margin: 0 auto;
+  max-width: 300px;
+  padding: 20px;
+  position: relative;
+  transition: transform 0.3s ease;
+  width: 100%;
+  z-index: 10;
+}
+Cómo ordenarlo automáticamente (Recomendado)
+No debes ordenar tu código manualmente. Los desarrolladores delegan esta tarea a herramientas integradas en su editor de código:
+Stylelint: Es el estándar moderno de la industria. Puedes instalar el plugin stylelint-order para forzar y corregir automáticamente el orden que elijas (alfabético o por grupos) cada vez que guardes el archivo .
+Prettier: Aunque es un formateador general, existen plugins como prettier-plugin-properties-order que organizan tus reglas de CSS de forma automática.
+Extensiones de VS Code: Herramientas como PostCSS Sorting o versiones integradas de CSScomb te permiten ordenar bloques enteros de CSS presionando un comando de teclado o al guardar.*/
