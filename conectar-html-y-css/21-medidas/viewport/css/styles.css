@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+    color: #331010;
+    margin: 0;
+}
+
+.header {
+    background-color: lightskyblue;
+    text-align: center;
+    height: 20vh;  /*pa solo hasta donde se le da el alto no es lo mismo un vh que un porcentaje con el porcentaje se queda estatico y con el vh crece a medida que crece el navegador*/ 
+    width: 100%;   /* no utilizar 100vw usar 100%*/
+}
+
+.box {
+    width: 300px;
+    height: 300px;
+    background-color: lightseagreen;
+}
+
+.box-children {
+    position: sticky;
+    top: 0;
+    width: 30vmax;
+    height: 40vmin;
+    background-color: lightgreen;
+}
+
+/* Viewport
+El viewport es el area util donde se mostrara la pagina web.
+IMPORTANTE: tener en cuenta que es el area visible sin hacer scroll
+Podemos usar el viewport como medidas de varias formas:
+vw: viewport width, hace referencia al ancho del viewport.
+vh: viewport height, hace referencia al alto del viewport.
+vmin: utiliza el valor mas pequeño entre el ancho y el alto del viewport.
+vmax: utiliza el valor mas grande entre el ancho y el alto del viewport.
+1vw= 1% del ancho del viewport
+1vh= 1% del alto del viewport
+1vmin= 1% del valor que sea más pequeño del viewport
+1vmax= 1% del valor que sea más grande del viewport.
+
+El viewport es el área visible de una página web dentro de la ventana del navegador. Su tamaño varía constantemente según el dispositivo que use el usuario (computador, tablet o teléfono móvil). 
+
+En CSS, el viewport actúa como el marco de referencia principal para estructurar y diseñar sitios web responsivos. 
+
+Unidades de Medida del Viewport en CSS
+CSS ofrece unidades especiales basadas en los porcentajes de esta área visible: 
+
+vw (Viewport Width): Representa el 1% del ancho total del viewport.
+vh (Viewport Height): Representa el 1% de la altura total del viewport.
+vmin: Utiliza el valor de la dimensión que sea más pequeña entre el ancho y el alto.
+vmax: Utiliza el valor de la dimensión que sea más grande entre el ancho y el alto. 
+
+Ejemplo: Si configuras un elemento con width: 50vw;, este ocupará exactamente la mitad del ancho de la pantalla. 
+
+Su relación con el diseño responsivo
+Para que el viewport de CSS funcione correctamente en dispositivos móviles, se debe incluir la etiqueta <meta name="viewport"> en el archivo HTML. Esta etiqueta le avisa al navegador que debe adaptar el tamaño físico de la pantalla a los estilos CSS.
+
+
+Las unidades CSS vmin y vmax (a veces llamadas viewport min y max) representan un porcentaje de la dimensión menor o mayor de la ventana del navegador. 
+
+¿Qué son vmin y vmax?
+vmin (Viewport Minimum): Equivale al 1% de la dimensión más pequeña entre el ancho (vw) y el alto (vh) de la pantalla.
+vmax (Viewport Maximum): Equivale al 1% de la dimensión más grande entre el ancho (vw) y el alto (vh) de la pantalla. 
+
+Diferencia clave
+Si tu pantalla es más ancha que alta (como un monitor de PC en horizontal):
+100vmin toma el valor del alto.
+100vmax toma el valor del ancho. 
+
+
+Si giras el dispositivo o usas una pantalla móvil muy vertical:
+Los valores se adaptan automáticamente a la nueva proporción física del área visible. 
+
+Usos comunes
+Tipografía fluida: Usar font-size: 5vmin; asegura que el texto escale de forma proporcional sin volverse gigante en móviles ni invisible en escritorios.
+Elementos cuadrados o circulares: Definir width: 20vmin; height: 20vmin; garantiza que un componente mantenga una figura geométrica perfecta sin importar la orientación del dispositivo.
+*/
