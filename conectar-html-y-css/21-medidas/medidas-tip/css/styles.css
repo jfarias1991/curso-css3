@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    min-height: 100vh;
+    color: lightsalmon;
+    background-color: #333;
+    border: 4px solid red;
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+
+}
+.footer {
+    position: absolute; /*se esconde y aparece haciendo scroll*/
+    /*position: fixed;  si se activa solapa al body posicionadose por encima del body se queda pegado justo al final de la pagina no baja ni sube haciendo scroll*/
+    /* position: relative; se desaparece al hacer scroll igual que absolute */
+    /* position: static; sucede lo mismo que con absolute, relative */
+    /* position: sticky; sucede lo mismo que con fixed */
+    bottom: 5px; /*empuja al footer al final de la pagina y respeta el tamaño del body no lo solapa*/
+    width: 98.5%; /*ancho del footer si se activa el posicionamiento se debe disminuir su ancho para que no se apile sobre el body*/
+    padding: 1rem 0; /* relleno interno entre el contenido de un elemento y su borde */
+    color: white; /*color de las letras*/
+    text-align: center; /*texto centralizado*/
+    background-color: lightseagreen;
+    /* margin-top: auto; */
+}
+
+/* 
+* {
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    min-height: 100vh;
+    color: lightsalmon;
+    background-color: #333;
+    border: 4px solid red;
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    /* Contenido de prueba *
+}
+
+.footer {
+    OPCIÓN 1: La forma recomendada con Flexbox (sin usar 'position') 
+    margin-top: auto; 
+    width: 100%;
+    padding: 1rem 0;
+    color: white;
+    text-align: center;
+    background-color: lightseagreen;
+
+    /* OPCIÓN 2: Explicación corregida si usas 'position' y 'bottom: 0' */
+    
+    /* position: static; 
+       -> Comportamiento por defecto. Se posiciona en el flujo normal del HTML. 
+          Ignora 'bottom: 0'. Si hay poco texto, se queda arriba. */
+
+    /* position: relative; 
+       -> Se posiciona en el flujo normal, pero empuja el footer hacia ARRIBA 
+          o hacia ABAJO según 'bottom: 0' (no lo pega al fondo de la pantalla). */
+
+    /* position: absolute; 
+       -> Se despega del flujo y se pega al fondo de su ancestro (el body). 
+          Si la página tiene scroll, se queda al final de todo el documento. */
+
+    /* position: fixed; 
+       -> Se flota encima de todo y se queda inmóvil en la pantalla (viewport). 
+          NUNCA se mueve aunque hagas scroll. */
+
+    /* position: sticky; 
+       -> Actúa como 'relative' hasta que haces scroll y toca el borde especificado 
+          (por ejemplo, top: 0 o bottom: 0), momento en el que se fija temporalmente. 
+}
+          
+La propiedad display: flex en CSS sirve para activar el modelo de diseño Flexbox, el cual permite organizar, alinear y distribuir el espacio entre los elementos hijos de un contenedor de forma automática y adaptable. 
+
+¿Qué hace exactamente?
+Alineación en fila: Por defecto, al aplicar display: flex a un elemento padre, todos sus elementos hijos se colocan de manera horizontal formando una fila. 
+
+Adaptabilidad: Los elementos ajustan su tamaño de forma dinámica si la pantalla cambia de tamaño, evitando que se desborden. 
+
+Control de espacios: Facilita centrar elementos tanto vertical como horizontalmente sin usar trucos antiguos de márgenes o posicionamiento. 
+
+Propiedades principales que se usan con Flexbox
+Una vez activado el display: flex, puedes controlar el contenedor con estas propiedades:
+flex-direction: Define si los elementos van en fila (row) o en columna (column).
+justify-content: Alinea los elementos en el eje principal (izquierda, derecha, centro, espacio distribuido).
+align-items: Alinea los elementos en el eje cruzado (verticalmente si está en fila). 
+
+Aquí tienes un resumen rápido de lo que hace cada regla:
+box-sizing: border-box: Incluye el relleno (padding) y los bordes en el ancho total de los elementos. Evita desbordamientos inesperados.
+body: Ocupa al menos el 100% de la altura de la pantalla (min-height: 100vh) y actúa como referencia posicional (position: relative) para el footer. Tiene un fondo gris oscuro y un borde rojo de prueba.
+.footer: Se clava en el fondo del sitio (bottom: 0) y ocupa todo el ancho (width: 100%).
+⚠️ Un problema común con este código
+Si el contenido de tu página es muy largo y supera la altura de la pantalla, el footer se quedará flotando en el medio del contenido en lugar de irse al final real de la página. Esto pasa porque position: absolute posiciona el elemento respecto al tamaño inicial del contenedor, no al contenido estirado.
+💡 Solución moderna (Recomendada)
+Para evitar que el footer se superponga con el texto, es mucho mejor usar Flexbox en el body. Aquí tienes el código corregido:
+css
+* { 
+  box-sizing: border-box; 
+} 
+
+body { 
+  margin: 0; 
+  min-height: 100vh; 
+  color: lightsalmon; 
+  background-color: #333; 
+  border: 4px solid red; 
+  
+  /* Cambios con Flexbox *
+  display: flex;
+  flex-direction: column;
+} 
+
+p { 
+  margin: 0; 
+} 
+
+.footer { 
+  padding: 1rem 0; 
+  color: white; 
+  text-align: center; 
+  background-color: lightseagreen; 
+  
+  /* Empuja el footer al fondo automáticamente *
+  margin-top: auto; 
+}*El footer se despega al hacer scroll porque usaste position: absolute en un body que tiene min-height: 100vh.
+Cuando el contenido de tu página crece y se estira más allá de la pantalla, el body también se estira. Sin embargo, position: absolute calcula el bottom: 0 basándose únicamente en la pantalla visible inicial, dejando el footer flotando en el medio cuando bajas con el scroll.
+🛠️ Cómo solucionarlo (2 opciones)
+Elige la que mejor se adapte a lo que buscas:
+Opción 1: Que el footer suba y baje con el contenido (Recomendado)
+Usa Flexbox. El footer se mantendrá abajo si hay poco texto, pero si el contenido es largo, se irá al final real de la página sin tapar nada.
+Modifica tu CSS para que quede así:
+css
+body { 
+  margin: 0; 
+  min-height: 100vh; 
+  color: lightsalmon; 
+  background-color: #333; 
+  
+  /* Cambia el body a Flexbox *
+  display: flex;
+  flex-direction: column;
+} 
+
+.footer { 
+  width: 100%; 
+  padding: 1rem 0; 
+  color: white; 
+  text-align: center; 
+  background-color: lightseagreen; 
+  
+  /* Elimina el position: absolute y agrega esto: *
+  margin-top: auto; 
+}
+Usa el código con precaución.
+Opción 2: Que el footer esté SIEMPRE visible en pantalla
+Si quieres que el footer actúe como una barra fija que nunca se mueva de la pantalla, cambia absolute por fixed.
+css
+.footer { 
+  position: fixed; /* Cambiado de absolute a fixed *
+  bottom: 0; 
+  width: 100%; 
+  padding: 1rem 0; 
+  color: white; 
+  text-align: center; 
+  background-color: lightseagreen; 
+}
+Usa el código con precaución.
+(Nota: Si usas esta opción, añade un padding-bottom al body para que el footer fijo no tape el final de tu texto).
+/
