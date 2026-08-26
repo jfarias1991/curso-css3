@@ -1,0 +1,1 @@
+*{box-sizing:border-box}body{background-color:#333;color:#f0f8ff;margin:0;padding:10px 20px 20px 20px}h1{font-size:clamp(2rem,5vw + 1rem,4rem)}p{width:100%;max-width:600px;min-width:0;height:60vw;max-height:300px;min-height:100px;background-color:#9acd32;padding:20px 20px 20px 20px}

@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+    color: aliceblue;
+    margin: 0;
+    padding: 10px 20px 20px 20px;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw + 1rem, 4rem);
+}
+
+p{
+    width: 100%;
+    max-width: 600px;  /*indica el ancho maximo que puede alcanzar el elemento. max-width cambia el tamaño del elemento si el valor de width es mayor que el de max-width. Sin embargo, si el width es menor entonces max-width no tendría que actualizar el tamaño ya que no se alcanzado el tamaño máximo del elemento.*/
+    min-width: 0;  /*indica el ancho minimo que puede alcanzar el elemento.*/
+    height: 60vw;
+    max-height: 300px; /*indica el alto maximo que puede alcanzar el elemento.*/
+    min-height: 100px; /*indica el alto minimo que puede alcanzar el elemento.*/
+    background-color: yellowgreen;
+    overflow: ;
+    padding: 20px 20px 20px 20px;  /*le da un padding dentro del párrafo */
+}
+/*
+limitadores del alto y del ancho
+
+cuando establecemos un width o un height con una medida que es relativa, es posible que no queramos que se respete esa medida en todos los casos.
+para ello tenemos propiedades que limitan esas medidas:
+    min-width-> indica el ancho minimo que puede alcanzar el elemento.  
+    max-width-> indica el ancho maximo que puede alcanzar el elemento. 
+    min-height-> indica el alto minimo que puede alcanzar el elemento.
+    max-height-> indica el alto maximo que puede alcanzar el elemento.
+
+vw  = ancho
+vh   = alto
+vmin =  menor entre ancho/alto
+vmax = mayor entre ancho/alto
+
+vw  = ancho = 1% del ancho
+vh   = alto = 1% del alto
+vmin =  menor entre ancho/alto = 1% del menor
+vmax = mayor entre ancho/alto = 1% del mayor
+
+
+
+Las propiedades min-width, max-width, min-height y max-height en CSS permiten controlar los límites de tamaño de un elemento. Son fundamentales para crear diseños web adaptables y responsivos. 
+
+A continuación se detalla el funcionamiento de cada una de estas restricciones:
+Propiedades de Ancho (Width)
+min-width: Define el ancho mínimo que debe tener un elemento. Impide que se encoja por debajo de ese valor, asegurando que su contenido siga siendo legible incluso en pantallas pequeñas. Su valor por defecto es 0. 
+
+Curiosidades y comportamientos clave
+Protección contra desbordamientos: Impide que textos o elementos flexibles se aplasten de forma ilegible en pantallas pequeñas.
+Conflicto con max-width: Si min-width llega a ser mayor que un max-width aplicado al mismo elemento, min-width toma el control y anula al máximo.
+Uso en Media Queries: Tradicionalmente se usa @media (min-width: ...) bajo el enfoque mobile-first, aunque las especificaciones modernas de CSS permiten rangos más directos
+
+Por ejemplo Primero se intenta hacer un resize sin min-width. Esto disminuye el ancho del elemento hasta el mínimo posible, haciendo que el elemento se distorsione. Luego, se coloca un valor al min-width del elemento. Con min-width ya puesto se comienza el resize. Sin embargo, a diferencia de la anterior vez, el elemento no se distorsiono a su máximo valor ya que tiene un ancho mínimo especificado. Esta propiedad permite que el contenido que tenga un elemento, no se vea comprometido cuando se haga un resize en la pantalla o si este es de otros dispositivos con diferentes tamaños. 
+
+max-width: Define el ancho máximo que puede alcanzar un elemento. Aunque la pantalla o el contenedor padre se expandan, el elemento se detendrá al llegar a este límite. Es muy útil para evitar que las líneas de texto se vuelvan demasiado largas y difíciles de leer. Su valor por defecto es none.
+Sobre min-width
+A diferencia de max-width que define el tamaño máximo, min-width define el mínimo tamaño que un elemento puede tener.
+
+
+
+Propiedades de Altura (Height)
+min-height: Define la altura mínima de un elemento. Si el elemento no tiene contenido o tiene muy poco, mantendrá de todas formas la altura especificada. Si el contenido crece y supera esa medida, el elemento se estirará de forma natural para contenerlo. Su valor por defecto es 0. 
+
+max-height: Define la altura máxima permitida para un elemento. Si el contenido interior es muy extenso y supera este límite, se desbordará (provocando un comportamiento que se puede controlar con la propiedad overflow). Su valor por defecto es none. 
+
+Resumen de Comportamientos
+Propiedad	Valor por Defecto	¿Qué hace?
+min-width	0	El elemento no se encogerá menos que este ancho.
+max-width	none	El elemento no se estirará más que este ancho.
+min-height	0	El elemento no se encogerá menos que esta altura.
+max-height	none	El elemento no se estirará más que esta altura.
+Ejemplo Práctico
+css
+.contenedor-responsivo {
+  width: 100%;       /* Intenta ocupar todo el ancho disponible 
+  max-width: 1200px; /* Pero nunca medirá más de 1200px 
+  min-width: 320px;  /* Y nunca se encogerá a menos de 320px 
+  
+  min-height: 400px; /* Tendrá al menos 400px de alto, ideal para secciones de portada 
+} */
