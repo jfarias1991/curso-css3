@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+    margin: 0;
+}
+
+.circulo {
+    width: 300px; /*ancho*/
+    height: 200px; /*alto*/
+    background-color: aquamarine; /* color de fondo*/
+    clip-path: circle(20% at 20% 60%);  /*20% tamaño del circulo / at 20% horizontal (x) 60% vertical (y)*/
+}
+
+.semicirculo {
+    width: 300px; /*ancho*/
+    height: 300px; /*alto*/
+    background-color: aquamarine; /* color de fondo*/
+    clip-path: circle(50% at 0% 50%);  /*20% tamaño del circulo / at 0% horizontal (x) 50% vertical (y) se puede mover a cualquier sitio del cuadro con movimientos entre (x) y (y)*/
+}
+
+.elipse {
+    width: 300px; /*ancho*/
+    height: 300px; /*alto*/
+    background-color: aquamarine; /* color de fondo*/
+    clip-path: ellipse(10% 30% at 20% 50%);  /*10% de ancho, 30% de alto/ at 10% horizontal (x) 50% vertical (y)*/
+}
+
+.triangulo {
+    width: 300px; /*ancho*/
+    height: 300px; /*alto*/
+    background-color: aquamarine; /* color de fondo*/
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100% );  /*solo se hacen movimientos entre (x) y (y): 0% horizontal(x) 0% vertical(y), 100% horizontal(x) 0% vertical(y), 50% horizontal(x) 100% vertical(y)*/
+}
+
+.flecha {
+    width: 100px; /*ancho*/
+    height: 30px; /*alto*/
+    background-color: aquamarine; /* color de fondo*/
+    clip-path: polygon(0 0, 25% 0, 50% 50%,75% 0, 100% 0, 50% 100%);  /*20% tamaño del circulo / at 20% horizontal (x) 60% vertical (y)*/
+}
+
+.estrella {
+    width: 300px; /*ancho*/
+    height: 300px; /*alto*/
+    background-color: aquamarine; /* color de fondo*/
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);  /*20% tamaño del circulo / at 20% horizontal (x) 60% vertical (y)*/
+}
+
+
+
+/* 
+
+
+clip-path css
+La propiedad clip-path en CSS se utiliza para crear una región de recorte que define qué parte de un elemento debe ser visible. Todo lo que quede dentro de la forma especificada se muestra, mientras que la región externa se oculta por completo. 
+
+Lo mejor de esta propiedad es que no altera el "Box Model" (el espacio que ocupa el elemento en el diseño de la página sigue siendo el mismo), solo cambia su visualización. 
+
+1. Sintaxis y Formas Básicas
+La propiedad acepta varias funciones geométricas predefinidas o referencias a elementos externos: 
+
+polygon() (Polígonos personalizados)
+Permite definir cualquier forma uniendo puntos mediante coordenadas X e Y (separadas por comas). El sistema usa la esquina superior izquierda como (0% 0%) y la inferior derecha como (100% 100%). 
+
+
+css
+/* Un triángulo perfecto *
+.elemento {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+circle() (Círculos)
+Recorta el elemento en forma esférica. Define el radio y (opcionalmente) la posición del centro usando la palabra clave at. 
+
+css
+/* Círculo del 40% del tamaño del contenedor, centrado *
+.elemento {
+  clip-path: circle(40% at 50% 50%);
+}
+
+ellipse() (Elipses)
+Similar al círculo, pero requiere dos radios diferentes: el radio horizontal (X) y el radio vertical (Y). 
+
+css
+/* Elipse con 30% de ancho y 50% de alto *
+.elemento {
+  clip-path: ellipse(30% 50% at 50% 50%);
+}
+
+inset() (Rectángulos internos / Bordes hacia adentro)
+Genera un recorte rectangular interno definiendo distancias desde los bordes del elemento (superior, derecho, inferior, izquierdo). Funciona de forma similar a los márgenes o paddings y permite esquinas redondeadas con round. 
+
+css
+/* Recorte de 20px en todos los lados con esquinas redondeadas al 10% *
+.elemento {
+  clip-path: inset(20px round 10%);
+}
+
+2. Uso de Vectores Complejos (url() y path())
+Si necesitas formas orgánicas o logos avanzados que un polígono básico no puede replicar, tienes dos opciones potentes: 
+
+url(#id): Hace referencia a una etiqueta <clipPath> definida dentro de un código SVG incrustado en el HTML.
+path("..."): Permite escribir directamente una cadena de datos de trazado SVG (los mismos comandos M, L, C de un SVG) en tu archivo CSS. 
+
+css
+/* Usando un path SVG directamente en CSS *
+.elemento {
+  clip-path: path("M 0 200 L 0,75 A 5,5 0,0,1 150,75 L 200 200 z");
+}
+
+3. Animaciones con clip-path
+Puedes aplicar transiciones (transition) o animaciones (@keyframes) a la propiedad clip-path. La única regla estricta es que ambas formas deben tener exactamente el mismo número de puntos. 
+
+.tarjeta {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); /*Cuadrado *
+  transition: clip-path 0.5s ease-in-out;
+}
+
+.tarjeta:hover {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* Rombo (4 puntos) *
+} */
