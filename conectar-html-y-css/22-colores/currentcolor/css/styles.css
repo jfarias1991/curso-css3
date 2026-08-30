@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: mediumorchid;
+    color: #333;
+}
+
+.main {
+    width: 400px;
+    height: 200px;
+    background-color: red;
+    color: currentColor; /*si se le coloca currentcolor tomara el  mismo color que este en el body:(color) por defecto*/
+    margin-bottom: 20px; /* Esto empujará el siguiente div hacia abajo */
+}
+
+.box {
+    width: 350px;
+    height: 150px;
+    background-color: lightsalmon;/*si se le coloca currentcolor tomara el  mismo color que este en el body:(color) por defecto*/
+}
+
+.section {
+    width: 400px;
+    height: 200px;
+    background-color: rgb(0, 140, 255);/*si se le coloca currentcolor tomara el  mismo color que este en el body:(color) por defecto*/
+    color: currentColor;/*si se le coloca currentcolor tomara el  mismo color que este en el body:(color) por defecto*/
+    margin-bottom: 20px; /* Esto empujará el siguiente div hacia abajo */
+
+}
+
+.box-1 {
+    width: 350px;
+    height: 150px;
+    background-color: rgb(216, 228, 36);/*si se le coloca currentcolor tomara el  mismo color que este en el body:(color) por defecto*/
+}
+
+.article {
+    width: 400px;
+    height: 200px;
+    background-color: blue;/*si se le coloca currentcolor tomara el  mismo color que este en el body:(color) por defecto*/
+    color: currentColor;/*si se le coloca currentcolor tomara el  mismo color que este en el body:(color) por defecto*/
+    margin-bottom: 20px; /* Esto empujará el siguiente div hacia abajo */
+}
+
+.box-2 {
+    width: 350px;
+    height: 150px;
+    background-color: green;/*si se le coloca currentcolor tomara el  mismo color que este en el body:(color) por defecto*/
+}
+
+
+/*
+currentcolor: es una palabra clave que se puede usar en lugar de cualquier valor de color y usara el valor ya sea establecido o heredado en la propiedad color.
+
+La palabra clave currentColor en CSS representa el valor calculado de la propiedad color (el color del texto) del propio elemento. 
+
+Funciona exactamente como una variable nativa y dinámica. Permite heredar y reutilizar el color del texto automáticamente en otras propiedades que no lo hacen de forma predeterminada (como bordes, fondos o íconos SVG). 
+
+Ejemplo Básico
+Si cambias el color del texto, el borde se actualizará automáticamente sin tener que repetir el código: 
+
+css
+.boton {
+  color: #ff4757;                 /* Texto rojo *
+  border: 2px solid currentColor; /* El borde será automáticamente rojo *
+  background-color: transparent;
+}
+
+.boton:hover {
+  color: #2ed573; /* Al pasar el mouse, el texto cambia a verde *
+                    /* ¡El borde también cambiará a verde solo! *
+}
+
+Casos de Uso Comunes
+Íconos SVG Dinámicos: Si defines fill: currentColor o stroke: currentColor dentro de tus vectores, el ícono adoptará siempre el color del texto del contenedor donde lo coloques. 
+
+Sombras y Siluetas: Úsalo en box-shadow o text-shadow para mantener efectos visuales perfectamente unificados con tu tipografía. 
+
+Pseudoelementos: Ideal para pintar decoraciones generadas con ::before o ::after (como líneas de subrayado personalizadas) basadas en el color del párrafo. 
+
+Propiedades que ya lo usan por defecto
+Muchas propiedades de CSS ya implementan currentColor de manera implícita si no les especificas un color: 
+
+border-color
+outline-color
+text-decoration-color 
+
+css
+/* Esto ya crea un borde del mismo color que el texto *
+.alerta {
+  color: orange;
+  border: 1px solid; 
+} */
