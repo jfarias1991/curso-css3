@@ -1,4 +1,4 @@
-* {
+*, {
     box-sizing: border-box;
 }
 
@@ -6,24 +6,37 @@ body {
     background-color: #333;
     color: aliceblue;
     margin: 0;
-    padding: 10px 20px 20px 20px;
+    /* padding: 10px 20px 20px 20px; */
 }
 
 h1 {
   font-size: clamp(2rem, 5vw + 1rem, 4rem);
 }
 
-p{
+p{  
     width: 100%;
-    max-width: 600px;  /*indica el ancho maximo que puede alcanzar el elemento. max-width cambia el tamaño del elemento si el valor de width es mayor que el de max-width. Sin embargo, si el width es menor entonces max-width no tendría que actualizar el tamaño ya que no se alcanzado el tamaño máximo del elemento.*/
-    min-width: 0;  /*indica el ancho minimo que puede alcanzar el elemento.*/
-    height: 60vw;
+    /*max-width: 500px;  indica el ancho maximo que puede alcanzar el elemento. max-width cambia el tamaño del elemento si el valor de width es mayor que el de max-width. Sin embargo, si el width es menor entonces max-width no tendría que actualizar el tamaño ya que no se alcanzado el tamaño máximo del elemento.*/
+    min-width: 475px;  /*indica el ancho minimo que puede alcanzar el elemento.*/
+    height: 60vh;
     max-height: 300px; /*indica el alto maximo que puede alcanzar el elemento.*/
-    min-height: 100px; /*indica el alto minimo que puede alcanzar el elemento.*/
+    min-height: 0; /*indica el alto minimo que puede alcanzar el elemento.*/
     background-color: yellowgreen;
-    overflow: ;
-    padding: 20px 20px 20px 20px;  /*le da un padding dentro del párrafo */
+    /* overflow: ; */
+    /*padding: 20px 20px 20px 20px;  le da un padding dentro del párrafo */ 
 }
+
+.img-iglesia{
+    position: relative;
+    left: 100px;
+    bottom: 310px;
+    width: 600px;
+    min-width: 20em;
+    max-width: 40em;
+    height: 60vh;
+    max-height: 19em;
+    min-height: 13em;
+}
+
 /*
 limitadores del alto y del ancho
 
@@ -56,7 +69,7 @@ Curiosidades y comportamientos clave
 Protección contra desbordamientos: Impide que textos o elementos flexibles se aplasten de forma ilegible en pantallas pequeñas.
 Conflicto con max-width: Si min-width llega a ser mayor que un max-width aplicado al mismo elemento, min-width toma el control y anula al máximo.
 Uso en Media Queries: Tradicionalmente se usa @media (min-width: ...) bajo el enfoque mobile-first, aunque las especificaciones modernas de CSS permiten rangos más directos
-
+/*
 Por ejemplo Primero se intenta hacer un resize sin min-width. Esto disminuye el ancho del elemento hasta el mínimo posible, haciendo que el elemento se distorsione. Luego, se coloca un valor al min-width del elemento. Con min-width ya puesto se comienza el resize. Sin embargo, a diferencia de la anterior vez, el elemento no se distorsiono a su máximo valor ya que tiene un ancho mínimo especificado. Esta propiedad permite que el contenido que tenga un elemento, no se vea comprometido cuando se haga un resize en la pantalla o si este es de otros dispositivos con diferentes tamaños. 
 
 max-width: Define el ancho máximo que puede alcanzar un elemento. Aunque la pantalla o el contenedor padre se expandan, el elemento se detendrá al llegar a este límite. Es muy útil para evitar que las líneas de texto se vuelvan demasiado largas y difíciles de leer. Su valor por defecto es none.
@@ -85,3 +98,4 @@ css
   
   min-height: 400px; /* Tendrá al menos 400px de alto, ideal para secciones de portada 
 } */
+

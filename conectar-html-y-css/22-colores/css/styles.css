@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #333;
+}
+
+.box {
+    width: 300px;
+    height: 110px;
+    background-color: lightsalmon;
+    color: black;
+}
+
+.box-1 {
+    position: relative;
+    top: 10px;
+    border-top: 500px solid red;
+    border-left: 350px solid blue;
+    border-right: 350px solid green;
+}
+
+.box-2 {
+    position: relative;
+    top: 20px;
+    border-left: 100px solid white;
+    border-top: 100px solid purple;
+    border-bottom: 100px solid blue;
+    /* la flecha apunta hacia la derecha */
+}
+
+.box-3 {
+    position: relative;
+    top: 30px;
+    border-right: 100px solid orange;
+    border-top: 100px solid violet;
+    border-left: 100px solid rosybrown;
+    border-bottom: 100px solid olive;
+}
+
+.box-4 {
+    position: relative;
+    top: 40px;
+    border-bottom: 500px solid white;
+    border-left: 385px solid purple;
+    border-right: 385px solid blue;
+    /* la flecha apunta hacia arriba */
+}
+
+.box-5 {
+    position: relative;
+    top: 50px;
+    border-radius: 5px;
+    border-left: 100px solid white;
+    border-top: 100px solid purple;
+    border-bottom: 100px solid blue;
+}
+
+.box-6 {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+/*
+colores la mayoria de las pantallas funcionan con un modo de color aditivo. la suma de rgb da como resultado un blanco tenemos varias formas de dar color en css.
+keywords-> palabras clave que representan colores 
+
+https://www.w3.org/wiki/CSS/Properties/color/keywords
+
+
+En CSS, existen múltiples formatos para definir y aplicar colores en un sitio web. Puedes usarlos en propiedades comunes como color (para texto), background-color (para fondos) y border-color (para bordes). 
+
+Formatos Principales de Color
+Nombres de colores: Palabras clave en inglés (como red, blue, tomato, gold). Los navegadores modernos reconocen 140 nombres estándar. 
+
+Hexadecimal (#HEX): Código de 6 dígitos que combina Rojo, Verde y Azul (#RRGGBB), por ejemplo, #FF0000 (rojo) o #4A90E2 (azul). Permite un cuarto par opcional para opacidad (#RRGGBBAA). 
+
+RGB / RGBA: Define la intensidad de Rojo (Red), Verde (Green) y Azul (Blue) con valores de 0 a 255. La variante RGBA incluye un canal Alfa (0 a 1) para controlar la transparencia. 
+
+HSL / HSLA: Define el color mediante Matiz o Tono (Hue en grados de 0 a 360), Saturación (Saturation en %) y Luminosidad (Lightness en %). Es ideal para crear variaciones de un mismo color. 
+
+Comparativa de Sintaxis Básica
+Formato	Ejemplo de Sintaxis	Transparencia (Alfa)
+Nombre	color: crimson;	No
+Hexadecimal	color: #ff0000;	#ff000080 (50% transparencia)
+RGB(A)	color: rgb(255, 0, 0);	rgba(255, 0, 0, 0.5);
+HSL(A)	color: hsl(0, 100%, 50%);	hsla(0, 100%, 50%, 0.5);
+Sintaxis Moderna (Separada por Espacios)
+Según el estándar Módulo de Color CSS Nivel 4 del W3C, las funciones rgb() y hsl() ahora aceptan una sintaxis moderna sin comas, donde la transparencia se añade usando una barra diagonal (/): 
+
+css
+/* Sintaxis moderna sRGB *
+.elemento {
+  background-color: rgb(255 0 0 / 0.5);   /* Rojo con 50% de opacidad *
+  color: hsl(200 70% 50% / 0.8);          /* Azul HSL con 80% de opacidad *
+}
+
+Esta actualización también incorpora espacios de color avanzados de alta definición (como oklch() y lab()) que permiten reproducir colores mucho más vivos y uniformes en pantallas modernas. Puedes generar paletas y códigos interactivos en la herramienta de Códigos de Colores HTML.  */
