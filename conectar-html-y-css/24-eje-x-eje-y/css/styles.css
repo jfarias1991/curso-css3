@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+    margin: 0;
+}
+
+.main {
+    width: 900px;
+    height: 500px;
+    background-color: red;
+    color: black;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -450px;
+    margin-top: -250px;
+    text-align: center;
+}
+/* En CSS, el eje X representa el movimiento o la posición horizontal (de izquierda a derecha), y el eje Y representa el movimiento o la posición vertical (de arriba hacia abajo). 
+
+Para entender y usar estos ejes en tus diseños, revisa los conceptos clave a continuación.
+Conceptos básicos de los ejes
+Eje X (Horizontal): Controla el ancho y el desplazamiento de los elementos hacia los lados.
+Eje Y (Vertical): Controla la altura y el desplazamiento de los elementos hacia arriba o hacia abajo.
+Plano 2D: La combinación de ambos ejes forma el plano bidimensional de tu pantalla. 
+
+Cómo usarlos en transformaciones (transform)
+Puedes mover, escalar o rotar elementos usando funciones específicas para cada eje con la propiedad transform: 
+
+Mover (Translate): Usa translateX(), translateY() o la función combinada translate(X, Y).
+css
+.elemento {
+  transform: translate(50px, 100px); /* 50px a la derecha, 100px hacia abajo *
+}
+
+Escalar (Scale): Usa scaleX(), scaleY() o scale(X, Y) para cambiar el tamaño. 
+
+Aquí tienes un video que explica cómo alinear y distribuir elementos usando los ejes en CSS:
+
+Alinear elementos con CSS para principiantes.
+1,3 K reproducciones · hace 4 años
+
+Cómo usarlos en alineación (Flexbox)
+En modelos de diseño como Flexbox, los ejes cambian de nombre según la dirección principal: 
+
+Eje principal (Main Axis): Se alinea con justify-content (por defecto es horizontal, es decir, el eje X).
+Eje cruzado (Cross Axis): Se alinea con align-items (por defecto es vertical, es decir, el eje Y). 
+
+En CSS, el eje X representa el movimiento horizontal (izquierda a derecha) y el eje Y representa el movimiento vertical (arriba a abajo). Sin embargo, la dirección exacta de sus valores positivos y negativos depende de la propiedad que estés utilizando. 
+
+Aquí te muestro cómo interactúan ambos ejes en los tres escenarios principales de CSS:
+1. Sistema de Coordenadas y Desplazamiento (transform)
+Cuando mueves, escalas o alteras un elemento con la propiedad transform, el plano cartesiano web funciona de la siguiente manera: 
+
+Eje X (Horizontal): Los valores positivos mueven el objeto hacia la derecha. Los valores negativos lo mueven hacia la izquierda.
+Eje Y (Vertical): A diferencia de las matemáticas tradicionales, los valores positivos mueven el objeto hacia abajo y los negativos hacia arriba. 
+
+css
+.caja {
+  /* Mueve 50px a la derecha (Eje X) y 100px hacia abajo (Eje Y) *
+  transform: translate(50px, 100px); 
+
+  /* Duplica el ancho (Eje X) y mantiene el alto original (Eje Y) *
+  transform: scale(2, 1); 
+}
+
+2. Desbordamiento y Scroll (overflow)
+Si el contenido de un contenedor es más grande que su espacio asignado, puedes controlar las barras de desplazamiento de manera independiente para cada eje:
+overflow-x: Administra el desborde en el eje horizontal.
+overflow-y: Administra el desborde en el eje vertical.
+css
+.contenedor {
+  width: 300px;
+  height: 200px;
+  overflow-x: scroll; /* Muestra barra horizontal si es necesario *
+  overflow-y: hidden; /* Oculta por completo la barra vertical *
+}
+
+3. Distribución en Flexbox (Main Axis y Cross Axis)
+Cuando usas display: flex, los ejes nativos cambian de nombre y se definen según la propiedad flex-direction: 
+
+Si usas flex-direction: row (Por defecto):
+El Eje Principal (Main Axis) corre de forma horizontal (Eje X). Se controla con justify-content.
+El Eje Secundario (Cross Axis) corre de forma vertical (Eje Y). Se controla con align-items. 
+
+Si usas flex-direction: column:
+Los ejes se invierten. El Eje Principal se vuelve vertical (Eje Y) y el Eje Secundario se vuelve horizontal (Eje X). 
+
+css
+.flex-contenedor {
+  display: flex;
+  flex-direction: row; 
+  justify-content: center; /* Centra los elementos horizontalmente (Eje X) *
+  align-items: center;     /* Centra los elementos verticalmente (Eje Y) *
+}
+*/
