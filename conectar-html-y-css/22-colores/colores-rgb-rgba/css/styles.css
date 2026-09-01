@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: purple;
+    color: #333;
+}
+
+.main {
+
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: lightcoral;
+    /* background-color: rgb(0,0,0); negro */
+    /*background-color: rgb(red, green, rgb(0, 0, 255)); azul
+    background-color: rgba(0, 0, 0, 0.8); negro con transparencia
+    background-color: rgba(0, 0, 0 / 0.1); negro con transparencia*/
+    box-shadow: 10px 10px rgb(0 0 0 / 0.5);
+}
+
+/*
+rgb/rgba
+    en el modo rgb tenemos tres canales (red,green,blue) y tenemos 8 bits de color por canal,( cada bits tiene dos posibles valores 0 o 1) lo que significa que tenemos 2 a 8 posibles valores que van desde 0 a 255.
+    Esto nos da un total de 255* 255* 255= 16.581.375 colores.
+    Su sintaxis es rgb (r,g,b)
+    Si ponemos todos los canales a 0 tendremos un negro puro y si lo ponemos a 255 tendremos un blanco.
+    Para movernos por la gama de grises debemos poner los 3 canales en el mismo valor, si ponemos 3 canales a 128 tendremos el gris puro.
+    El modo rgb nos da la opcion de utilizar un cuarto canal que corresponderia al canal alpha, es decir, la transparencia y su valor va de 0 a 1. tenemos dos sintaxis para utilizar el canal alpha.
+    rgba(r,g,b,a)
+    rgb(r g b / a)
+
+
+La diferencia principal es que RGB define colores sólidos mediante la mezcla de rojo, verde y azul, mientras que RGBA añade un cuarto canal llamado "alfa" para controlar la opacidad o transparencia del color. 
+
+Colores RGB (Sólidos)
+Representa la mezcla de luces Red (rojo), Green (verde) y Blue (azul). 
+
+Rango: Cada canal va de 0 (ausencia total de color) a 255 (intensidad máxima).
+Sintaxis tradicional: rgb(rojo, verde, azul).
+Sintaxis moderna: rgb(rojo verde azul) (separada por espacios, introducida en el estándar CSS Color Module Level 4). 
+
+css
+/* Sintaxis tradicional *
+.ejemplo-rgb {
+  background-color: rgb(255, 99, 71); /* Color tomate *
+}
+
+/* Sintaxis moderna (Recomendada actualmente) *
+.ejemplo-rgb-moderno {
+  background-color: rgb(255 99 71); 
+}
+
+Colores RGBA (Con Transparencia)
+Funciona igual que el formato RGB, pero incorpora la letra A de Alpha (alfa). 
+
+Canal Alfa: Define el nivel de opacidad utilizando un número decimal entre 0.0 (100% transparente) y 1.0 (100% opaco). También se pueden usar porcentajes (ej. 50%).
+Sintaxis tradicional: rgba(rojo, verde, azul, alfa).
+Sintaxis moderna: La función estándar rgb() ahora acepta directamente el canal alfa usando una barra diagonal / (ej. rgb(rojo verde azul / alfa)). 
+
+css
+/* Sintaxis tradicional *
+.ejemplo-rgba {
+  background-color: rgba(255, 99, 71, 0.5); /* Tomate al 50% de transparencia *
+}
+
+/* Sintaxis moderna (Recomendada actualmente) *
+.ejemplo-rgba-moderno {
+  background-color: rgb(255 99 71 / 0.5); 
+}
+Usa el código con precaución.
+Tabla de combinaciones comunes
+Color	Sintaxis RGB (Sólido)	Sintaxis RGBA (50% Transparente)
+Negro	rgb(0, 0, 0)	rgba(0, 0, 0, 0.5)
+Blanco	rgb(255, 255, 255)	rgba(255, 255, 255, 0.5)
+Rojo puro	rgb(255, 0, 0)	rgba(255, 0, 0, 0.5)
+Verde puro	rgb(0, 255, 0)	rgba(0, 255, 0, 0.5)
+Azul puro	rgb(0, 0, 255)	rgba(0, 0, 255, 0.5) */
