@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #123;
+}
+
+.main {
+
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    /* background-color: #ffffff; blanco*/
+    /* background-color: #000000; negro */
+    /* background-color: #ff0000; rojo */
+    /* background-color: #00ff00; verde */
+    /* background-color: #0000ff; azul */
+    background-color: #88760426; /*#3338*/
+    box-shadow: 5px 5px 10px rgb (0 0 0 / 0.5);
+    box-shadow: 5px 5px 10px #0008;/*tiene transparencia de 5.3*/
+}
+
+
+/*El formato de color hexadecimal en CSS se utiliza para definir colores mediante el sistema de numeración hexadecimal (base 16), combinando las intensidades de los componentes Rojo (Red), Verde (Green) y Azul (Blue). 
+
+Se escribe siempre precedido por el símbolo # y admite los caracteres del 0 al 9 y de la A a la F (las letras no distinguen entre mayúsculas y minúsculas). 
+
+Estructura del Código (#RRGGBB)
+Cada par de dígitos representa un canal de color en un rango que va desde 00 (ausencia de color) hasta FF (máxima intensidad): 
+
+RR: Intensidad de rojo.
+GG: Intensidad de verde.
+BB: Intensidad de azul. 
+
+css
+/* Ejemplo de uso en CSS *
+p {
+  color: #ff5733; /* Un tono naranja vibrante *
+  background-color: #000000; /* Fondo negro absoluto *
+}
+
+Variaciones de Sintaxis en CSS
+El estándar de MDN Web Docs permite escribir la notación hexadecimal de cuatro maneras distintas: 
+
+6 dígitos (#RRGGBB): El formato estándar y más compatible.
+3 dígitos (#RGB): Versión abreviada. Se usa cuando los dos caracteres de cada componente son iguales. Por ejemplo, #F00 equivale a #FF0000.
+8 dígitos (#RRGGBBAA): Incluye un cuarto canal AA al final para controlar la opacidad o transparencia (Alpha). 00 es totalmente transparente y FF es completamente opaco.
+4 dígitos (#RGBA): Versión abreviada del formato con transparencia. Por ejemplo, #F008 se duplica automáticamente a #FF000088. 
+
+
+Colores Básicos de Referencia
+Color	Hexadecimal de 6 dígitos	Abreviado
+Negro	#000000	#000
+Blanco	#ffffff	#fff
+Rojo puro	#ff0000	#f00
+Verde puro	#00ff00	#0f0
+Azul puro	#0000ff	#00f
+Gris medio	#808080	No aplica  */
