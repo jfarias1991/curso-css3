@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+}
+
+.contenedor {
+    background-color: purple;
+    display: flex;
+    flex-wrap: wrap;
+    height: 300px;
+    /* align-content: center; centrado */
+    /* align-content: flex-start; todo al inicio */
+    /* align-content: flex-end; todo al final */
+    /* align-content: stretch; aborda todo el contenedor en espacios iguales */
+    /* align-content: space-between; parte de encima parte de abajo */
+    /* align-content: space-around; */
+}
+
+.box {
+    background-color: darkorange;
+    padding: 20px;
+    margin: 5px;
+    /* height: 20px; no puede usar height si vas a usar stretch*/
+}
+
+
+/* align-content
+La propiedad align-content en CSS define cómo se distribuyen las líneas de elementos dentro de un contenedor flexible a lo largo del eje secundario.
+
+⚠️ Nota clave: Esta propiedad solo funciona cuando el contenedor tiene múltiples líneas (es decir, cuando usas flex-wrap: wrap o wrap-reverse) y hay espacio de sobra en el eje secundario. No tiene ningún efecto en contenedores de una sola línea.
+
+Valores disponibles
+
+stretch: Es el valor predeterminado. Las líneas se estiran para ocupar todo el espacio restante disponible.
+
+flex-start: Agrupa todas las líneas al inicio del contenedor.
+
+flex-end: Agrupa todas las líneas al final del contenedor.
+
+center: Agrupa todas las líneas en el centro del contenedor.
+
+space-between: Distribuye las líneas uniformemente; la primera línea queda al inicio y la última al final.
+
+space-around: Distribuye las líneas uniformemente con espacios idénticos a ambos lados de cada línea.
+space-evenly: Distribuye las líneas de forma que el espacio entre ellas (y los bordes) sea exactamente el mismo.
+
+Ejemplo de uso
+
+css
+.contenedor {
+  display: flex;
+  flex-wrap: wrap;       /* Necesario para tener múltiples líneas *
+  align-content: center; /* Junta y centra todas las filas verticalmente *
+  height: 500px;
+} */
