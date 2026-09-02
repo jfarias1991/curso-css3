@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(0, 100%, 60% );
+}
+
+.container {
+    background-color: hwb(60 40% 20%);
+    width: 200px;
+    height: 200px;
+    box-shadow: 10px 10px 20px hsla(180, 50%, 50%, 0.8);
+}
+
+
+
+/*
+paginas web necesarias para sacar colores.
+1->brandcolors
+2->squarespace
+3->colorscode
+4->colorhunt
+5->adobecolor
+
+0 -> rojo
+60 -> amarillo
+120 -> verde
+180 -> cyan
+240 -> azul
+300 -> magenta
+
+
+color hsl y hsla css
+En CSS, HSL y HSLA son funciones para definir colores basadas en componentes humanos e intuitivos: Tono (Hue), Saturación (Saturation) y Luminosidad (Lightness), sumando el canal Alfa (Alpha) para la opacidad en el caso de HSLA. 
+
+
+A diferencia del sistema hexadecimal o RGB, HSL facilita la creación manual de paletas de color y variantes más claras u oscuras.
+
+Componentes de HSL / HSLA
+Cada color se compone de los siguientes tres (o cuatro) parámetros: 
+
+Tono (H): Representa el color en una rueda cromática de 0 a 360 grados.
+0 o 360: Rojo
+120: Verde
+240: Azul 
+
+Saturación (S): Controla la intensidad o pureza del color, desde 0% (gris grisáceo) hasta 100% (color completo y vivo). 
+
+Luminosidad (L): Determina la claridad del color, desde 0% (completamente negro) hasta 100% (completamente blanco). El color puro se obtiene al 50%. 
+
+Alfa (A): Exclusivo de HSLA. Define la opacidad con un valor de 0.0 (transparente) a 1.0 (opaco). 
+
+Sintaxis en CSS
+Existen dos maneras oficiales de escribir estos formatos según las especificaciones modernas e históricas de CSS:
+
+1. Sintaxis Tradicional (Separada por comas)
+Es la sintaxis compatible con navegadores antiguos. 
+
+css
+/* Sintaxis: hsl(tono, saturación%, luminosidad%) *
+.boton-primario {
+  background-color: hsl(200, 100%, 50%); /* Azul brillante *
+}
+
+/* Sintaxis: hsla(tono, saturación%, luminosidad%, alfa) *
+.capa-transparente {
+  background-color: hsla(0, 100%, 50%, 0.5); /* Rojo con 50% de transparencia *
+}
+
+2. Sintaxis Moderna (Espaciada, estándar actual)
+En el CSS moderno, la función hsl() acepta de forma nativa el canal alfa utilizando una barra diagonal / y espacio en lugar de comas, haciendo que la palabra clave hsla() sea opcional. 
+
+
+css
+/* Color sólido sin comas *
+.texto-verde {
+  color: hsl(120 80% 40%);
+}
+
+/* Color con transparencia en la misma función hsl() *
+.fondo-alerta {
+  background-color: hsl(0 100% 50% / 0.3); /* Rojo con 30% de opacidad *
+}  */
