@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+}
+
+.contenedor {
+    background-color: purple;
+    display: flex;
+    height: 300px;
+    /* align-items: stretch; crece para rellenar los espacios vacios */
+    /* align-items: flex-start; lo coloca al inicio */
+    /* align-items: flex-end; lo coloca al final */
+    /* align-items: center; centrado */
+     align-items: baseline; /*se alinea a la base de cada elemento asi sus letras sean mas grandes */
+}
+
+.box {
+    width: 50px;
+    padding: 10px;
+    background-color: blueviolet;
+    color: white;
+    margin: 5px;
+}
+
+/* 
+La propiedad align-items en CSS controla la alineación de los elementos flexibles a lo largo del eje secundario o cruzado (perpendicular a flex-direction).
+
+Valores disponibles
+
+stretch: Es el valor predeterminado. Estira los elementos para llenar el contenedor (si no tienen un tamaño fijo).
+
+flex-start: Coloca los elementos al inicio del eje secundario.
+
+flex-end: Coloca los elementos al final del eje secundario.
+
+center: Centra los elementos vertical u horizontalmente, según el eje secundario.
+
+baseline: Alinea los elementos a través de la línea base de sus textos.
+
+Ejemplo clásico: Centrado perfecto
+Al combinar justify-content y align-items, puedes centrar un elemento de forma exacta tanto horizontal como verticalmente:
+css
+.contenedor-padre {
+  display: flex;
+  justify-content: center; /* Centrado en eje principal *
+  align-items: center;     /* Centrado en eje secundario *
+  height: 100vh;           /* Altura de toda la pantalla *
+}
+*/
