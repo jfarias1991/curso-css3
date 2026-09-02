@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: rgb(255, 255, 255);
+}
+
+.container {
+    background-color: purple;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    /*flex-wrap: nowrap;no hace nada*/
+    /* flex-wrap: wrap; se bajan a la siguiente fila */
+    flex-wrap: wrap-reverse; /*fila reversa*/
+}
+
+.box {
+    width: 50px;
+    height: 50px;
+    background-color: crimson;
+    margin: 5px;
+}
+
+/* La propiedad flex-wrap en CSS controla si los elementos hijos de un contenedor flexible se fuerzan a mantenerse en una sola línea o si pueden saltar a nuevas líneas cuando no hay suficiente espacio.
+Valores disponibles
+nowrap: Es el valor predeterminado. Todos los elementos se mantienen en una sola línea, lo que puede causar desbordamiento si el contenedor es muy estrecho.
+wrap: Los elementos saltan a una nueva línea (de arriba hacia abajo) si el espacio horizontal se agota.
+wrap-reverse: Los elementos saltan a una nueva línea, pero el flujo de las líneas es inverso (de abajo hacia arriba).
+Ejemplo de uso
+css
+.contenedor {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente fila *
+} */
