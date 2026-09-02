@@ -1,0 +1,69 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+    color: #fff;
+    /* font-family: sans-serif; le quita serifas fuente arial */
+    /* font-family: cursiva; letra a mano */
+    /* font-family: fantasy; expresivas y decorativas*/
+    font-family: monospace; /*ideales para codigo*/
+}
+
+
+/*
+fuentes css
+Las fuentes en CSS se gestionan mediante un conjunto de propiedades que permiten controlar el tipo de letra, su tamaño, grosor y estilo en un sitio web. 
+
+1. Propiedades básicas de tipografía
+Para aplicar y modificar fuentes en CSS, se utilizan principalmente las siguientes propiedades básicas: 
+
+font-family: Define el tipo de letra o la lista de fuentes de respaldo.
+font-size: Controla el tamaño de la letra (ej. 16px, 1rem).
+font-weight: Determina el grosor, desde normal (400) hasta bold (700).
+font-style: Define la inclinación del texto (normal, italic u oblique). 
+
+2. Familias de fuentes genéricas
+Cuando configuras font-family, siempre debes incluir una familia genérica al final como rueda de repuesto por si el navegador no tiene instalada la fuente principal: 
+
+serif: Fuentes con remates o pequeños trazos en los bordes (ej. Times New Roman).
+sans-serif: Fuentes limpias, rectas y sin remates (ej. Arial, Helvetica).
+monospace: Letras con el mismo ancho fijo, ideales para código (ej. Courier New).
+cursive: Tipografías que imitan la escritura a mano.
+fantasy: Fuentes puramente decorativas o expresivas. 
+
+css
+/* Ejemplo de uso correcto con fuentes de respaldo *
+p {
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+3. Cómo agregar fuentes externas
+Si deseas utilizar fuentes que no vienen integradas en el sistema operativo del usuario, tienes dos métodos principales: 
+
+Método A: Google Fonts (Mediante enlaces externos)
+Puedes importar fuentes gratuitas utilizando la regla @import en la parte superior de tu archivo CSS: 
+
+css
+@import url('https://googleapis.com');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+Método B: @font-face (Archivos locales)
+Si tienes el archivo de la fuente descargado (formatos .woff2 o .woff), puedes alojarlo en tu propio servidor: 
+
+css
+@font-face {
+  font-family: 'MiFuentePersonalizada';
+  src: url('fuentes/mi-fuente.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  font-family: 'MiFuentePersonalizada', sans-serif;
+}
+*/
