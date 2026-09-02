@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+.container {
+    background-color: purple;
+    text-align: center;
+    display: flex;
+    flex-direction: row; /*row->fila column->columna*/
+    /* justify-content: center; centrado*/
+    /* justify-content: flex-start; alineado al inicio */
+    /* justify-content: flex-end; alineado al final */
+    /* justify-content: space-between; 1 y 3 pegado en el borde y el 2 centrado */
+    /* justify-content: space-around; alinea y separa dando espacios entre los bloques existentes */
+    justify-content: space-evenly;
+}
+
+.box {
+    background-color: blueviolet;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+
+}
+
+
+
+/* justify-content
+La propiedad justify-content en CSS define cómo se distribuye el espacio sobrante entre y alrededor de los elementos flex a lo largo del eje principal (determinado por flex-direction).
+
+Valores disponibles
+
+flex-start: Es el valor predeterminado. Alinea los elementos al inicio del contenedor.
+
+flex-end: Alinea los elementos al final del contenedor.
+
+center: Centra los elementos en el contenedor.
+
+space-between: Distribuye los elementos uniformemente. El primer elemento queda al inicio y el último al final.
+
+space-around: Distribuye los elementos uniformemente con espacio idéntico a cada lado de ellos.
+
+space-evenly: Distribuye los elementos de forma que el espacio entre dos elementos cualesquiera (y los bordes) sea exactamente el mismo.
+
+Ejemplo de uso
+css
+.contenedor {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Separa los elementos al extremo izquierdo y derecho *
+} */
+
