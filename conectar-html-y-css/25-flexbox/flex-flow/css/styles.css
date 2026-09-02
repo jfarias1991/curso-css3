@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: #000;
+    color: white;
+}
+
+.container {
+    background-color: bisque;
+    display: flex;
+    /* flex-flow: row nowrap; las tienen por defecto por eso no pasa nada*/
+    /* flex-flow: column nowrap; modo columna */
+    flex-flow: row wrap; /*salta las lineas*/
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: darkgreen;
+    margin: 5px;
+}
+
+
+
+/* La propiedad flex-flow en CSS es una propiedad atajo (shorthand) que te permite definir flex-direction y flex-wrap al mismo tiempo en una sola línea de código.
+Sintaxis
+css
+
+.contenedor {
+  display: flex;
+  flex-flow: <flex-direction> <flex-wrap>;
+}
+
+Valores comunes
+flex-flow: row nowrap;: El valor por defecto. Elementos en fila, sin saltos de línea.
+
+flex-flow: row wrap;: Elementos en fila; si no caben, bajan a la siguiente línea.
+
+flex-flow: column nowrap;: Elementos en columna vertical, sin saltos de línea.
+
+flex-flow: column wrap;: Elementos en columna vertical; si faltas espacio, abren una nueva columna a la derecha.
+
+Ejemplo de uso
+En lugar de escribir esto:
+css
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+Puedes simplificarlo directamente así:
+css
+.contenedor {
+  display: flex;
+  flex-flow: column wrap;
+} */
