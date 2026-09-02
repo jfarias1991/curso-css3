@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+    color: rgb(255, 255, 255);
+}
+
+.container {
+    display: flex;
+    background-color: cornsilk;
+    padding: 5px;
+    /*flex-direction: row; viene por defecto
+    flex-direction: row-reverse; cambia el orden y empieza desde el 3
+    flex-direction: column;  crea columnas*/
+    flex-direction: column-reverse; /*crea columnas empezando desde el 4 hacia el 1 (reversa)*/
+
+}
+
+.box {
+    background-color: blueviolet;
+    margin: 5px;
+    color: white;
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+}
+/* La propiedad flex-direction en CSS establece la dirección del eje principal de un contenedor flexible, determinando cómo se alinean sus elementos hijos. Esta regla solo surte efecto si el contenedor tiene activo el modelo de caja display: flex. 
+
+
+Valores disponibles
+La propiedad acepta cuatro valores básicos: 
+
+row: Es el valor predeterminado. Coloca los elementos horizontalmente en fila, de izquierda a derecha (o según la dirección del texto).
+row-reverse: Distribuye los elementos horizontalmente, pero en orden inverso (de derecha a izquierda).
+column: Organiza los elementos de forma vertical en una sola columna, de arriba hacia abajo.
+column-reverse: Coloca los elementos verticalmente, pero ordenados desde abajo hacia arriba. 
+
+Ejemplo de uso
+Para aplicar esta propiedad en tus estilos de código de desarrollo web:
+css
+.contenedor {
+  display: flex;
+  flex-direction: column; /* Cambia los elementos a una lista vertical *
+} */
