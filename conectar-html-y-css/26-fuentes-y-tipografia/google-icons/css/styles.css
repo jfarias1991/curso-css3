@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+}
+
+.icon {
+    font-size: 5rem;
+    color: red;
+}
+
+.fa-skull {
+    font-size: 5rem;
+    color: rgba(29, 126, 167, 0.536);
+}
+/*
+mucho mejor trabajar con font awesome
+Google Fonts Icons (anteriormente conocido como Material Icons) es una biblioteca gratuita de iconos de código abierto creada por Google bajo la licencia Apache 2.0, diseñada para complementar cualquier interfaz digital o proyecto de diseño.
+💡 Beneficios principales
+Uso gratuito: Completamente libre para proyectos personales y comerciales.
+Formatos versátiles: Disponibles como fuente web (Icon Font), vectores SVG y archivos PNG.
+Estilos consistentes: Diseñados bajo las pautas de Material Design para garantizar claridad y legibilidad.
+Altamente personalizables: Se les puede cambiar el tamaño, color y peso directamente con CSS.
+✨ Estilos disponibles (Material Symbols)
+Outlined: Estilo lineal limpio y moderno por defecto.
+Rounded: Esquinas suavizadas para una apariencia más amigable.
+Sharp: Bordes rectos y definidos para un diseño más técnico o corporativo.
+Filled / Filled Customization: Capacidad de ajustar dinámicamente el grosor, el relleno y el contraste mediante ejes variables.
+🛠️ ¿Cómo usar Google Icons?
+Busca el icono: Entra en el catálogo oficial de Google Fonts Icons.
+Copia el código de inserción: Selecciona el icono y elige la opción de integrarlo mediante la etiqueta <link> en tu HTML.
+Inserta la etiqueta en tu web: Coloca el elemento en tu código, por ejemplo: <span class="material-symbols-outlined">search</span>.
+Descarga para diseño: Si trabajas offline, puedes descargar el archivo SVG o usar los plugins oficiales para herramientas como Figma y Adobe XD */
