@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: purple;
+}
+
+h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #1a1a1a;
+    text-transform: capitalize;
+    text-shadow: 2px 2px 10px rgba(0 0 0 / 0.5);
+}
+
+h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #1a1a1a;
+    text-transform: uppercase; /*todo mayusculas*/
+}
+
+h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #1a1a1a;
+    text-transform: lowercase; /*todo minusculas*/
+}
+
+/*tipografia css
+La tipografía en CSS abarca todas las propiedades que permiten dar formato, estilo y diseño a los textos de una página web, yendo más allá de la elección del tipo de letra.
+1. Propiedades de Estilo del Texto
+Controlan el aspecto visual y la forma de los caracteres:
+font-family: Define la fuente (ej. 'Roboto', sans-serif).
+font-size: Define el tamaño (ej. 16px, 1.2rem).
+font-weight: Define el grosor (normal, bold, o números como 300, 700).
+font-style: Aplica cursiva (italic, normal).
+text-transform: Cambia a mayúsculas o minúsculas (uppercase, lowercase, capitalize).
+2. Propiedades de Espaciado y Alineación
+Controlan la disposición del texto en el bloque o contenedor:
+text-align: Alínea el texto (left, center, right, justify).
+line-height: Define la altura de línea o interlineado (ej. 1.5, 24px).
+letter-spacing: Modifica el espacio entre caracteres o letras (ej. 2px).
+word-spacing: Modifica el espacio entre palabras (ej. 4px).
+3. Propiedades de Efectos Avanzados
+Añaden detalles visuales o controlan el comportamiento del desborde:
+text-shadow: Agrega sombras al texto (ej. 2px 2px 4px rgba(0,0,0,0.3)).
+text-decoration: Añade subrayado o tachado (underline, line-through, none).
+text-overflow: Controla cómo se muestra el texto que no cabe, añadiendo puntos suspensivos (ellipsis).
+white-space: Evita que el texto salte de línea si se configura como nowrap.
+css
+/* Ejemplo completo de tipografía para un título *
+h1 {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #1a1a1a;
+  text-transform: capitalize;
+}  */
