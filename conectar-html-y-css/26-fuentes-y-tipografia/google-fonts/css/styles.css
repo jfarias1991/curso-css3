@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+    color: #fff;
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 700;
+}
+
+
+/*Google Fonts es un directorio gratuito y de código abierto gestionado por Google que permite a diseñadores y desarrolladores web descargar e implementar miles de fuentes tipográficas e iconos en sus proyectos de forma sencilla. 
+
+💡 Beneficios principales
+Gratuito y comercial: Licencias abiertas (OFL) aptas para proyectos personales y comerciales.
+Optimización web: Servidas directamente desde los servidores de Google para una carga ultra rápida.
+Gran variedad: Miles de familias tipográficas categorizadas (Serif, Sans Serif, Display, Monospace, Handwriting).
+Fuentes variables: Soporte avanzado para ajustar peso, ancho y estilos en un solo archivo ligero. 
+
+📈 Tipografías más populares
+Roboto: La tipografía limpia y geométrica insignia del ecosistema Android.
+Inter: Diseñada específicamente para pantallas de ordenadores y legibilidad de interfaces.
+Montserrat: Inspirada en los carteles del tradicional barrio de Buenos Aires, ideal para títulos.
+Lato: Una fuente Sans Serif cálida pero muy profesional.
+Playfair Display: Una tipografía Serif clásica y elegante para titulares sofisticados. 
+
+🛠️ ¿Cómo usar Google Fonts?
+Explora el catálogo: Entra en el sitio oficial de Google Fonts.
+Selecciona tus estilos: Elige las familias y los grosores (Regular, Bold, Light) que necesitas.
+Copia el código: Integra el enlace <link> en el <head> de tu HTML o usa @import en tu archivo CSS.
+Define en CSS: Aplica la propiedad font-family: 'Nombre de la fuente', sans-serif; a tus elementos tipográficos.
+Descarga local: También puedes bajar los archivos .ttf o .woff2 para instalarlos en tu ordenador y usarlos en programas como Photoshop, Figma o Word.  */
