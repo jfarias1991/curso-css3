@@ -1,0 +1,143 @@
+@font-face {
+  font-family: "mano alzada";
+  src: url(../assets/fonts/Hugh\ is\ Life\ Personal\ Use\ .ttf);
+}
+
+@font-face {
+  font-family: "letra";
+  src: url(../assets/fonts/modavina-casual-drawing.otf);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #333;
+  color: aliceblue;
+  font-family: "mano alzada";
+}
+
+h1 {
+  font-family: "letra";
+  text-align: center;
+  font-weight: 100;
+  font-size: 100px;
+  text-shadow: 5px 5px 10px rgba(255, 255, 255, 0.3);
+}
+
+p {
+  font-family: "mano alzada";
+  text-align: center;
+  font-weight: 100;
+  font-size: 60px;
+}
+
+/* La regla @font-face en CSS permite cargar fuentes tipográficas personalizadas en un sitio web cuando no están instaladas en el dispositivo del usuario.
+
+Estructura básica
+CSS
+@font-face {
+  font-family: 'MiFuentePersonalizada';
+  src: url('fuentes/mifuente.woff2') format('woff2'),
+       url('fuentes/mifuente.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Aplicación en el documento *
+body {
+  font-family: 'MiFuentePersonalizada', sans-serif;
+}
+Propiedades principales
+font-family: Define el nombre personalizado con el que referenciarás la fuente en tu código CSS.
+
+src: Especifica la ruta del archivo de fuente (url()) y su formato (format()). Se pueden listar varias fuentes separadas por comas; el navegador descargará la primera que sea compatible.
+
+font-weight: Define el grosor asociado a este archivo específico (ej. normal, bold o valores como 400, 700).
+
+font-style: Define si el archivo corresponde a estilo normal e italic.
+
+font-display: Controla cómo se muestra el texto mientras la fuente se descarga. Usar swap muestra una fuente del sistema mientras se carga la personalizada para evitar texto invisible (FOIT).
+
+Formatos recomendados
+WOFF2 (.woff2): Formato moderno con la mejor compresión. Compatible con todos los navegadores actuales.
+
+WOFF (.woff): Respaldo para navegadores ligeramente más antiguos.
+
+Ejemplo con múltiples estilos
+Si tienes variantes para negrita o cursiva, define un bloque @font-face por cada archivo compartiendo el mismo font-family:
+
+CSS
+/* Fuente Normal *
+@font-face {
+  font-family: 'RobotoCustom';
+  src: url('fonts/roboto-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Variante Negrita *
+@font-face {
+  font-family: 'RobotoCustom';
+  src: url('fonts/roboto-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Uso *
+h1 {
+  font-family: 'RobotoCustom', sans-serif;
+  font-weight: 700; /* Usará el archivo roboto-bold.woff2 *
+} */
+
+/* La regla @font-face es una directiva de CSS que permite cargar fuentes tipográficas personalizadas en un sitio web. Esto significa que los diseñadores y desarrolladores ya no están limitados a usar las "fuentes seguras de la web" (como Arial o Times New Roman) que vienen preinstaladas en el dispositivo del usuario; en su lugar, pueden descargar un archivo de fuente directamente desde el servidor web o un almacenamiento local.
+
+Estructura y Sintaxis Básica
+Para implementar una fuente personalizada, primero debes declarar la regla @font-face en la parte superior de tu archivo CSS y definir la ruta del archivo. Luego, puedes asignarla a cualquier elemento HTML mediante la propiedad font-family: [1, 4] 
+
+/* 1. Declaración de la fuente personalizada *
+@font-face {
+  font-family: "MiFuentePersonalizada";
+  src: url("fuentes/mi-fuente.woff2") format("woff2"),
+       url("fuentes/mi-fuente.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+/* 2. Uso de la fuente en el documento *
+body {
+  font-family: "MiFuentePersonalizada", sans-serif;
+}
+
+## Descriptores Clave de @font-face
+Dentro de la regla @font-face se configuran una serie de propiedades especiales llamadas descriptores: [5] 
+
+* 
+* font-family: El nombre identificador que le asignas a la fuente. Puede ser cualquiera que elijas y lo utilizarás más adelante para invocarla en los selectores tradicionales.
+
+* src: Especifica la ruta local o la URL externa de los archivos tipográficos. Es una buena práctica listar múltiples formatos para asegurar la máxima compatibilidad entre navegadores, los cuales usarán el primero que reconozcan.
+
+* font-weight y font-style: Definen respectivamente el grosor (p. ej., bold, 400) y la variante (p. ej., italic) específicos del archivo que se está cargando. Si tienes una variante en negrita y otra cursiva, debes realizar declaraciones @font-face independientes para cada archivo.
+
+* font-display: Controla el comportamiento visual mientras se descarga la fuente. El valor swap es altamente recomendado ya que muestra inmediatamente una tipografía alternativa del sistema y la sustituye de manera fluida en cuanto el archivo personalizado termina de cargar, evitando dejar el texto invisible temporalmente. 
+
+Formatos Modernos Recomendados
+Para un rendimiento óptimo en la web actual, los formatos estándar de fuentes son los siguientes:
+
+Formato: WOFF2
+Tipo MIME: font/woff2
+Uso sugerido: Prioritario. Formato con la mejor compresión web y compatibilidad nativa moderna.
+
+Formato: WOFF
+Tipo MIME: font/woff
+Uso sugerido: Alternativo. Excelente compatibilidad con navegadores antiguos como respaldo.
+
+Formato: TTF / OTF
+Tipo MIME: font/ttf / font/otf
+Uso sugerido: Local / Respaldo. Formatos tradicionales de escritorio. Generalmente más pesados para descarga directa en la web.
+
+Ventajas de su implementación
+A diferencia de alternativas antiguas que renderizaban texto dentro de imágenes, el uso nativo de @font-face garantiza que el contenido conserve accesibilidad completa para lectores de pantalla, indexación optimizada en motores de búsqueda (SEO) y compatibilidad directa con propiedades de manipulación tipográfica como letter-spacing, line-height o traducciones dinámicas de navegador. 
+*/

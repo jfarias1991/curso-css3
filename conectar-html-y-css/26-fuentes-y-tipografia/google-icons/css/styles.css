@@ -12,8 +12,9 @@ body {
 }
 
 .fa-skull {
-    font-size: 5rem;
+    font-size: 10rem;
     color: rgba(29, 126, 167, 0.536);
+    text-shadow: 5px 5px 10px rgba(29, 126, 167, 0.536)
 }
 /*
 mucho mejor trabajar con font awesome
