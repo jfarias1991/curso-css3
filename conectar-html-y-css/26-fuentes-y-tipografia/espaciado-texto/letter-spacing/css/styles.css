@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #c86767;
+}
+
+
+h1 {
+  letter-spacing: 4px; /* Separa las letras 4 píxeles */
+}
+
+.text {
+  letter-spacing: -2px; /* Junta más las letras */
+}
+
+span {
+    color: #333;
+  letter-spacing: normal; /* Valor por defecto */
+}
+
+p {
+    letter-spacing: 4px;
+}
+
+/* El espacio entre letras en CSS se ajusta con la propiedad letter-spacing. 
+
+Uso básico
+Puedes usar valores en píxeles (px), em (em) o números negativos si quieres juntarlas más. 
+
+h1 {
+  letter-spacing: 4px; /* Separa las letras 4 píxeles *
+}
+
+p {
+  letter-spacing: -1px; /* Junta más las letras *
+}
+
+span {
+  letter-spacing: normal; /* Valor por defecto *
+}
+
+Propiedades relacionadas
+word-spacing: Cambia el espacio entre las palabras en lugar de entre las letras individuales. 
+
+La propiedad letter-spacing en CSS se utiliza para aumentar o disminuir el espacio entre los caracteres de un texto. 
+
+Puedes aprender más sobre cómo aplicar esta propiedad en el artículo de MDN Web Docs sobre letter-spacing.
+Sintaxis básica
+css
+p {
+  letter-spacing: 2px;
+}
+
+Valores principales
+normal: Es el valor por defecto. Usa el espaciado predeterminado de la fuente.
+Valores de longitud (px, em, rem): Permiten añadir un espacio fijo o relativo. Por ejemplo, 1px o 0.1em.
+Valores negativos: Acercan las letras entre sí (ejemplo: -1px). 
+*/
