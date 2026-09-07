@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #837474;
+}
+
+.under {
+  text-decoration: underline; /*linea bajo el texto*/
+}
+
+.line {
+  text-decoration: line-through; /*una linea tachando el texto*/
+}
+
+.blink {
+  text-decoration: blink; /*obsoleto*/
+}
+
+.over {
+  text-decoration: overline; /*linea sobre el texto*/
+}
+
+.none {
+    color: #8d1717;
+    text-decoration: none; /* elimina cualquier linea*/
+}
+
+.underover {
+  text-decoration: underline overline; /*una linea sobre el texto y otra linea bajo el texto*/
+}
+
+/* text-decoration esta propiedad nos permite controlar la linea que podemos poner en los textos
+    admite los siguientes valore:
+    none-> elimina cualquier linea
+    underline-> coloca una linea bajo el teexto
+    overline-> coloca una linea sobre el texto
+    line-through-> coloca una linea tachando el texto */
+
+
+
+
+
+/* La propiedad CSS text-decoration se usa para establecer el formato de texto a subrayado (underline) y suprarrayado (overline), tachado (line-through) o parpadeo (blink). El subrayado y el suprarrayado son posicionados bajo el texto, mientras la línea a través de éste se posiciona por encima.
+
+Las decoraciones de texto se dibujan a través de los elementos descendientes. Esto significa que no es posible deshabilitar la decoración en un descendiente si la propiedad se especifica en un elemento ancestro. Por ejemplo, en el código <p>Este texto tiene <em>algunas palabras enfatizadas</em> en él.</p>, la regla de estilos p { text-decoration: underline; } causará que el párrafo entero tenga subrayado. La regla em { text-decoration: none; } no causará ningún cambio; el párrafo entero seguirá subrayado. Sin embargo, la regla em { text-decoration: overline; } causará una segunda decoración que aparecerá sobre "algunas palabras enfatizadas".
+
+Nota: El Nivel 3 de Decoraciones de Texto transformó esta propiedad en la forma reducida de las tres propiedades nuevas text-decoration-color, text-decoration-line, y text-decoration-style. Como en cualquier otra propiedad reducida, esto significa que restaura sus valores a los predeterminados si no son definidos explícitamente en la propiedad.
+
+*/
