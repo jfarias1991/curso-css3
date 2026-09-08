@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #c07878;
+}
+
+/* Usa unidades relativas (recomendado) se pueden usar px em rem % */
+h1 { 
+    word-spacing: 0.5em; 
+}
+
+/* Añade 15px de espacio extra entre palabras */
+.text1 { 
+    word-spacing: 15px; 
+}
+
+/* Reduce el espacio entre palabras */
+.text2 { 
+    word-spacing: -2px; 
+}
+
+/* Elimina completamente el espacio (todas las palabras se pegan) */
+.text3 { 
+    word-spacing: -0.25em; 
+}   
+
+
+/*
+word-spacing en CSS
+Propiedad que define el espacio entre palabras (no entre letras) de un bloque de texto.  El valor indicado se suma al espaciado intrínseco del font.
+
+Sintaxis
+word-spacing: normal | <length> | <percentage>;
+
+Valor: normal
+Descripción: Espaciado normal definido por el font (≈ 0.25 em). Es el valor inicial.
+
+Valor:<length>
+Descripción:Espaciado adicional en unidades como px, em, rem, pt, etc. Acepta valores negativos.
+
+Valor:<percentage>
+Descripción:Espaciado adicional como porcentaje del ancho del glifo afectado (soporte inconsistente).
+
+Definición formal
+
+Propiedad: valor inicial
+Valor: normal
+
+Propiedad: Aplica a
+Valor: Todos los elementos (incluye ::first-letter y ::first-line)
+
+Propiedad: Heredable
+Valor: si
+
+Propiedad: animable
+Valor: si(como longitud)
+
+Propiedad: porcentaje
+Valor: Referidos al ancho del glifo afectado
+
+Propiedad: version
+Valor: css1
+*/
+
+
