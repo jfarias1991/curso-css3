@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ab8888;
+}
+
+.text {
+    text-transform: uppercase;
+    line-height: 2;
+}
+
+.word-container {
+    background-color: lightcoral;
+    height: 200px;
+    text-align: center;
+
+}
+
+.word {
+    line-height: 200px;
+}
+
+
+/* La propiedad line-height en CSS se utiliza para controlar el interlineado o espacio vertical entre las líneas de un texto. Es una de las propiedades más importantes para mejorar la legibilidad del contenido en la web. 
+
+🚀 La mejor práctica: Valores sin unidad
+La recomendación general es utilizar valores numéricos puros (sin unidades). Al omitir la unidad, el valor actúa como un multiplicador directo del tamaño de fuente (font-size) actual, asegurando que si los elementos hijos cambian de tamaño, hereden la proporción correcta y no un valor fijo heredado. 
+
+css
+p {
+  font-size: 16px;
+  line-height: 1.5; /* La altura de la línea será de 24px (16 x 1.5) *
+}
+
+🎨 Tipos de valores aceptados
+
+
+tipo de valor: Normal (Por defecto)
+Ejemplo: line-height: normal;
+Descripción: El navegador decide el espacio automáticamente (suele ser entre 1.1 y 1.2).
+
+Tipo de Valor: Número (Recomendado) 
+Ejemplo: line-height: 1.6;
+Descripción: Multiplica el font-size del elemento por este número.
+
+Tipo de Valor: Longitud fija
+Ejemplo: line-height: 24px;
+Descripción: Define una altura absoluta en píxeles (px), rem o em. No se adapta bien si el texto escala.
+
+Tipo de Valor: Porcentaje
+Ejemplo: line-height: 150%;
+Descripción: Calcula la altura en base al porcentaje del tamaño de la fuente actual.
+
+💡 Ejemplos comunes de uso
+1. Texto de párrafo legible
+Para bloques extensos de texto, las pautas de accesibilidad (WCAG) sugieren utilizar un interlineado mínimo de 1.5 para que sea cómodo de leer. 
+
+css
+.articulo {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+2. Títulos compactos
+Los títulos grandes (h1, h2) suelen verse demasiado separados si heredan un interlineado amplio. En fuentes grandes es mejor reducir la proporción: 
+
+css
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+3. Centrar texto verticalmente (en una sola línea)
+Un truco clásico para centrar verticalmente un texto dentro de un botón o contenedor de altura fija es darle a line-height exactamente el mismo valor que la altura (height) del contenedor:
+
+css
+.boton {
+  height: 40px;
+  line-height: 40px;
+}
+
+⚠️ ¿Por qué evitar unidades como px o em en textos largos?
+Si defines un interlineado fijo en un contenedor superior, por ejemplo:
+css
+.contenedor-padre {
+  font-size: 14px;
+  line-height: 21px; /* Fijo en píxeles *
+}
+
+Cualquier elemento hijo (como un título h2 más grande) heredará exactamente 21px de interlineado, provocando que las líneas de un título grande se encimen o colapsen entre sí. Al usar line-height: 1.5;, cada elemento calculará su interlineado en base a su propio tamaño de letra de forma dinámica. */
