@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #9a6565;
+    perspective: 800px;
+}
+
+.backbox {
+    position: absolute;
+    top: 100px;
+    left: 200px;
+    height: 300px;
+    width: 300px;
+    background-color: #faf3dd;
+    box-shadow: 5px 5px 5px black;
+    border-radius: 5px;
+    z-index: -1;
+}
+    
+.box {
+    position: absolute;
+    top: 100px;
+    left: 200px;
+    height: 300px;
+    width: 300px;
+    background-color: #b8f2e6af;
+    color: rgb(5, 3, 5);
+    padding-top: 70px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 3em;
+    border-radius: 5px;
+    transition: transform 900ms;
+    transform-origin: top; /*sirve para hacer girar la caja*/
+}
+
+.box:hover{
+    /*transform: translate(-100px, 200px);  -100px+-100px se va a la parte inferior izquierda 100px+-100px se va a la derecha superior  100px+100px se va a la derecha inferior -100px+100px se va a la izquierda inferior translatey baja hacia abajo el cuadro*/
+    transform: rotateY(180deg); /*sentido en el sentido de las agujas del reloj usar - hace en contra de las manecillas rotateX gira hacia abajo y hacia arriba con - rotateY gira a la derecha y, a la izquierda usando - rotateZ hace lo mismo que rotate gira */
+    /*transform: scale(.5, .5); estira o encoje la caja puedes usarlo con eje scaleX o eje scaleY*/
+    /* transform: skew(45deg); inclinacion tanto positiva como negativa */
+    /*matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY()) */
+    /*transform: matrix(2, .45, .45, 2, 200, 20); estira a todos los lados*/
+}
+
+/* La propiedad CSS transform te permite modificar visualmente un elemento al rotarlo, escalarlo, moverlo (trasladarlo) o inclinarlo. Modifica el espacio de coordenadas del elemento sin alterar el flujo normal del diseño de la página.
+Funciones Principales de Transformación
+1. Translate (Mover Elementos)
+Mueve un elemento a lo largo de los ejes X (horizontal) y/o Y (vertical).
+Los valores de porcentaje (%) se calculan en base al tamaño del propio elemento, no de su contenedor padre.
+css
+.box {
+  transform: translate(50px, 100px); /* Mueve 50px a la derecha y 100px abajo *
+  transform: translateX(20px);       /* Mueve 20px a la derecha *
+  transform: translateY(-10%);       /* Mueve hacia arriba un 10% de su propia altura *
+}
+
+2. Rotate (Girar Elementos)
+Rota un elemento en el sentido de las agujas del reloj o en sentido contrario utilizando ángulos (por ejemplo, deg para grados o turn para vueltas completas).
+css
+.box {
+  transform: rotate(45deg);    /* Rota 45 grados en sentido horario *
+  transform: rotate(-0.5turn); /* Rota media vuelta en sentido antihorario *
+}
+3. Scale (Redimensionar Elementos)
+Cambia el tamaño de un elemento. El valor 1 representa el tamaño original, 2 lo duplica y 0.5 lo reduce a la mitad.
+css
+.box {
+  transform: scale(1.5);     /* Escala tanto el ancho como el alto al 150% *
+  transform: scaleX(2);      /* Estira el ancho al 200% *
+  transform: scale(0.5, 2);  /* Reduce el ancho a la mitad y duplica el alto *
+}
+
+4. Skew (Inclinar Elementos)
+Dorsaléa o inclina un elemento a lo largo del eje X o Y mediante un ángulo específico.
+css
+.box {
+  transform: skewX(20deg);  /* Inclina horizontalmente *
+  transform: skewY(10deg);  /* Inclina verticalmente *
+  transform: skew(15deg, 15deg); /* Inclina en ambos ejes *
+}
+Conceptos Clave a Tener en Cuenta
+Combinar Transformaciones: Puedes encadenar varias funciones separándolas con espacios. El orden importa, ya que las transformaciones se aplican de manera secuencial de izquierda a derecha.
+css
+/* Primero rota, LUEGO se mueve en la dirección del nuevo eje rotado *
+transform: rotate(45deg) translate(50px); 
+
+/* Primero se mueve, LUEGO rota sobre su propio centro *
+transform: translate(50px) rotate(45deg); 
+
+Transform Origin (Punto de Origen): Por defecto, las transformaciones ocurren desde el centro exacto del elemento (50% 50%). Puedes cambiar este punto de anclaje con la propiedad transform-origin.
+
+css
+transform-origin: top left; /* Rota o escala desde la esquina superior izquierda *
+Animaciones Suaves: Para evitar que la transformación cambie de golpe, combínala con una propiedad CSS transition.
+css
+.box {
+  transition: transform 0.3s ease;
+}
+.box:hover {
+  transform: scale(1.2);
+} */
