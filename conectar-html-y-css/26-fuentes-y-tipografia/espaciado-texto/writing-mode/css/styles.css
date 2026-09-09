@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(190, 136, 136);
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.vertical-title {
+  writing-mode: vertical-rl;
+  text-transform: uppercase;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  margin: 0;
+  
+}
+
+.badge {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  
+  /* Optional styling for a cleaner look */
+  letter-spacing: -2px; /* Fixes spacing on stacked letters */
+  background-color: #ff4757;
+  color: white;
+  padding: 15px 8px;
+  font-weight: bold;
+}
+
+
+/*La writing-mode propiedad CSS controla si las líneas de texto están dispuestas horizontal o verticalmente, así como la dirección en la que avanzan esas líneas. Se utiliza ampliamente para admitir scripts verticales (como chino, japonés o coreano) y para diseños de diseño web creativos, como encabezados de barras laterales verticales. 
+
+🛠️ Descripción general de la sintaxis
+css
+.element {
+  writing-mode: horizontal-tb; /* Default *
+  writing-mode: vertical-rl;
+  writing-mode: vertical-lr;
+}
+
+📋 Valores de las propiedades
+horizontal-tb(De arriba a abajo): el valor predeterminado para la mayoría de los idiomas. El texto fluye horizontalmente de izquierda a derecha (o de derecha a izquierda para escrituras como el árabe) y la siguiente línea se coloca debajo de la anterior. 
+
+vertical-rl (De derecha a izquierda): el texto fluye verticalmente de arriba a abajo y la siguiente línea vertical se coloca a la izquierda de la anterior. Común para las escrituras tradicionales del este de Asia. 
+
+vertical-lr (De izquierda a derecha): El texto fluye verticalmente de arriba a abajo y la siguiente línea vertical se coloca a la derecha de la anterior. Común para escrituras como el mongol. 
+
+sideways-rl / sideways-lr: Valores experimentales que rotan el diseño horizontal del texto lateralmente para mirar hacia la derecha o hacia la izquierda. Nota: Estos tienen soporte limitado para el navegador, por lo que los modos combinados suelen ser alternativas más seguras.vertical-*transform: rotate() 
+
+💻 Ejemplo de código
+Así es como puedes usarlo para crear un encabezado vertical junto a un párrafo de texto:
+
+html
+<div class="container">
+  <h2 class="vertical-title">SPORTS NEWS</h2>
+  <p>This is a standard paragraph that stays horizontal while the heading runs vertically along the side.</p>
+</div>
+
+css
+.container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.vertical-title {
+  writing-mode: vertical-rl;
+  text-transform: uppercase;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  margin: 0;
+}
+
+⚠️ Efectos secundarios cruciales: propiedades lógicas
+Cuando cambias el writing-mode , también intercambias los ejes en línea y de bloque de tu elemento. 
+
+En ,horizontal-tb el ancho es el eje en línea y la altura es el eje del bloque.
+En o , el ancho se convierte en el eje del bloque y la altura se convierte en el eje en línea.vertical-rlvertical-lr 
+
+Para evitar roturas de diseño, se recomienda encarecidamente utilizar propiedades lógicas CSS en lugar de las físicas: 
+
+En lugar de width , utilice inline-size .
+En lugar de height , utilice block-size .
+En lugar de margin-left , utilice margin-inline-start . 
+  */

@@ -20,6 +20,7 @@ body {
 
 .word {
     line-height: 200px;
+    writing-mode: horizontal-tb;
 }
 
 
