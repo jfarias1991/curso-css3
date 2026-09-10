@@ -1,4 +1,85 @@
-/* SELECTORES */
+/* SELECTOR universal (*) */
+* {
+    color: rgb(197, 135, 135);
+}
+
+/* selector de tipo o elemento*/
+body {
+    background-color: #333;
+}
+
+p {
+    background-color: rgb(166, 120, 120);
+}
+
+/* a {
+    background-color: cadetblue;
+} */
+
+p,
+a {
+    color: rgb(17, 5, 5);
+}
+
+/* selector de id cuando usamos id seleccionamos con # porque con el punto (.) no lo reconoce*/
+
+#enlace2 {
+    background-color: blueviolet;
+}
+
+/* selector de clases se hace con el (.) punto seguido del nombre de la clase */
+
+.title-2 {
+    background-color: blue;
+}
+
+/* selector de atributo se usan corchetes se le pueden colocar href */
+
+[target] {
+    background-color: aqua;
+}
+
+/* mediante los valores del atributo */
+/* con  circunflejo o carete*/
+[href^="www"] {
+    background-color: lightcoral;
+}
+/* con simbolo de dolar */
+[href$=".cl"] {
+    background-color: beige; 
+}
+
+/* con simbolo unirversal */
+[href*="#"] {
+    background-color: coral; 
+}
+
+/* selectores combinadores */
+    /* selector de descendientes*/
+section a {
+    background-color: antiquewhite;
+}
+
+    /* selector de hijos */
+section > a {
+    background-color: aqua;
+}
+
+    /* selector de hermano adyacente el p es hermano del a por ende selecciono al a que este debajo del p */
+p + a {
+    background-color: darkmagenta;
+}
+
+/* selector de hermano siguiente con virgulilla */
+
+div ~ a {
+    background-color: blue;
+}
+
+
+
+
+
 
 /* 
     selectores simples: Los selectores simples son los elementos más básicos de CSS que apuntan directamente a una etiqueta HTML por su nombre, su clase, su ID o sus atributos universales. No combinan otras etiquetas ni dependen de relaciones familiares (como padres o hijos) en el código.
