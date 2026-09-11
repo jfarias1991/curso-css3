@@ -1,0 +1,195 @@
+/* selector universal 0 de especificidad*/
+* {
+    box-sizing: border-box;
+    transition-duration: 800seg;
+}
+
+body{
+    background-color: #b4a6a6;
+    
+}
+
+/*selector de clase 10 de especificidad*/
+.title{
+    color:cyan;
+    font-size: 10px;
+}
+
+.text{
+    color:rgb(56, 114, 159);
+}
+
+.link{
+    color: inherit;
+}
+
+.list{
+    color:indianred
+}
+
+.list-item-extra{
+    color: initial;
+}
+
+/* selector de elementos 1 de especificidad */
+
+a {
+    color: red;
+    background-color: yellow;
+}
+
+a {
+    color: blue;
+    background-color: black;
+}
+
+
+a {
+    color: white;
+    
+}
+
+ol {
+    position: relative;
+    padding-left: 20px;
+    /* list-style: none; Opcional: quita los puntos negros por defecto del HTML */
+}
+/* herencia  */
+
+article {
+    color:red;
+    border: 1px solid black;
+}
+
+article + p {
+    color: violet;
+}
+
+section + p {
+    color: black;
+}
+/* selector de atributo [href] 10 de especificidad asi le agreguemos el simbolo universal valdra los mismos 10 de especificidad*/
+
+[href="#1"] {
+    color: yellow;
+    background-color: gray;
+}
+
+/* selector de linea 1000 de especificidad se coloca en el html con la propiedad important se le gana a la especificidad y a la cascada*/
+
+.linea {
+    color: black !important; 
+    background-color: brown;
+}
+
+/* <p style="color: #fff; background-color: brown;">hola</p> 
+<!--selector de linea 1000 de especificidad se coloca en el html dentro de cada elemento-->*/
+        
+
+/* selector de elemento + selector de atributo 11 de especificidad */
+
+div [href] {
+    color: blueviolet;
+    background-color: hotpink;
+}
+
+/* selector de clase + selector de clase 20 de especificidad */
+
+.contenedor .clase {
+    color: black;
+    background-color: darkgreen;
+}
+
+/* selector de id 100 de especificidad */
+
+#id {
+    color: black;
+    background-color: brown;
+}
+
+/* pseudo-elementos 1 +  de especificidad */
+
+section::before {
+    content: "“";
+    color: #ff4500;
+    font-size: 2rem;
+    margin-right: 5px;
+}
+
+
+ol::before {
+    content: "";          /* Obligatorio, aunque esté vacío */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 6px;
+    background-color: #3498db;
+}
+
+
+/* pseudo-clases:hover  10 de especificidad selector de atributos [src] 10 de especificidad */
+
+[src]:hover {
+    width: 700px;
+    height: 700px;
+}
+
+
+/* ¿Como funciona CSS?
+    especificidad - Establece como de especifico es un selector para saber que estilo aplicar.
+    El calculo se realiza con la siguiente formula:
+        Etiquetas y pseudoelementos 001
+        Clases, atributos y pseudoclases 010
+        Ids 100
+        Estilos de linea 1000
+        !important GANA A TODO Y NO SE USA NUNCA!
+    Cascada -> Funciona siempre que la especificidad sobre el elemento sea la misma
+    Herencia
+    *Siempre usar clases para que la cascada no se vea afectada.
+
+    * Herencia:es el mecanismo por el cual ciertas propiedades aplicadas a un elemento padre se transmiten automáticamente a sus elementos hijos. Esto evita tener que repetir el mismo código para cada etiqueta de la página.
+    1. Propiedades que se heredan automáticamente
+    Texto y Tipografía: Propiedades como font-family, font-size, font-weight y line-height.
+    Color: La propiedad color (color del texto) siempre se transmite a los descendientes.
+    Estilos de lista: Propiedades como list-style-type o list-style-position para viñetas.Alineación: La propiedad text-align para centrar o justificar contenido escrito.
+    2. Propiedades que NO se heredanModelo de Caja: 
+    Los márgenes (margin), rellenos (padding) y bordes (border) no se transmiten.
+    Dimensiones: El ancho (width) y el alto (height) pertenecen exclusivamente al contenedor contenedor.
+    Posicionamiento: Propiedades como position, top, left, display, flex o grid no afectan la estructura interna del hijo de forma directa.
+    3. Palabras clave para controlar la herencia
+    inherit: Fuerza a un elemento hijo a adoptar el valor de su padre (ej. border: inherit;).
+    initial: Rompe la herencia y restablece la propiedad al valor por defecto del navegador.
+    unset: Actúa como inherit si la propiedad se hereda por naturaleza, o como initial si no lo hace.
+    
+
+    h1{
+        background-color: red;
+    }
+
+    .title{
+        background-color: blue;
+    }
+
+    #title{
+        background-color: green;
+    }
+
+    h1.title{
+        background-color: yellow;
+    }
+
+    h1#title{
+        background-color: teal;
+    }
+
+    h1.title#title{
+        background-color: tomato;
+    }
+     #h1{
+        background-color: red;
+    }
+    Herencia*/
+
+   
