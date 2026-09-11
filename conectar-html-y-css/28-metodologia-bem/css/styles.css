@@ -1,0 +1,150 @@
+/* regla 1: para que nada se desborde*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #767474;
+}
+
+/*header*/
+.header {
+    background-color: #565555;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between; /*logo a la izquierda buscador a la derecha  */
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.buscador {
+    display: flex;
+    gap: 10px;
+}
+
+.input-search {
+    padding: 8px 15 px;
+    border-radius: 20px;
+    border: none;
+    width: 250px;
+}
+
+.btn-search {
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+/* .btn-search:hover {
+    transform: rotateY(180deg);
+
+} */
+
+/* main para centrar la tarjeta */
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    min-height: 80vh;
+}
+
+/* la tarjeta- aqui esta el box model */
+.card {
+    background-color: #705c5c;
+    color: white;
+    width: 100%;
+    max-width: 350px; /*nunca mas ancha que 350px*/
+    padding: 25px; /*aire interno*/
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card-etiqueta {
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+}
+
+.card-logo {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;/*la centra*/
+}
+
+.card-texto {
+    font-size: 0.9rem;
+    color: #771212;
+    line-height: 1.5; /*el que vimos antes*/
+}
+
+.card-input {
+    background-color: #706d6d;
+    color: rgb(18, 18, 18); /* Color oscuro para el texto */
+    border: 1px solid #555;
+    padding: 8px;
+    text-align: center;
+    border-radius: 5px; /* Opcional para que combine con los bordes redondeados */
+}
+
+.card-input::placeholder {
+    color: black;
+}
+
+.card-boton {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* La metodología BEM (Block, Element, Modifier) es un sistema de nomenclatura para clases en HTML y CSS que permite escribir código modular, reutilizable y fácil de mantener. 
+
+Fue creada por el equipo de Yandex para evitar problemas de especificidad y mantener el orden en proyectos web grandes. 
+
+Componentes de BEM
+Bloque (Block): Un componente independiente y con significado por sí mismo. Ejemplo: .card o .btn (botón).
+Elemento (Element): Una parte de un bloque que depende de este y no tiene sentido fuera de él. Se separa del bloque con dos guiones bajos (__). Ejemplo: .btn__price.
+Modificador (Modifier): Una variación en la apariencia o el estado de un bloque o elemento. Se separa con dos guiones (--). Ejemplo: .btn--orange o .btn--big. 
+
+Ejemplo práctico en CSS y HTML
+html
+<button class="btn btn--orange btn--big">
+  <span class="btn__text">Comprar</span>
+</button>
+
+css
+.btn {
+  /* Estilos base del botón *
+}
+.btn__text {
+  /* Estilos del texto interno *
+}
+.btn--orange {
+  /* Variante de color naranja *
+}
+.btn--big {
+  /* Variante de tamaño grande *
+} */
