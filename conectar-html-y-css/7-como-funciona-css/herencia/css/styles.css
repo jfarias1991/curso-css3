@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    /*color: green;  no lo reconoce porque ya esta seleccionado directamente desde su clase div si comentamos la clase div si toma desde el body/
+    font-family: Arial, Helvetica, sans-serif;*/
+    background-color: #333;
+}
+
+.contenedor {
+    position: relative;
+    top: 0;
+    width: 96%;
+    color: red;
+    border: 3px solid rgb(114, 8, 8);
+}
+
+a {
+    color: red;/* inherit significa heredar*/
+    
+}
+
+p {
+    color: blue;
+    border: blue; /*estamos forzando la herencia del contenedor*/
+}
+
+button {
+    color: inherit;
+
+}
+/*  font-family: inherit;
+    font-size: inherit;
+    color: inherit;*/
+
+.contenedor1 {
+    position: absolute;
+    top: 160px;
+    width: 500px;
+    color: rgb(0, 21, 128);/*no lo va a tomar porque la clase le esta ganando por valor directo*/
+    border: 5px solid grey;
+}
+
+.title {
+    color: green;
+    border: 5px solid brown;
+}
+
+.text {
+    color: white;
+} 
+
+div p h1 h2 {
+    color: red; /*no lo va a tomar porque la clase le esta ganando en especificidad*/
+}
+/* La herencia en CSS es el mecanismo mediante el cual ciertas propiedades de un elemento padre se transmiten automáticamente a sus elementos hijos y descendientes en el árbol del DOM. Su objetivo principal es evitar que tengas que escribir el mismo código una y otra vez para cada etiqueta. 
+
+Por ejemplo, si aplicas un color de texto o una tipografía al elemento <body>, todos los párrafos, títulos y listas dentro de él adoptarán ese estilo sin necesidad de declararlo uno por uno. 
+
+¿Qué propiedades se heredan y cuáles no?
+No todas las propiedades de CSS se comportan de la misma manera. El diseño web sería caótico si absolutamente todo se heredara. 
+
+Tipo de Propiedad	Se heredan automáticamente	Ejemplos comunes
+Relacionadas con Texto y Fuentes	Sí	color, font-family, font-size, font-weight, line-height, text-align.
+Relacionadas con Estructura y Caja	No	margin, padding, border, width, height, background.
+
+¿Por qué el borde no se hereda? Si aplicas un border: 1px solid black; a un contenedor principal (<div>), no querrás que cada párrafo, enlace o negrita dentro de ese contenedor dibuje un borde individual a su alrededor. Por eso las propiedades de estructura no se heredan. 
+
+Palabras clave para controlar la herencia
+CSS ofrece palabras clave especiales (keywords) que puedes asignar a cualquier propiedad para forzar o alterar el comportamiento nativo de la herencia: 
+
+inherit: Obliga a un elemento hijo a tomar el valor exacto de su elemento padre, incluso si la propiedad no se hereda por defecto.
+Ejemplo: Los enlaces (<a>) no heredan el color del texto del padre por defecto. Si usas color: inherit;, tomarán el color de su contenedor. 
+
+initial: Ignora el valor del padre y restablece la propiedad al valor por defecto que el estándar CSS dicta para ese elemento. 
+
+unset: Actúa como un interruptor dinámico. Si la propiedad es heredable por naturaleza, se comporta como inherit. Si no lo es, se comporta como initial. 
+
+revert: Revierte el estilo al comportamiento predeterminado del navegador (los estilos que aplica el navegador por defecto antes de tus líneas de código).
+Ejemplo Práctico
+Imagina que tienes la siguiente estructura HTML:
+html
+<div class="contenedor-padre">
+  <h1>Título Principal</h1>
+  <p>Este es un texto con un <a href="#">enlace</a>.</p>
+</div>
+
+Y aplicas este código CSS:
+css
+.contenedor-padre {
+  color: #2c3e50;         /* Se hereda: El h1 y el p se vuelven gris oscuro *
+  font-family: Arial;     /* Se hereda: Todo el texto cambia a Arial *
+  border: 2px solid blue; /* NO se hereda: Solo el contenedor tendrá borde azul *
+  padding: 20px;          /* NO se hereda: Solo el contenedor tendrá espacio interno *
+}
+
+/* Forzar herencia en una propiedad que no lo hace por defecto *
+a {
+  color: inherit;         /* El enlace ahora adopta el color gris oscuro del padre *
+}
+
+Excepciones comunes a tener en cuenta
+Los elementos de formulario como los botones (<button>), los campos de texto (<input>) y las listas desplegables (<select>) no heredan las propiedades de fuente ni color de sus elementos padres debido a las hojas de estilo nativas de los navegadores. Si quieres que sigan el diseño de tu web, tendrás que aplicarles explícitamente font-family: inherit; y color: inherit; */
