@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    border: 10px solid brown;
+    margin: 20px;
+    padding: 15px;
+    background-color: aqua;
+}
+
+.img--position {
+    position: fixed;
+    top: 260px;
+    left: 0 auto; /*centra */
+    justify-content: center;
+}
+
+
+/*La propiedad content en CSS se usa con los pseudo-elementos ::before y ::after para insertar texto, imágenes u otro contenido generado directamente desde la hoja de estilos, sin modificar el código HTML. 
+Cómo funciona la propiedad content
+Pseudo-elementos: Funciona principalmente con ::before (antes del elemento) y ::after (después del elemento).
+Valores comunes: Permite insertar texto directo (content: "Texto"), imágenes (content: url(imagen.png)), o valores de atributos HTML (content: attr(href)).
+Accesibilidad: El contenido generado por CSS no forma parte del DOM real, por lo que algunas tecnologías de asistencia o lectores de pantalla podrían no leerlo. No lo uses para información crítica de la página.   */
