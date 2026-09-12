@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+}
+.contenedor {
+    max-width: 80%;
+    height: auto;
+    display: inline-block;
+    /* background-color: aqua; */
+}
+
+.image--1 {
+    width: 100%; /* Obliga a la imagen a medir el 100% del ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen para que no se deforme */
+    /*border-top-width: 100px;*/
+    /*border-right-width: 40px;*/
+    /*border-bottom-width: 20px;*/
+    /*border-left-width: 40px;*/
+    /*border-width: 20px; puedes definir de un valor a 4 valores */
+    /*border-top-style: dotted;*/
+    /*border-right-style: dashed;*/
+    /*border-bottom-style: double;*/
+    /*border-left-style: solid; */
+    /*border-style: dashed dotted double groove;puedes definir de un valor a 4 valores (solid,double,dotted,dashed,groove,ridge,inset,outset,none) */
+    /* border-top-color: yellow; */
+    /* border-right-color: blue; */
+    /* border-bottom-color: white; */
+    /* border-left-color: red; */
+    /*border-color: yellow blue white red;puedes definir de un valor a 4 valores 
+    */
+    /* border: 40px blue double; */
+    border-top: 20px black solid;
+    border-right: 20px black solid;
+    border-bottom: 20px black solid;
+    border-left: 20px black solid;
+}
+
+.image--2 {
+    width: 100%; /* Obliga a la imagen a medir el 100% del ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen para que no se deforme */
+    /* border-top-left-radius: 100px; */
+    /* border-top-right-radius: 50px; */
+    /* border-bottom-left-radius: 20px; */
+    /* border-bottom-right-radius: 10px; */
+    border-radius: 100px 50px 20px 10px;
+    
+}
+
+.image--3 {
+    width: 100%; /* Obliga a la imagen a medir el 100% del ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen para que no se deforme */
+    border: 20px solid red;
+    /* padding-top: ;
+    padding-right: ;
+    padding-bottom: ;
+    padding-left: ; */
+    padding: 20px 40px 60px 80px;
+}
+
+.image--4 {
+    width: 100%; /* Obliga a la imagen a medir el 100% del ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen para que no se deforme */
+    border: 20px solid red;
+    /* margin-top: ;
+    margin-right: ;
+    margin-bottom: ;
+    margin-left: ; */
+    margin: 10px 20px 30px 40px ;
+}
+
+
+
+
+
+/*  Las propiedades shorthand (o propiedades abreviadas) en CSS son reglas que te permiten establecer los valores de múltiples propiedades individuales simultáneamente en una sola línea de código. Su propósito principal es optimizar el tamaño de tus hojas de estilo, haciéndolas más cortas, limpias y fáciles de leer. 
+
+MDN Web Docs
+Las propiedades shorthand más utilizadas
+A continuación se agrupan los ejemplos más comunes estructurados por categorías:
+1. Margen y Relleno (margin y padding)
+Siguen la regla del reloj (Arriba → Derecha → Abajo → Izquierda).
+4 valores: margin: 10px 20px 30px 40px; (Arriba, Derecha, Abajo, Izquierda).
+3 valores: margin: 10px 20px 30px; (Arriba, Laterales, Abajo).
+2 valores: margin: 10px 20px; (Vertical, Horizontal).
+1 valor: margin: 10px; (Todos los lados igual).
+2. Bordes (border)
+Agrupa el ancho, el estilo y el color del borde en un solo lugar. 
+
+Código Facilito
+Shorthand: border: 2px solid #333;
+Equivale a: border-width, border-style, y border-color.
+3. Fondos (background)
+Permite definir el color, imagen, repetición y posición simultáneamente. 
+
+W3Schools
+Shorthand: background: #fff url('imagen.png') no-repeat right top;
+Equivale a: background-color, background-image, background-repeat, y background-position. 
+
+SitePoint
+ +1
+4. Tipografías (font)
+Es una de las más potentes, pero requiere obligatoriamente definir el tamaño de fuente (font-size) y la familia (font-family).
+Shorthand: font: italic bold 16px/1.5 Arial, sans-serif;
+Equivale a: font-style, font-weight, font-size, line-height, y font-family.
+Comparación directa: Longhand vs. Shorthand
+Para entender el ahorro de código, mira cómo se reduce la estructura al definir un fondo según la documentación técnica de MDN Web Docs: 
+
+MDN Web Docs
+Propiedades Individuales (Longhand)	Equivalente Abreviado (Shorthand)
+background-color: #000;
+background-image: url('stars.png');
+background-repeat: repeat-x;
+background-position: center;	background: #000 url('stars.png') repeat-x center;
+margin-top: 10px;
+margin-right: 5px;
+margin-bottom: 10px;
+margin-left: 5px;	margin: 10px 5px;
+border-width: 1px;
+border-style: dashed;
+border-color: red;	border: 1px dashed red;
+⚠️ Regla importante que debes conocer
+Cuando usas una propiedad shorthand, cualquier valor que omitas se restablecerá automáticamente a su valor inicial por defecto.
+Por ejemplo, si escribes:
+css
+/* Esto reiniciará cualquier background-image previa que se hubiera heredado *
+background: red; 
+Usa el código con precaución.
+El navegador interpretará que el color es rojo y que background-image es none, sobreescribiendo configuraciones previas de fondos de manera accidental.
+*/
