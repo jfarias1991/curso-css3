@@ -2,24 +2,52 @@
     box-sizing: border-box;
 }
 
+body {
+  margin: 50px;
+}
+
 .box{
-    background-color: darkcyan;
-    width: 200px;
-    padding: 50px;
-    color: red;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    /* border-radius: 30px; */
-    /*box-shadow: -100px; va hacia la derecha con 10px y hacia la izquierda con -10px*/
-    /* box-shadow: 5px -60px; con el segundo px el cuadro sube con -60px y baja con 200px*/
-    /* box-shadow: 0 30px 0px -20px #111; */
-    /* box-shadow: inset -5px -5px 10px 0 #111;*/
-    box-shadow: 5px 5px red, 10px 10px blue, 15px 15px purple;
+  background-color: darkcyan;
+  width: 200px;
+  padding: 50px;
+  color: black;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  /* border-radius: 30px; */
+  /*box-shadow: -100px; va hacia la derecha con 10px y hacia la izquierda con -10px*/
+  /* box-shadow: 5px -60px; con el segundo px el cuadro sube con -60px y baja con 200px*/
+  /* box-shadow: 0 30px 0px -20px #111; */
+  /* box-shadow: inset -5px -5px 10px 0 #111;*/
+  box-shadow: 5px 5px red, 10px 10px blue, 15px 15px purple;
 }  
+
+.box--2 {
+  width: 150px;
+  height: 150px;
+  margin-top: 80px;
+  background-color: aqua;
+  border-radius: 100px;
+  box-shadow: ;
+  box-shadow: inset 70px 70px 0 -20px violet;
+}
     
+.contenedor {
+  width: 200px;
+  height: 200px;
+  background-color: aqua;
+  margin-left: 30px;
+  
+}
 
+.contenedor--1 {
+  box-shadow: 0 0 0 50px;
+  margin-top: 160px;
+}
 
+.contenedor--2 {
+
+}
 
 
 
