@@ -2,14 +2,44 @@
     box-sizing: border-box;
 }
 
+html {
+  /* font-size: 30px; */
+}
+
 body {
   background-color: #333;
+  /* font-size: 40px; */
+}
 
+.contenedor {
+  /* font-size: 50px; */
+  height: 600px;
+  width: 600px;
+  background-color: blueviolet;
+}
+
+.contenedor__texto {
+  /*font-size: 1em;  con em toma la medida del padre mas cercano o del ansestro mas cercano y lo divide x 2 si el padre tiene como referencia 50px la medida que tomara el hijo sera de 100px*/
+  font-size: 2rem; /*con rem toma la medida dada del html en este caso seria 30px * 2 = 60px*/
+  width: 80%;
+  height: 50%;
+  background-color: brown;
+}
+
+.contenedor__subtitulo {
+  /* font-size: 2em; aqui toma como referencia al div porque es su padre con em toma la medida del padre mas cercano o del ansestro mas cercano y lo divide x 2 si el padre tiene como referencia 100px la medida que tomara el hijo sera de 200px*/
+  font-size: 2rem; /*con rem toma la medida dada del html en este caso seria 30px * 2 = 60px*/
+  background-color: aqua;
+  padding: 1em;
 }
 
 
+/* 
+unidades adsolutas: px cm mm pt.
 
-/* En CSS, dominar las unidades de medida y la gestión de fuentes es fundamental para crear diseños web adaptables, accesibles y estéticamente atractivos.
+unidades relativas: em rem %vw vh vmax vmin
+
+En CSS, dominar las unidades de medida y la gestión de fuentes es fundamental para crear diseños web adaptables, accesibles y estéticamente atractivos.
 Unidades de Medida en CSS
 Las unidades se dividen principalmente en dos grandes categorías según su comportamiento:
 1. Unidades Relativas (Recomendadas) Estas unidades cambian su valor en función de otro elemento del diseño (como el tamaño de fuente del padre o el tamaño de la pantalla), lo que las hace ideales para el diseño responsivo.
