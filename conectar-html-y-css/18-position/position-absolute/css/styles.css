@@ -25,8 +25,8 @@ body{
 .box-1{
     background-color: lightcoral;
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 600px;
+    left: 0;
 }
 
 .link-1{
@@ -50,6 +50,44 @@ body{
     bottom: 0;
     right: 0;
 }
+
+.cont {
+    border: 5px solid black;
+    width: 400px;
+    /* height: 460px;*/
+    margin: 400px auto;
+}
+
+.cont__forma {
+    width: 150px;
+    height: 150px;
+}
+
+.cont__1 {
+    background-color: red;
+}
+
+.cont__2 {
+    background-color: yellow;
+    /* position: relative;
+    left: 150px; */
+}
+
+.cont__3 {
+    background-color: violet;
+    /*position: absolute;  el bloque se sale de su contenedor padre porque no le dimos un valor de altura al padre por si solo el navegador lo coloca en auto*/
+}
+
+.cont--e {
+    position: absolute; /*al colocarle al enlace un position absolute este podra tomar medidas de bloque siendo un elemento de linea */
+    background-color: blue;
+    width: 200px;
+    height: 200px;
+
+
+}
+
+
 
 
 /* position: absolute; pierde automaticamente sus medidas (el tamaño original del div) pero si le damos un width y un height pareceria que no a pasado nada pero el elemento ya esta posicionado y ademas esta posicionado de manera absoluta*/
