@@ -7,7 +7,7 @@ body {
 }
 
 .under {
-  text-decoration: underline; /*linea bajo el texto*/
+  text-decoration: underline wavy #0f0 0.2em; /*linea bajo el texto con linea ondulada color verde y de grosor .2 em*/
 }
 
 .line {
@@ -24,11 +24,32 @@ body {
 
 .none {
     color: #8d1717;
-    text-decoration: none; /* elimina cualquier linea*/
+    /*text-decoration: none;  elimina cualquier linea*/
+    text-decoration-line: underline overline line-through; /*underline overline none line-through se pueden colocar los tres valores*/
+    text-decoration-color: aqua; /*cualquier color*/
+    text-decoration-style: ;/*dashed dotted double none solid wavy estilos de la linea*/
+    text-decoration-thickness: 0.2em; /*grosor*/
+    text-decoration-skip-ink: ; /*none auto all* rompe la linea cuando hay letras que bajan hasta donde estan las lineas*/
+    text-decoration-inset: ; /*no existe*/
+    text-decoration-skip: ; /*obsoleta*/
 }
 
 .underover {
-  text-decoration: underline overline; /*una linea sobre el texto y otra linea bajo el texto*/
+  /*text-decoration: underline double #333 0.4em;  dashed dotted double none solid wavy */
+  /* text-decoration: dashed; */
+  /* text-decoration: dotted; */
+  /* text-decoration: double; */
+  /* text-decoration: none; */
+  /* text-decoration: solid; */
+  text-decoration: underline double; /*si colocas solo double desaparecen la linea*/
+
+  text-decoration-skip-ink: auto; /* rompe la linea cuando hay letras que bajan hasta donde estan las lineas*/
+}
+
+.link {
+  /*text-decoration: none; se le borra la linea*/
+  /*text-decoration: underline;*/
+  text-decoration-thickness: 60%; /*coloca el grosor de la linea*/
 }
 
 /* text-decoration esta propiedad nos permite controlar la linea que podemos poner en los textos
