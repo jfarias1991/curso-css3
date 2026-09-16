@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+}
+
+.container {
+    margin: 50px auto;
+    width: 600px;
+    height: 600px;
+    border: 10px solid red;
+}
+
+.background {
+    /* background-color: aqua; color de fondo*/
+    /* background-image: url(../assets/images/images.jpg); ubicacion de la imagen */
+    /*background: no-repeat;desaparece la imagen*/
+    /*background-repeat: no-repeat; no repeat: hace que se vea la imagen una sola vez al tamaño original*/
+    /*background-repeat: no-repeat; lo hace con imagenes en sentido vertical repeat-x hace la imagenes en horizontal*/
+    /*background-size: 80% 80%; se le puede definir la altura y el ancho 300px 200px tambn se puede usar contain escala para mostrarse completa y cover escala para cubrir todo el contenedor  */
+    /*background-position: 10% 30%; podemos colocar top right bottom left center si solo se le coloca un valor 100px el siguiente valor sera center se pueden usar las distantas expresiones de medida como em rem % px tambn se le puede poner 0
+    left 30% top 10%*/
+    /*background-origin: content-box; padding-box(valor por defecto) la imagen va desde el padding border-box: la imagen agarra desde el borde content-box la imagen toma todo el contenido*/
+    /*background-clip: border-box;border-box padding-box content-box*/
+    /*shorthand de background*/
+    background: aqua url(../assets/images/images.jpg) no-repeat 10% 30% / 80% 80% content-box border-box;
+}
+
+/* background css
+
+En CSS, la propiedad background es una propiedad "shorthand" o abreviada que permite definir múltiples aspectos del fondo de un elemento en una sola línea de código [1].
+La sintaxis básica y los valores individuales más importantes son los siguientes:
+
+Propiedades individuales de Background
+background-color: Define un color sólido de fondo (ej: background-color: #f0f0f0;).
+background-image: Coloca una o más imágenes de fondo usando la función url() o gradientes mediante linear-gradient() [1].
+background-position: Controla la ubicación inicial de la imagen (ej: center, top left, 50% 50%).
+background-size: Ajusta el tamaño de la imagen de fondo. Sus valores clave son cover (escala para cubrir todo el contenedor) y contain (escala para mostrarse completa).
+background-repeat: Determina si la imagen se repite en mosaico (repeat, no-repeat, repeat-x, repeat-y) [1].
+background-attachment: Elige si el fondo se desplaza con la página (scroll) o se queda fijo (fixed) [1].
+
+Ejemplos Prácticos
+1. Uso Abreviado (Shorthand)
+Puedes agrupar casi todas las propiedades en una sola línea siguiendo este orden común:
+css
+.mi-contenedor {
+  /* color | imagen | repetición | posición / tamaño | fijación *
+  background: #23272a url('fondo.jpg') no-repeat center / cover fixed;
+}
+
+2. Fondos con Gradientes Modernos
+No siempre necesitas una imagen pesada; puedes crear fondos dinámicos directamente con CSS:
+css
+.fondo-gradiente {
+  /* Gradiente lineal que va hacia la derecha superior *
+  background: linear-gradient(45deg, #ff007f, #7f00ff);
+  height: 100vh; /* Ocupa todo el alto de la pantalla *
+}
+  
+La propiedad background-origin en CSS especifica el área de posicionamiento de origen de una imagen de fondo dentro de un elemento.
+
+Valores principales
+
+padding-box: Es el valor por defecto. La imagen de fondo se posiciona y empieza a contar desde el borde exterior del área de relleno (padding). No se dibuja debajo del borde (border).
+
+border-box: La imagen de fondo se posiciona desde la esquina superior izquierda del borde exterior. El fondo se extiende por debajo del borde del elemento.
+content-box: La imagen de fondo se posiciona únicamente dentro del área de contenido, sin extenderse por el relleno ni por el borde. 
+
+Detalles clave Modelo de caja: Funciona en conjunto con las propiedades de posicionamiento como background-position para definir el punto de referencia.
+Valor inicial: padding-box.Compatibilidad: Es compatible con todos los navegadores modernos.
+
+background-clip
+
+La propiedad CSS background-clip define el área exacta en la que se va a pintar el fondo de un elemento, ya sea un color sólido o una imagen. Sirve para decidir si el fondo se extiende por debajo de los bordes, si se detiene en el relleno (padding), o si queda confinado estrictamente a la zona del contenido.
+
+Valores principalesborder-box (Valor por defecto): El fondo se extiende por toda la caja, incluyendo el área debajo del borde. Si el borde es punteado, discontinuo o semitransparente, verás el fondo a través de él. 
+
+padding-box: El fondo se extiende hasta el límite exterior del padding. El área del borde queda completamente excluida y limpia de fondo. 
+
+content-box: El fondo se recorta rigurosamente al contorno del contenido, dejando sin color tanto el padding como el borde del elemento. 
+text: El fondo se pinta únicamente siguiendo la silueta del texto foreground. Es ideal para lograr textos con rellenos degradados o texturas fotográficas. 
+border-area: (Estándar más reciente) Recorta el fondo exactamente dentro de la línea que dibuja el borde, ignorando el fondo del resto del contenedor.
+
+Ejemplo de Código
+css
+.caja-ejemplo {
+  width: 300px;
+  padding: 20px;
+  border: 10px dashed #333;
+  background-image: linear-gradient(to right, #ff7e5f, #feb47b);
+  
+  /* Cambia este valor para probar los diferentes comportamientos *
+  background-clip: padding-box; 
+}
+
+/* Efecto de texto con degradado *
+.texto-gradiente {
+  background-image: linear-gradient(to right, #4facfe, #00f2fe);
+  background-clip: text;
+  -webkit-background-clip: text; /* Requerido para compatibilidad en algunos navegadores *
+  color: transparent;            /* Hace que el texto sea transparente para ver el fondo *
+  font-size: 3rem;
+}
+
+¿En qué se diferencia de background-origin?
+Es un error común confundir ambas propiedades: 
+background-origin decide dónde empieza a dibujarse la esquina superior izquierda de una imagen de fondo.
+background-clip decide dónde se corta el fondo de manera física.
+
+
+*/
