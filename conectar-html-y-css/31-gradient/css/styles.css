@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+}
+.contenedor {
+    width: 300px;
+    height: 310px;
+    border: 5px solid black;
+    margin-top: 50px;
+    margin-left: 150px;
+    /* background-image: linear-gradient(blue, pink); */
+}
+
+.gradient {
+    background-image: linear-gradient( blue 25%, pink 25% 50%, orange 50% 75%, green 75%); /*to bottom (valor por defecto) se pueden usar dos tipos de dirrecciones a la vez to bottom right se pueden usar 270deg(grados) */
+    width: 150px;
+    height: 150px;
+}
+
+.gradient2 {
+    background-image: radial-gradient(at bottom 20% right 30%, red 10%, yellow 10% 20%, green 20% 30%, blue 40% 50%, red 60% 70%);/*en esta propiedad se usa at en vez de to! se pueden usar dos direcciones a la vez como top left */
+    width: 150px;
+    height: 150px;
+}
+
+.gradient3 {
+    background-image: conic-gradient(red, yellow, green, blue, red);
+    width: 140px;
+    height: 150px;
+    position: relative;
+    top: -300px;
+    left: 150px;
+}
+
+
+/* degradados css
+Los degradados CSS (gradients) te permiten crear transiciones suaves entre dos o más colores sin necesidad de usar imágenes pesadas. Se aplican mediante la propiedad background o background-image y son generados dinámicamente por el navegador.
+Existen tres tipos principales de degradados en CSS:
+1. Degradados Lineales (linear-gradient)
+Los colores avanzan en línea recta. Puedes definir la dirección usando palabras clave (to right, to bottom left, etc.) o ángulos exactos (45deg, 180deg).
+css
+/* De izquierda a derecha: azul a morado *
+.degradado-lineal {
+  background-image: linear-gradient(to right, #4facfe, #00f2fe);
+}
+
+/* En ángulo diagonal (45 grados) con 3 colores *
+.degradado-angulo {
+  background-image: linear-gradient(45deg, #ff7e5f, #feb47b, #76b852);
+}
+
+2. Degradados Radiales (radial-gradient)
+Los colores emergen desde un punto central en forma de círculo o elipse y se extienden hacia afuera.
+css
+/* Radial básico desde el centro *
+.degradado-radial {
+  background-image: radial-gradient(circle, #ff007f, #7f00ff);
+}
+
+3. Degradados Cónicos (conic-gradient)
+Los colores rotan alrededor de un punto central (como si fuera un gráfico de pastel o la manecilla de un reloj). Son perfectos para efectos metálicos, ruedas de color o gráficos circulares.
+css
+/* Degradado cónico de 360 grados *
+.degradado-conico {
+  background-image: conic-gradient(#red, #yellow, #green, #blue, #red);
+}
+Usa el código con precaución.
+Control Avanzado: Color-Stops (Paradas de Color)
+Puedes controlar exactamente dónde empieza y termina cada color añadiendo un porcentaje o valor en píxeles justo después del color.
+css
+/* El naranja ocupa el primer 20%, luego transiciona hacia el azul *
+.degradado-porcentajes {
+  background-image: linear-gradient(to right, #ff7e5f 20%, #4facfe 80%);
+}
+
+/* Bordes duros (sin difuminado): ideal para patrones de rayas *
+.lineas-puras {
+  background-image: linear-gradient(to right, #ff7e5f 50%, #4facfe 50%);
+}  
+  
+
+
+
+
+*/
