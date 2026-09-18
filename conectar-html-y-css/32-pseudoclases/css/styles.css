@@ -1,0 +1,312 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ccb6b6;
+}
+
+
+/*
+:link
+:visited
+:hover
+:actived
+*/
+/* se debe respetar el orden en el que se coloque por la cascadas especificidad de 11 puntos 1 por el selector 10 puntos por la pseudoclase  */
+a:link {
+    color: red; /*enlace aun no visitado color de letras rojos*/
+}
+
+a:visited {
+    color: green; /* cambia de color cuando visitas el enlace*/
+}
+
+/* a:hover {
+    background-color: black; /*pasas el cursos por encima y se pinta de negro el fondo*/
+} */
+
+a:active {
+    background-color: yellowgreen; /*cuando damos click se pondra color amarillo*/
+}
+
+/* 
+:first-child 
+:last-child
+:nth-child
+:nth-last-child
+*/
+body p:first-child { /*selecciona el primer hijo del body, section article, div*/
+    background-color: blue;
+}
+/* p:first-child {
+    background-color: red; /*hay que tener en cuenta que si se coloca esta propiedad va a seleccionar los hijos de otros padres sea del body (si el primer hijo es un parrafo), section, article, div etc.*
+} */
+
+/* .contenedor h2:first-child { /*en este caso tendremos que cambiar el p por un h2 que viene siendo el primer hijo del contenedor*
+    background-color: red; /*para seleccionar directamente el hijo del contenedor padre pero si hay un titulo dentro de la section o el div o article ya esta funcion no serviria porque el primer hijo seria el h2*
+} */
+
+.contenedor p:last-child { /*selecciona el ultimo hijo del contenedor */
+    background-color: aqua;
+}
+
+/*.contenedor p:nth-child(2 3 4)sintaxis invalida si quieres colocarle color de fondo a los hijos tendrias que crear nuevas propiedades como las siguientes {
+    background-color: brown;
+}*/
+.contenedor p:nth-child(), /*si hay un titulo (h2) no lo toma porque estamos diciendo que seleccione solo a los parrafo y el h2 no es un parrafo solo debemos colocar el parrafo de segundo puesto para que lo pueda seleccionar */
+.contenedor p:nth-child(),
+.contenedor p:nth-child() {
+    background-color: brown;
+}
+
+.contenedor p:nth-child() /*podemos colocar (odd) seleccion impar (even) seleccion par (1n,2n,3n) selecciona de 2 en 2 parrafos o de 3 en 3   */ {/*selecionamos los impares 1 (<h2> se seleccionaria si este fuera un p pero como el primer lugar esta ocupado por el encabezado lo toma desde el parrafo 2 que vendria teniendo el 3er puesto) p1,p3,p6,p9)*/
+    background-color: aqua;
+}
+
+.contenedor p:nth-last-child(3n) /*empezaria a contar desde el ultimo hijo hacia el primero*/ {
+    background-color: aqua;
+}
+
+/* 
+:first-of-type
+:last-of-type
+:nth-of-type
+:nth-last-of-type */
+
+.contenedor2 a:first-of-type { /*se pueden seleccionar los h1(titulos) los p(párrafos) los a(enlaces)*/ 
+    background-color: pink;
+}
+
+.contenedor2 h2:last-of-type { /*se le puede aplicar a cualquier elemento que este dentro del contenedor y sea el ultimo elemento*/
+    background-color: yellow;
+}
+
+.contenedor2 a:nth-of-type(3) { /*se le puede aplicar a cualquier elemento que este dentro del contenedor p(parrafos) h(titulos) a(enlaces)*/
+    background-color: orange;
+}
+
+.contenedor2 p:nth-last-of-type(2) {/*se contaria de abajo hacia arriba */
+    background-color: blue;
+}
+
+/*
+:only-child
+:only-of-type
+*/
+
+.contenedor3 p:only-child { /*no serviria la sintaxis porque el primer hijo es un h2 y no un p*/
+    background-color: green;
+}
+
+.contenedor3 p:only-of-type { /*aqui si se selecciona el p porque es el unico p(parrafo)que tiene si tuviera mas parrafos no se pondria el fondo verde porque ya no seria el unicp p que tiene el contenedor*/
+    background-color: green;
+}
+
+/* 
+:valid
+:invalid
+:required
+:placeholder-shown
+:focus
+*/
+input {
+    color: black;
+}
+
+input:valid {
+    background-color: green;
+}
+
+input:invalid {
+    background-color: red;
+}
+
+input:required {
+    border: 2px dotted blue;
+    background-color: darkblue;
+}
+
+input:read-only {
+    background-color: gray;
+}
+
+input:placeholder-shown {
+    background-color: black;
+}
+
+input:focus {
+    background-color: aqua;
+}
+
+/*
+:checked 
+:default
+*/
+
+input:checked + label { /*le aplica estilos a los elementos seleccionados*/
+    color: white;
+    background-color: black;
+}
+
+input:default + label { /* solo le aplica estilos a los elementos por defecto*/
+    border: 1px solid red;
+}
+
+/* 
+:target 
+*/
+
+p:target {
+    background-color: red;
+}
+
+/* 
+:is
+:where
+:has 
+*/
+
+
+/*div h2,
+div h3,
+div #parrafo {
+    color: red;
+}*/
+
+/*div :is(h2, h3, #parrafo) { nos ayuda a disminuir los codigos en vez de hacer 3 lineas de codigo con una la podemos incluir a todas
+    color: green;
+}*/
+
+/*div :where(h2, h3, #parrafo) { /*no serviria de nada esta linea de codigo porque la especificidad no la ayuda la especificidad del codigo de arriba es de 101*
+    color: orange;
+}*/
+
+div {
+    border: 2px solid red;
+}
+
+div:has(p) {/*si dentro del contenedor div hay un elemento de tipo p al contenedor se le aplicara un colo de fondo */
+    background-color: yellow;
+}
+
+div:has(a) :is(h2, p) {
+    background-color: aqua;
+}
+
+
+
+/*
+pseudoclases css
+Las pseudoclases en CSS son palabras clave que se añaden a los selectores para aplicar estilos a un elemento cuando este se encuentra en un estado específico o cumple con una condición estructural, todo esto sin necesidad de agregar clases manualmente en el HTML.
+
+Su sintaxis siempre utiliza un solo carácter de dos puntos (:). Por ejemplo: button:hover.
+
+Catálogo Completo de Pseudoclases (Agrupadas por Categoría)
+1. Estados de Interacción (Acciones del Usuario)
+Reaccionan al comportamiento del usuario en tiempo real:
+:hover — Se activa cuando el usuario pasa el cursor por encima del elemento.
+:active — Se aplica mientras el elemento está siendo clickeado o presionado.
+:focus — Activo cuando el elemento recibe el foco (común en inputs al escribir o al usar la tecla Tab).
+:focus-within — Se activa si el elemento o cualquiera de sus hijos tiene el foco (ideal para iluminar un formulario entero cuando se edita un input interno).
+:focus-visible — Aplica el foco solo si el navegador determina que es necesario visualmente (por ejemplo, al navegar con teclado, ocultándolo al hacer clic con el mouse).
+2. Ubicación Estructural (El Árbol DOM)
+Permiten seleccionar elementos según su orden o posición dentro de su contenedor padre:
+:first-child — Selecciona el primer hijo de un contenedor.
+:last-child — Selecciona el último hijo de un contenedor.
+:nth-child(n) — Selecciona elementos usando un número, palabra clave o fórmula (ejemplo: :nth-child(2) elige el segundo; :nth-child(odd) los impares; :nth-child(3n) de tres en tres).
+:nth-last-child(n) — Igual que el anterior, pero empieza a contar de atrás hacia adelante (desde el último hijo).
+:only-child — Selecciona un elemento solo si es el único hijo que tiene su padre.
+:first-of-type / :last-of-type — Eligen el primer o último hijo que coincida exactamente con ese tipo de etiqueta (ejemplo: el primer p dentro de un div, ignorando si antes hay un h1).
+:nth-of-type(n) — Aplica fórmulas matemáticas filtrando únicamente por el tipo de etiqueta.
+3. Formularios y Validación
+Ideales para dar feedback dinámico sobre el estado de los campos de texto y opciones:
+:checked — Selecciona checkboxes (<input type="checkbox">) o radio buttons que están marcados.
+:disabled — Aplica a cualquier elemento de formulario que tenga el atributo disabled (deshabilitado).
+:enabled — Selecciona elementos que están activos y listos para recibir interacción.
+:required — Selecciona campos que tienen el atributo required (obligatorios).
+:optional — Selecciona campos que no son obligatorios.
+:valid — Se activa si el valor del campo cumple con las reglas (ejemplo: un email bien estructurado).
+:invalid — Se activa si el valor no cumple con las reglas del input.
+:placeholder-shown — Selecciona el input mientras el texto de sugerencia (placeholder) sigue visible (desaparece en cuanto el usuario escribe una sola letra).
+4. Enlaces (Hipervínculos)
+Específicas para gestionar el ciclo de vida de la etiqueta <a>:
+:link — Estila un enlace que no ha sido visitado por el usuario.
+:visited — Estila un enlace que ya fue visitado (por motivos de privacidad, los navegadores limitan los estilos aplicables aquí, como solo cambiar el color de texto).
+5. Filtros y Lógica Avanzada
+:not(selector) — Excluye elementos. Aplica estilos a todo lo que NO coincida con el argumento (ejemplo: li:not(.destacado)).
+:is(selector_list) — Agrupa selectores para hacer el código más limpio (ejemplo: :is(h1, h2, h3):hover).
+:where(selector_list) — Idéntico a :is(), pero reduce la especificidad CSS a cero, facilitando que sus estilos sean sobrescritos más adelante.
+:has(selector) — (CSS Moderno) El selector de padres. Aplica estilos a un contenedor siempre y cuando contenga un elemento específico dentro (ejemplo: div:has(img) estila los divs que tienen una imagen adentro).
+Ejemplo Práctico: Combinando Pseudoclases con position: absolute
+Es muy común usar pseudoclases junto con posicionamiento absoluto para crear tooltips (bocadillos de texto) o menús que aparecen dinámicamente:
+css
+/* El contenedor del menú o botón *
+.boton-contenedor {
+  position: relative;
+}
+
+/* El menú flotante oculto por defecto *
+.menu-desplegable {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+}
+
+/* Cuando el usuario pasa el mouse por el contenedor, mostramos el menú absoluto *
+.boton-contenedor:hover .menu-desplegable {
+  display: block;
+} 
+  
+:target pseudoclase css
+
+La pseudo-clase :target en CSS selecciona un elemento únicamente cuando su atributo id coincide con el fragmento de la URL (el texto que va después del símbolo #).
+
+Se activa cuando un usuario hace clic en un enlace que apunta a una sección de la misma página (por ejemplo, <a href="#seccion1">).
+
+Ejemplo práctico
+1. HTML
+
+HTML
+<!-- Enlaces para activar el target -->
+<a href="#perfil">Ver Perfil</a>
+<a href="#config">Ver Configuración</a>
+
+<!-- Secciones objetivo -->
+<div id="perfil" class="caja">
+  <h2>Sección Perfil</h2>
+</div>
+
+<div id="config" class="caja">
+  <h2>Sección Configuración</h2>
+</div>
+2. CSS
+
+CSS
+.caja {
+  display: none; /* Ocultas por defecto *
+}
+
+/* Se muestra SOLO el elemento cuyo ID esté en la URL (#perfil o #config) *
+.caja:target {
+  display: block;
+  background-color: #e0f7fa;
+  border: 2px solid #00acc1;
+}
+Casos de uso comunes
+Modales y Popups sin JavaScript: Abrir y cerrar ventanas emergentes usando solo enlaces HTML y CSS.
+
+Pestañas (Tabs): Mostrar u ocultar secciones de contenido según el enlace seleccionado.
+
+Resaltado de secciones: Destacar un encabezado o comentario cuando alguien llega a la página mediante un enlace directo ([ejemplo.com/#comentario-5](https://ejemplo.com/#comentario-5)).
+
+Menús desplegables o colapsables: Abrir menús laterales al hacer clic.
+
+Ventajas y limitaciones
+Pro: Funciona totalmente sin JavaScript.
+
+Pro: Soporta el historial del navegador (los botones "Atrás" y "Adelante" del navegador cambian el estado).
+
+Contra: Modifica la URL de la página añadiendo el #hash, lo que puede desplazar el scroll automáticamente hacia el elemento.
+*/
