@@ -182,19 +182,21 @@ div #parrafo {
     color: orange;
 }*/
 
-div {
+/* div { 
     border: 2px solid red;
-}
+}*/
 
-div:has(p) {/*si dentro del contenedor div hay un elemento de tipo p al contenedor se le aplicara un colo de fondo */
+/*div:has(p) {si dentro del contenedor div hay un elemento de tipo p al contenedor se le aplicara un colo de fondo
     background-color: yellow;
-}
+} */
 
-div:has(a) :is(h2, p) {
+/* div:has(a) :is(h2, p) {
+    background-color: aqua;
+} */
+
+h2, p {
     background-color: aqua;
 }
-
-
 
 /*
 pseudoclases css

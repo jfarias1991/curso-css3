@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #b4a2a2;
+}
+
+
+ul {
+    list-style-type: armenian; /*armenio tradicional*/
+    
+}
+
+ul {
+    list-style-type: circle;/* viñetas sin relleno*/
+}
+
+ul {
+    list-style-type: disc; /*viñetas predeterminado*/
+}
+
+ul {
+    list-style-type: decimal; /*numeros*/
+}
+
+ul {
+    list-style-type: decimal-leading-zero; /*numeros con ceros al inicio*/
+}
+
+ul {
+    list-style-type: georgian; /*caracteres georgian*/
+}
+
+ul {
+    list-style-type: lower-alpha; /*letras minusculas*/
+}
+
+ul {
+    list-style-type: lower-greek; /*letras minúsculas del alfabeto griego klasik*/
+}
+
+ul {
+    list-style-type: lower-latin; /*letras minusculas latinas*/
+}
+
+ul {
+    list-style-type: lower-roman; /*letras minusculas romanas*/
+}
+
+ul {
+    list-style-type: none; /*no posee viñetas ni letras ni numeros*/
+}
+
+ul {
+    list-style-type: square; /*viñetas cuadradas*/
+}
+
+li {
+    border: 2px solid blueviolet;
+    background-color: gray;
+}
+/* ul {
+    border: 2px solid black;
+    list-style-position: outside; predeterminado
+} */
+
+ul {
+    border: 2px solid black;
+    list-style-position: outside; /*inside las viñetas van dentro de los list items */
+    list-style-image: url(../assets/images/home.png);
+}
+
+
+
+
+
+
+
+/* estilos de listas css
+Para dar estilo a las listas en CSS, se utilizan principalmente tres propiedades específicas que controlan el aspecto, la posición y el tipo de marcador (viñeta o número) de los elementos <ul> u <ol>. La propiedad abreviada que unifica a todas es list-style. 
+
+A continuación se detallan los estilos fundamentales de listas según la Guía de Estilos de Listas en MDN:
+
+1. Tipo de marcador (list-style-type)
+Esta propiedad define el aspecto visual del marcador. 
+
+Para listas no ordenadas (<ul>):
+disc: Círculo relleno (predeterminado).
+circle: Círculo hueco.
+square: Cuadrado relleno.
+none: Quita el marcador por completo. 
+
+Para listas ordenadas (<ol>):
+decimal: Números tradicionales (1, 2, 3...).
+decimal-leading-zero: Números con cero a la izquierda (01, 02, 03...).
+lower-alpha / upper-alpha: Letras minúsculas o mayúsculas (a, b, c... / A, B, C...).
+lower-roman / upper-roman: Números romanos en minúsculas o mayúsculas (i, ii, iii... / I, II, III...). 
+
+css
+ul {
+  list-style-type: square;
+}
+
+2. Posición del marcador (list-style-position)
+Determina si la viñeta o número se coloca dentro o fuera del cuadro de contenido del elemento de la lista (<li>). 
+
+outside: El marcador se sitúa fuera del bloque de texto principal (predeterminado). Si el texto ocupa varias líneas, estas se alinearán verticalmente dejando la viñeta a la izquierda.
+inside: El marcador se integra dentro del bloque de texto. Las líneas secundarias de texto se colocarán justo debajo de la viñeta. 
+
+css
+li {
+  list-style-position: inside;
+}
+
+3. Marcador con imagen (list-style-image)
+Permite sustituir los marcadores tradicionales por una imagen personalizada. 
+
+css
+ul {
+  list-style-image: url('tu-icono.png');
+}
+
+4. Propiedad abreviada (list-style)
+Puedes definir el tipo, la posición y la imagen en una sola línea siguiendo el orden correspondiente: 
+
+css
+ul {
+  list-style: circle inside url('tu-icono.png');
+}
+Usa el código con precaución.
+Personalización Avanzada con ::marker
+Si necesitas cambiar solo el color o el tamaño del marcador sin afectar al texto de la lista, puedes utilizar el pseudoelemento ::marker: 
+
+css
+li::marker {
+  color: #ff4500;
+  font-size: 1.2em;
+} */
