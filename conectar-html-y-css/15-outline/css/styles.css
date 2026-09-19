@@ -25,6 +25,38 @@ body{
     border: 2px solid lightcoral;
 }
 
+div {
+    border: 2px solid white;
+    background-color: #ddd;
+}
+
+p {
+    font-size: 2rem;
+    background-color: #888;
+    width: 50%;
+    margin: 2em auto;
+    text-align: center;
+    padding: 0.5em;
+}
+
+.borde { /*forma parte del modelo de caja*/
+    /* border-width: 5px; */
+    /* border-color: black; */
+    /* border-style: solid; */
+    /* border-radius: 20px; */
+    border-left: 10px solid green;
+    border-right: 10px solid blue;
+}
+
+.contorno { /*estetico*/
+    outline: 5px solid red;
+    /* outline-width: 5px;
+    outline-color: red;
+    outline-style: solid; */
+    border-radius: 20px;
+    outline-offset: 0px;
+}
+
 
 /* 
 outline es la propiedad que nos permite dibujar un borde por fuera del modelo de caja.
