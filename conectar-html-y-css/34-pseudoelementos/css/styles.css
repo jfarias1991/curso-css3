@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ccaaaa;
+}
+/* firs-letter */
+.parrafo::first-letter {
+  color: red;
+  font-size: 2.2rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* first-line */
+.parrafo::first-line { /*no funciona con enlaces solo funcionan con elementos de bloque*/
+  color: white;
+  background-color: black;
+}
+
+/* selection */
+.parrafo::selection {/*se coloca para darle estilos al texto cuando lo subrayas y tamien sirve para los elementos de enlace*/
+  color: rgb(80, 67, 93);
+  background-color: darkcyan;
+}
+
+/* placeholder */
+input::placeholder { /*para darle estilo a la letra dentro del input o el placeholder*/
+  color: rgba(0, 128, 0, 0.331);
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.svg1 {
+  color: red;
+}
+
+
+/* marker */
+li::marker { /*selecciona a las viñetas*/
+  color: red;
+  font-size: 15px; /*sirve para hacer crecer las viñetas o para hacerlas pequeñas*/
+  /*content: '';url(../assets/images/block.svg);sirve para imagenes y para cualquier tipo de caracter dentro de dos comillas simples*/
+  /* content: none; no coloca viñetas */
+  
+}
+
+/* 
+li {
+  fill: green;
+  background-image: url('../assets/images/block.svg');
+  color: red;
+  /* background: no-repeat; *
+} */
+
+.svg1 {
+  list-style: none;
+  padding: 0;
+  margin-left: -27px;
+}
+.svg1 {
+  fill: green;
+  vertical-align: middle;
+}
+
+/* 
+::before ->antes
+::after ->despues
+*/
+.parrafo1::before {
+  content: '*';
+  display: block; /*elemento de linea cambiado a elemento de bloque*/
+  color: red;
+  font-size: 2rem; /*la altura la agarra desde este elemento y no desde height*/
+  background-color: green;
+  border: 2px solid red; 
+  width: 40px; /*ancho*/
+  height: 40px; /*altura*/
+}
+
+.parrafo1::after {
+  content: '*';
+  color: green;
+}
+
+
+
+
+
+
+/*Un pseudoelemento CSS es una palabra clave que se añade a un selector para estilizar una parte específica de un elemento o para insertar contenido decorativo que no existe en el documento HTML original. A diferencia de los elementos normales, no requieren modificar tu código HTML. 
+
+Por estándar actual, se escriben utilizando dos puntos dobles (::) para diferenciarlos visualmente de las pseudoclases (como :hover), aunque la mayoría de los navegadores modernos siguen aceptando la sintaxis antigua de un solo dos puntos (:) por compatibilidad. 
+
+Los Pseudoelementos más utilizados
+Los pseudoelementos se agrupan según la función o la parte del texto que modifican: 
+
+1. Contenido Generado
+Permiten inyectar elementos visuales antes o después del contenido real de una etiqueta. Es obligatorio usar la propiedad content para que funcionen. 
+
+::before: Inserta contenido justo antes del interior del elemento.
+::after: Inserta contenido justo al final del interior del elemento. 
+
+css
+/* Añade un emoji decorativo antes de cada título secundario *
+h2::before {
+  content: "🚀 ";
+}
+
+2. Tipografía y Fragmentos de Texto
+Ideales para aplicar estilos editoriales o de diseño editorial clásico. 
+
+::first-letter: Selecciona exclusivamente la primera letra de un bloque de texto (útil para capitulares).
+::first-line: Aplica estilos únicamente a la primera línea visible de un párrafo. 
+
+/* Hace la primera letra de un párrafo más grande y roja *
+p::first-letter {
+  font-size: 2rem;
+  color: red;
+}
+
+3. Interacción y Formularios
+Modifican partes del documento interactivo controladas por el navegador o el usuario. 
+
+::selection: Cambia el fondo y el color del texto cuando el usuario lo selecciona arrastrando el cursor.
+::placeholder: Aplica estilos al texto de sugerencia temporal dentro de los campos input o textarea.
+::marker: Selecciona el punto o número de las viñetas en las listas (<ul> o <ol>). 
+
+/* Cambia el color de fondo cuando seleccionas texto *
+::selection {
+  background-color: yellow;
+  color: black;
+}
+Usa el código con precaución.
+Diferencia clave: Pseudoelemento vs. Pseudoclase
+Es muy común confundirlos, pero sirven para propósitos completamente distintos:  
+
+
+
+caracteristicas: Objetivo
+pseudoclase(:): Estiliza un elemento según su estado o comportamiento.
+pseudoelementos (::): Estiliza una parte física o crea contenido nuevo.
+
+caracteristicas: Sintaxis
+pseudoclase(:): :hover, :focus, :nth-child(), :active
+pseudoelementos(::):     ::before, ::first-letter, ::selection
+
+caracteristicas: Posición
+pseudoclase(:): Puede ir en cualquier parte del selector.
+pseudoelementos(::): Solo puede ir al final del selector
+
+
+
+
+CaracterísticaPseudoelemento (::)Pseudoclase (:)ObjetivoEstiliza una parte física o crea contenido nuevo.Estiliza un elemento según su estado o comportamiento.Sintaxis::before, ::first-letter, ::selection:hover, :focus, :nth-child(), :activePosiciónSolo puede ir al final del selector.Puede ir en cualquier parte del selector.*/
