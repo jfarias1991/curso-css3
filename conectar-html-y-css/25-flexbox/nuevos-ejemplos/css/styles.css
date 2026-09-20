@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #333;
+}
+
+div {
+    font-size: 3rem;
+    background-color: #ddd;
+    border: 0.2em solid black;
+    margin: 1em;
+}
+
+p {
+    text-align: center;
+    color: white;
+    background-color: darkcyan;
+    border: 0.1em solid darkblue;
+    border-radius: 10px;
+}
+
+.flex-container {
+    height: 10em; /**/
+    display: flex; /*los elementos dentro del contenedor se vuelven flexibles*/
+    flex-direction: row; /*predeterminado (fila)*/
+    /*flex-direction: row-reverse; elementos se colocan en fila pero de derecha a izquierda*/
+    /*flex-direction: column;columnas*/
+    /*flex-direction: column-reverse;columnas de abajo hacia arriba*/
+    /*flex-wrap: nowrap;todos los elementos se van a colocar en una unica linea*/
+    /*flex-wrap: wrap;los aplica en nuevas lineas */
+    /*flex-wrap: wrap-reverse;los aplica en nuevas lineas pero empieza con el numero 1 abajo y termina con el numero 6 arriba */
+    /*flex-flow: row wrap-reverse;hace lo mismo que flex row y flex wrap*/
+    /*justify-content: flex-start; predeterminado*/
+    /*justify-content: flex-end; elementos al lado derecho pero siguen en regla 123456 solo le cambia la ubicacion*/
+    /*justify-content: center; centra los elementos horizontalmente*/
+    /*justify-content: space-between; 1 y 4 elementos se pegan a los bordes y los otros 2 se centran*/
+    /*justify-content: space-around; se distribuye el espacio entre todos los elementos*/
+    /*align-content: stretch; los elementos se estiraran en el cross axis hasta que abarque todo el contenedor*/
+    /*align-content: flex-start; los elementos se van agrupar y se van a colocar donde se encuentre el cross start*/
+    /*align-content: flex-end; pocisiona los elementos en la parte de abajo mantienen su orden tambien sucede los elementos se colocan en la parte de arriba de la fila */
+    /*align-content: center; centra verticalmente*/
+    /*align-content: space-between;  primero y ultimos elementos pegados a los bordes y los demas distribuidos equitativamente */
+    /*align-content: space-around; el espacio se distribuya equitativamente entre los elementos pero el espacio entre dos elementos va a hacer del doble tamano que el espacio entre un border y un elemento*/
+    /*align-content: space-evenly; hace que todos los espacios sean del mismo tamano*/
+    /*align-items: flex-end; alineamos los elementos dentro de las filaspero por debajo de la fila dejan el espacio en la parte de encima*/
+    /*align-content: center; */
+    /*align-items: center; centra los elementos dado su altura si tenemos dos elementos de 300px de alto el va a centrar los elementos al centro */
+    /*align-items: baseline;alinea el texto con los demas elementos si tenemos un font-size en varios elementos el texto dado se alineara a nivel de los demas elementos */
+}
+
+
+.flex-item {
+    height: 50px;  /*alto */
+    width: 200px; /*ancho 264px medida para que toma todo el ancho del contenedor*/
+    /* flex-shrink: 0; */
+}
+
+/* .item1,
+.item3 {
+    font-size: 7rem;
+    height: 300px;
+} */
+
+.item1 {
+    /* font-size: 5rem; */
+    /*align-self: stretch; predeterminado el elemento se extira para abarcar todo el contenedor*/
+    /*align-self: flex-start; se coloca en la parte de arriba y se vuelve pequeño si antes media 10em ahora mide 1em */
+    /*align-self: flex-end;  se coloca en la parte de abajo el elemento seleccionado*/
+    /*align-self: center; para que se centre en el contenedor*/
+    /*align-self: baseline; hace que el elemento se alinie a la linea base que es donde se asientan los textos*/
+    order: 10; /*sirve para colocar los elementos en diferentes posiciones de primero de tercero cuarto o quinto dependiendo de donde lo necesites*/
+    flex-shrink: 1;
+}
+
+.item2 {
+    /* font-size: 7rem; */
+    /* width: 5rem; */
+    /* align-self: baseline; */
+    order: 20;
+    flex-shrink: 1;
+}
+
+.item3 {
+    order: 40;
+    /* flex-shrink: 1; */
+    flex-grow: 0;/*especifica el valor de crecimiento de un elemento*/
+}
+
+.item4 {
+    order: 70;
+    /* flex-shrink: 1; */
+     flex-grow: 0;
+}
+
+.item5 {
+    order: 100;
+    /* flex-shrink: 1; */
+     flex-grow: 5;
+}
+
+.item6 {
+    order: 200;
+    flex-shrink: 1; /*hace que el elemento se vuelva pequeño o mas grande dandole mas espacio a los demas elementos*/
+}
