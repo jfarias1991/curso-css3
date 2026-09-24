@@ -1,0 +1,867 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(147, 147, 144);
+    font-size: 2rem;
+}
+
+.contenedor {
+    background-color: #4dc09a;
+    border: 2px solid #930404;
+    display: grid;
+    height: 600px;
+    /*grid-template-columns: 100px 20%; explicito, largo*/
+    /*grid-template-rows: 50px 100px 150px; explicito, ancho*/
+    /*grid-auto-rows: 200px; implicito, largo*/
+    /*grid-auto-columns: 100px; implicito, ancho*/ 
+    /*grid-auto-flow: column; crea columnas y filas implicitas*/ 
+    /*grid-template-columns: 100px 1fr 2fr 3fr;se divide en 7 partes una de 100px, 1 espacio de 1fr, 2 espacios de 2fr, 3 espacios de 3fr*/
+    /* grid-template-columns: auto auto auto auto; se crean 4 columnas igualitaarias */
+    /* grid-template-columns: repeat(4, auto); se crean 4 columnas igualitariaas */
+    /* grid-template-columns: 30% repeat(3, 1fr) 30%; se crean 1 columna de 30% 3 columnas igualitarias por el fr y otra columna de 30%*/
+    /*grid-template-columns: repeat(2, 50px 100px); se crean 2 columnas de 50px y 2 columnas de 100px*/ 
+    /* grid-template-columns: repeat(3, 50px 100px); se crean 3 cuadros de 50px y 3 cuadros de 100px */
+    /* grid-template-columns: min-content; define una sola columna en el contenedor grid cuyo ancho se ajusta al tamaño del elemento más pequeño posible sin desbordar el contenido. */
+    /* grid-template-columns: max-content; define una sola columna en el contenedor grid cuyo ancho se ajusta exactamente al tamaño máximo necesario para albergar todo su contenido sin romper líneas */
+    /* grid-template-columns: minmax(200px, 700px) 200px; se crean dos columnas una con tamano minimo de 200px y extensible hasta los 700px y otra fija de 200px */
+    /* grid-template-columns: repeat(3, minmax(50px, 200px)); se crean 3 columnas de igual tamaño con un minimo de 140px y una extencion hasta 200px */
+    /* grid-template-columns: repeat(3, minmax(50px, 200px)) minmax(300px, 1fr); se crean 3 columnas de 50px minimo 200px maximo y aparte se crea una de 300px minimo y 1 fraccion maximo */
+    /* grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); Grid es una palabra clave que le indica al navegador que cree tantas columnas (o filas) como entren en el contenedor de forma automática */
+    /*grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); ajusta automáticamente el número de columnas de una cuadrícula según el espacio disponible, expandiendo los elementos para rellenar toda la fila. */
+    /* grid-row-gap: 10px; row-gap es una regla de CSS que define el tamaño del espacio (también llamado canal o gutter) entre las filas de un contenedor de cuadrícula (Grid).*/
+    /*grid-column-gap: 20px; columns-gap  se utiliza en CSS para definir el ancho del espacio (canal o gutter) entre las columnas de un contenedor CSS Grid*/
+    /*grid-gap: 10px 20px;  shorthand de column-gap y row-gap recientemente gap anteriormente grid-gap*/
+    /*padding: 30px; para separar las cuadriculas del contenedor*/
+    grid-template-columns: repeat(5, 80px);
+    grid-auto-rows: 150px; /*para darle altura a las celdas*/
+    justify-content: center;
+    align-content: center;
+    /* justify-items: center; */
+    /* align-items: center; */
+}
+
+.item {
+    background-color: #b25d54;
+    border: 1px solid black;
+}
+
+.item:first-child {
+    background-color: yellow;
+    /* grid-row-start: 1; seleccionamos la primera fila */
+    /* grid-row-end: 3; hasta la fila 3 */
+    /*grid-row: 1 / 3; estamos haciendo lo mismo que con las propiedades grid-row-star y grid-row-end*/
+    /* grid-column-start: 1; */
+    /* grid-column-end: 4; */
+    /* grid-column: 1 / 4; */
+    /*grid-area: 1 / 1 / 3 / 4;  row start, column start, row end, column end*/
+    /* grid-column-start: 1; */
+    /*grid-column-end: -1;  nos referimos a la ultima linea y primera linea de derecha a izquierda*/
+    /* grid-column-start: 1; */
+    /*grid-column-end: span 3; indico que se abarquen 3 columnas*/
+    /* grid-area: 1 / 1 / span 2 / span 3; */
+    justify-self: center;
+    align-self: center;
+}
+
+
+
+
+
+
+
+/* CSS Grid layoutCSS Grid Layout es un sistema de diseño bidimensional para la web que permite organizar elementos en filas y columnas de forma simultánea. A diferencia de Flexbox (que es principalmente unidimensional), Grid proporciona un control total sobre ambos ejes estructurales, facilitando la creación de interfaces complejas y adaptables sin depender de trucos o hacks estructurales.
+
+Conceptos ClavePara dominar CSS Grid, es indispensable comprender sus componentes fundamentales:
+Grid Container (Contenedor): El elemento padre directo sobre el cual se activa la cuadrícula aplicando display: grid o display: inline-grid.
+Grid Items (Elementos): Los hijos directos del contenedor que pasan a posicionarse de manera automática o explícita dentro de la rejilla.
+Grid Lines (Líneas): Las divisorias verticales y horizontales que delimitan las columnas y filas. Se numeran de forma consecutiva (comenzando en 1).
+Grid Tracks (Bandas): El espacio comprendido entre dos líneas adyacentes; en términos prácticos, representa una fila o una columna.
+Grid Cell (Celda): La unidad mínima de la cuadrícula, delimitada por la intersección de dos líneas de fila y dos líneas de columna (similar a la celda de una tabla).
+Grid Area (Área): Una región rectangular compuesta por una o más celdas combinadas.
+
+Propiedades Más Utilizadas
+Para el Contenedor (Padre)
+grid-template-columns y grid-template-rows: Definen la cantidad y el tamaño de las columnas y filas. Soportan unidades fijas (px, em), porcentajes o la unidad flexible fr (fracción del espacio disponible).
+gap (o row-gap / column-gap): Establece la separación o canales (gutters) entre las celdas de forma limpia y directa.
+grid-template-areas: Permite nombrar zonas del diseño para estructurarlo de forma visual directamente en el código.
+
+Para los Elementos (Hijos)
+
+grid-column / grid-row: Atajos para determinar en qué líneas inicia y termina un elemento específico (ej. grid-column: 1 / 3;).
+grid-area: Asigna un elemento hijo a un área nominal previamente declarada en el contenedor.
+
+Comparativa Básica: CSS Grid vs. FlexboxCaracterísticaCSS GridFlexboxDimensiónBidimensional (Filas y Columnas a la vez)Unidimensional (Filas o Columnas por separado)EnfoqueEstructural / Diseño Primero (Basado en el contenedor)Basado en el Contenido Primero (Se adapta según los ítems)Uso IdealLayouts complejos de páginas web completas (layouts de dashboards o cuadrículas dinámicas).Menús de navegación, galerías sencillas o componentes lineales.
+
+Ejemplo Práctico de CódigoA continuación se muestra un ejemplo para generar una rejilla responsiva de tres columnas de forma compacta utilizando la función repeat() y fracciones:
+
+html
+<!-- Estructura HTML -->
+
+<div class="contenedor-grid">
+  <div class="item">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+</div>
+
+
+css
+/* Estilos CSS *
+.contenedor-grid {
+  display: grid; /* Activa CSS Grid *
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas que ocupan partes iguales *
+  gap: 15px; /* Espaciado entre elementos *
+}
+
+.item {
+  background-color: #4fbae3;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+Para layouts avanzados y dinámicos que se adapten a cualquier pantalla sin necesidad de utilizar Media Queries, los desarrolladores frecuentemente recurren a combinaciones avanzadas como grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));. Puedes consultar la documentación oficial en las Guías de CSS Grid Layout en MDN Web Docs o explorar guías didácticas alternativas en A Complete Guide to CSS Grid Layout en CSS-Tricks. */
+
+
+/* El grid implícito es la estructura que el navegador crea de forma automática cuando los elementos hijos de un contenedor con CSS Grid se desbordan o se colocan fuera de la cuadrícula que definiste explícitamente.
+A diferencia del grid explícito (donde determinas el número exacto de filas y columnas con grid-template-rows y grid-template-columns), el implícito añade celdas dinámicamente para que el contenido no quede flotando ni rompa el diseño.
+
+¿Por qué se activa el grid implícito?
+Ocurre principalmente por dos razones:
+Exceso de elementos: Si defines una cuadrícula de 2 columnas y 2 filas (4 espacios en total), pero tu HTML tiene 6 elementos, el navegador generará automáticamente una tercera fila implícita para acomodar los 2 elementos restantes.
+Posicionamiento forzado: Si sitúas manualmente un elemento en la fila 5 mediante grid-row: 5, pero tu cuadrícula explícita solo tiene 2 filas, el navegador generará de inmediato las filas implícitas necesarias para llegar hasta esa posición.
+
+¿Cómo controlar su tamaño y dirección
+Por defecto, las filas o columnas creadas implícitamente adaptan su tamaño de forma automática al contenido (auto). Sin embargo, puedes controlar su comportamiento usando tres propiedades clave en el contenedor:
+
+Propiedad Qué hace Ejemplo grid-auto-rows Define el tamaño de las filas automáticas. grid-auto-rows: 150px; grid-auto-colum; grid-auto-flow Cambia la dirección en la que se generan los nuevos bloques (por defecto es row).grid-auto-flow: column;Ejemplo Práctico Si creas un contenedor donde solo fijas las columnas, las filas nacerán bajo el sistema implícito:
+css
+.contenedor {
+  display: grid;
+  /* Grid Explícito: 3 columnas de igual tamaño *
+  grid-template-columns: repeat(3, 1fr); 
+  
+  /* Grid Implícito: Todas las filas que se generen medirán 100px *
+  grid-auto-rows: 100px; 
+}
+
+Esta característica es fundamental para maquetar secciones dinámicas como redes sociales, tiendas en línea o galerías de imágenes, donde no sabes de antemano cuántos productos o publicaciones cargará la base de datos. */
+
+
+/* grid explicitoEl grid explícito es la cuadrícula que definas de manera voluntaria y estructurada en CSS Grid usando las propiedades grid-template-columns y grid-template-rows. Al declarar estas propiedades, le indicas exactamente al navegador cuántas columnas y filas deseas y qué tamaño específico tendrá cada una.A diferencia del grid implícito (que el navegador crea automáticamente cuando el contenido se desborda o se posiciona un elemento fuera de los límites definidos), el grid explícito está limitado estrictamente a la cantidad de celdas y pistas que escribas en tu código fuente.Ejemplo de códigoEn el siguiente fragmento, se crea una cuadrícula fija con 3 columnas y 2 filas:
+
+css
+.contenedor-grid {
+  display: grid;
+  /* Grid Explícito *
+  grid-template-columns: 200px 1fr 1fr; /* 3 columnas definidas *
+  grid-template-rows: 100px 200px;       /* 2 filas definidas *
+  gap: 15px;
+}
+
+Características principalesControl Absoluto: Tú decides las dimensiones usando valores fijos (px, em, rem), porcentajes (%) o la unidad flexible (fr).Líneas del Grid: El navegador numera automáticamente las líneas divisomenrias basándose en tu definición (por ejemplo, 3 columnas generan 4 líneas verticales).Uso de patrones: Puedes simplificar la sintaxis utilizando la función repeat(), como grid-template-columns: repeat(3, 1fr).Para profundizar en la implementación de layouts modernos, puedes consultar la Guía de conceptos básicos en MDN Web Docs o revisar los ejemplos prácticos interactivos recopilados en Grid by Example. */
+
+
+/* css unidad flexible fr
+En el diseño web con CSS, la unidad fr representa una "facción" o "fraction" del espacio disponible en un contenedor. Esta unidad se utiliza exclusivamente dentro del sistema de diseño CSS Grid Layout para crear layouts totalmente flexibles y adaptables.
+A diferencia de los porcentajes (%), la unidad fr calcula el espacio libre automáticamente después de restar los márgenes (gaps) y los elementos con tamaños fijos, evitando que el diseño se rompa o aparezcan barras de desplazamiento horizontales.
+
+¿Cómo funciona la unidad fr?
+La unidad fr distribuye el espacio disponible de forma proporcional entre las columnas o filas que la utilicen. 
+Aquí tienes un desglose de los casos más comunes:
+
+1. Reparto equitativo del espacio Si defines tres columnas utilizando 1fr, el contenedor se dividirá en 3 partes iguales. Cada columna ocupará exactate el 33.33% del espacio libre.
+
+css
+.contenedor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Tres columnas idénticas *
+  gap: 20px;
+}
+
+2. Proporciones asimétricas Puedes cambiar el número antes de fr para dar más peso a una columna. Si tienes una columna de 1fr y otra de 2fr, el espacio total se divide en 3 partes (1 + 2 = 3). La segunda columna será el doble de grande que la primera.
+
+css
+.contenedor-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Barra lateral (1/3) y Contenido principal (2/3) *
+}
+
+3. Combinación con valores fijos (La verdadera ventaja) Si mezclas unidades fijas (como píxeles) con fr, el navegador primero asigna el espacio a los píxeles y al margen (gap). Luego, todo el espacio restante se lo entrega a las unidades fr.
+
+css
+.contenedor-mixto {
+  display: grid;
+  grid-template-columns: 250px 1fr; /* Menú fijo de 250px y el resto es flexible *
+  gap: 15px;
+}
+
+Tabla comparativa: fr vs. % en CSS Grid
+Para entender por qué fr es superior a los porcentajes dentro de un Grid, observa cómo manejan los espacios intermedios (gaps):CaracterísticaUnidad fr (Fraction)Unidad % (Porcentaje)Cálculo de Margen (gap)Automático. Resta el gap antes de dividir el espacio.Manual. Tienes que restar el gap usando calc() o desbordará el contenedor.ComportamientoDivide únicamente el espacio libre restante.Se calcula respecto al ancho total del contenedor padre.Riesgo de Desborde Muy bajo. Se adapta perfectamente al contenido. Alto si se combina con gaps en píxeles.
+
+Sintaxis avanzada: El uso de repeat()Si necesitas crear muchas columnas iguales, puedes simplificar tu código CSS utilizando la función repeat() en combinación con fr:
+
+css
+.galeria {
+  display: grid;
+  /* Crea 4 columnas idénticas, cada una de 1 unidad flexible *
+  grid-template-columns: repeat(4, 1fr); 
+} */
+
+
+/* La propiedad grid-template-columns en CSS define el número y el ancho de las columnas dentro de un contenedor cuadriculado (display: grid). Cada valor separado por un espacio determina el tamaño de una pista de columna individual. 
+
+Sintaxis y Valores Comunes
+A continuación se detallan las unidades y funciones principales que puedes utilizar con esta propiedad:
+Unidades Fijas y Porcentajes: Define anchos rígidos usando px, em, rem, o valores relativos como %.
+css
+/* Crea 3 columnas: la primera de 200px, la segunda de 50% del total y la tercera de 100px *
+grid-template-columns: 200px 50% 100px;
+
+Unidad de Fracción (fr): Representa una fracción del espacio libre disponible en el contenedor. Es ideal para diseños responsivos.
+css
+/* 3 columnas de igual ancho que se reparten equitativamente el espacio *
+grid-template-columns: 1fr 1fr 1fr;
+
+Función repeat(): Simplifica la escritura cuando necesitas duplicar un patrón de columnas varias veces.
+css
+/* Equivale a escribir: 1fr 1fr 1fr 1fr *
+grid-template-columns: repeat(4, 1fr);
+
+Palabra clave auto: Ajusta de manera automática el ancho de la columna según el tamaño de su contenido o el espacio sobrante.
+css
+/* Una barra lateral fija y un cuerpo principal que toma todo el espacio restante *
+grid-template-columns: 250px auto;
+
+Función minmax(): Define un límite mínimo y máximo para que la columna no se encoja ni crezca de forma desmedida.
+css
+/* Nunca medirá menos de 150px, pero escalará hasta 1fr si hay espacio *
+grid-template-columns: minmax(150px, 1fr) 2fr;
+
+
+Ejemplo Práctico de Implementación
+Para estructurar una cuadrícula de tres columnas desiguales con una separación entre ellas:
+css
+.contenedor-grid {
+  display: grid;
+  grid-template-columns: 200px 1fr 1fr; /* Columna fija y dos flexibles *
+  gap: 15px;                             /* Espacio de separación entre elementos *
+} */
+
+
+/* grid-template-rows:
+La propiedad grid-template-rows es una regla de CSS que define el número y la altura de las filas dentro de un contenedor Grid explícito. Al asignarle valores separados por espacios, le indicas al navegador cuántas filas crear y qué tamaño tendrá cada una en orden secuencial. 
+
+Sintaxis Comunes y Ejemplos
+Aquí tienes los métodos más utilizados para estructurar filas en un CSS Grid Container: 
+1. Valores Fijos o Porcentajes
+Define tamaños estáticos utilizando píxeles (px), ems (em) o porcentajes (%). 
+
+css
+.contenedor {
+  display: grid;
+  /* Crea 3 filas: la primera de 100px, la segunda de 300px y la tercera de 150px *
+  grid-template-rows: 100px 300px 150px; 
+}
+
+2. Unidades Fraccionales (fr)
+Divide el espacio disponible de forma proporcional y flexible. 
+
+css
+.contenedor {
+  display: grid;
+  /* Crea 3 filas: la del medio ocupará el doble de espacio que las otras dos *
+  grid-template-rows: 1fr 2fr 1fr; 
+}
+
+3. La Función repeat()
+Ideal para evitar repetir código cuando necesitas múltiples filas con las mismas dimensiones. 
+
+css
+.contenedor {
+  display: grid;
+  /* Atajo para crear 4 filas de 150px cada una *
+  grid-template-rows: repeat(4, 150px); 
+}
+
+4. Flexibilidad Dinámica (minmax y auto)
+auto: El tamaño de la fila se ajusta automáticamente según la altura de su contenido.
+minmax(mín, máx): Define un rango de tamaño. La fila nunca será más pequeña que el mínimo ni más grande que el máximo. 
+
+css
+.contenedor {
+  display: grid;
+  /* Dos filas: la primera se adapta al texto; la segunda mide al menos 100px, pero puede estirarse hasta 400px *
+  grid-template-rows: auto minmax(100px, 400px); 
+}
+
+Comparativa Básica de Unidades de Altura
+Tipo de Unidad	Ejemplo	Comportamiento en Producción
+Absoluta	200px	Rígido. No cambia aunque se modifique el tamaño de la pantalla o ventana.
+Relativa	20%	Proporcional a la altura total que tenga asignada el contenedor padre.
+Fraccional	1fr	Reparte dinámicamente el espacio sobrante dentro del propio contenedor Grid.
+Automática	auto	Se encoge o agranda basándose estrictamente en el contenido de sus celdas. */
+
+
+
+/*grid-auto-rows:
+La propiedad grid-auto-rows en CSS define el tamaño de las filas creadas de forma implícita dentro de un contenedor Grid. 
+
+Cuando agregas más elementos de los que caben en las filas definidas explícitamente con grid-template-rows, el navegador genera de manera automática nuevas filas (la "cuadrícula implícita") para acomodar el contenido. Esta propiedad sirve para controlar precisamente la altura de esas nuevas filas automáticas. 
+
+Sintaxis y Valores Comunes
+Puedes aplicar grid-auto-rows en cualquier contenedor que use display: grid: 
+
+css
+.contenedor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 100px 200px; /* Filas explícitas */
+  
+  /* Control de filas implícitas (las que se creen después) *
+  grid-auto-rows: 150px; 
+}
+
+Los valores más utilizados incluyen: 
+
+auto: El valor por defecto. La fila se estira o encoge según el tamaño del contenido que tenga dentro.
+
+Medidas fijas (px, em, rem): Por ejemplo, grid-auto-rows: 200px; asegura que cada fila extra mida exactamente 200 píxeles de alto.
+
+Porcentajes (%): Define la altura relativa al contenedor.
+
+Fracciones (fr): Distribuye el espacio sobrante de forma equitativa.
+
+Funciones (minmax()): Ideal para layouts dinámicos (ej. grid-auto-rows: minmax(100px, auto); hace que la fila mida al menos 100px, pero crezca si el texto es muy largo). 
+
+Patrones múltiples
+También puedes pasarle más de un valor para crear un patrón repetitivo en las filas implícitas que se vayan generando consecutivamente: 
+
+css
+/* La primera fila extra medirá 100px, la segunda 1fr, la tercera 100px, y así... *
+grid-auto-rows: 100px 1fr;  */
+
+
+/* grid-auto-columns:
+La propiedad grid-auto-columns de CSS define el tamaño de las columnas implícitas de una cuadrícula, es decir, aquellas columnas que se crean automáticamente cuando los elementos del grid se posicionan fuera de las columnas definidas explícitamente. 
+
+¿Cuándo se crean columnas implícitas?
+Una columna implícita se genera en dos escenarios principales:
+Posicionamiento manual: Cuando colocas un elemento por la fuerza en una columna que no definiste en grid-template-columns (por ejemplo, usando grid-column: 5; en un contenedor que solo tiene 2 columnas explícitas). 
+
+Flujo por columnas: Cuando configuras el flujo automático del contenedor para que use columnas mediante grid-auto-flow: column; y el contenido excede el espacio explícito. 
+
+Valores comunes y Sintaxis
+css
+/* Valor por defecto *
+grid-auto-columns: auto;
+
+/* Tamaños fijos y flexibles *
+grid-auto-columns: 100px;
+grid-auto-columns: 1fr;
+grid-auto-columns: min-content;
+grid-auto-columns: max-content;
+
+/* Rangos *
+grid-auto-columns: minmax(100px, auto);
+
+/* Patrón repetitivo (Múltiples valores) *
+grid-auto-columns: 50px 100px;
+
+Ejemplo Práctico
+Si defines un contenedor donde posicionas manualmente un elemento en una columna lejana, grid-auto-columns controlará el ancho de todo lo que se cree en el camino. 
+
+css
+.grid-container {
+  display: grid;
+  /* Definimos 2 columnas explícitas de 150px *
+  grid-template-columns: 150px 150px; 
+  
+  /* Todas las columnas nuevas que aparezcan medirán 100px *
+  grid-auto-columns: 100px; 
+}
+
+.item-especial {
+  /* Forzamos a este elemento a ir a la columna 4 *
+  grid-column: 4; 
+}
+
+Resultado: Las columnas 1 y 2 medirán 150px cada una (explícitas). La columna 3 (creada automáticamente para rellenar el espacio) y la columna 4 medirán 100px cada una gracias a grid-auto-columns. */
+
+
+/* grid-auto-flow:
+La propiedad grid-auto-flow en CSS controla cómo funciona el algoritmo de colocación automática de los elementos dentro de un contenedor Grid. Esto determina exactamente cómo se distribuyen y acomodan los elementos que no han sido posicionados explícitamente. 
+
+Valores principales
+Valor	Descripción	Comportamiento por defecto
+row	Coloca los elementos rellenando cada fila sucesivamente de izquierda a derecha. Si faltan celdas, crea una nueva fila implícita.	Sí (es el valor por defecto).
+column	Coloca los elementos rellenando cada columna sucesivamente de arriba a abajo. Si falta espacio, crea una nueva columna implícita.	No.
+dense	Utiliza un algoritmo de empaquetado compacto. Intenta rellenar los huecos que dejen los elementos grandes usando elementos más pequeños que aparezcan después en el código.	No (por defecto usa un algoritmo "disperso" que no retrocede).
+Combinaciones admitidas
+Puedes combinar la dirección (row o column) con el algoritmo dense para maximizar el espacio libre: 
+
+grid-auto-flow: row dense; – Rellena las filas horizontalmente, pero altera el orden visual del HTML si encuentra elementos pequeños que quepan en huecos traseros.
+grid-auto-flow: column dense; – Rellena las columnas verticalmente, retrocediendo para rellenar los huecos vacíos con elementos posteriores. 
+
+Ejemplo de uso
+css
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* Cambia el flujo predeterminado a columnas con algoritmo denso *
+  grid-auto-flow: column dense; 
+}
+
+Nota sobre accesibilidad: El uso de dense puede provocar que el orden visual de la pantalla no coincida con el orden del código fuente (DOM). Esto puede desorientar a los usuarios que navegan utilizando lectores de pantalla o mediante la tecla Tabulador.*/
+
+/*auto-fill en CSS Grid es una palabra clave que le indica al navegador que cree tantas columnas (o filas) como entren en el contenedor de forma automática. 
+
+¿Cómo funciona?
+Se usa dentro de la función repeat() junto con minmax() para crear diseños adaptables. 
+
+Cálculo automático: El navegador calcula cuántas pistas caben según el tamaño disponible.
+Espacio vacío: Si sobran espacios o no hay suficientes elementos para llenar la fila, auto-fill deja las columnas vacías ocupando su tamaño mínimo previsto sin colapsarlas. 
+
+Ejemplo de código
+css
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+Cada columna mide al menos 200px.
+Si hay espacio, crecen hasta ocupar 1fr (una fracción del espacio libre). 
+
+Diferencia clave entre auto-fill y auto-fit
+auto-fill: Mantiene las columnas vacías ocupando espacio aunque no tengan contenido adentro.
+auto-fit: Contrae o colapsa las columnas vacías para que los elementos existentes se expandan y llenen todo el ancho del contenedor.  */
+
+/* auto-fit es una palabra clave de CSS Grid que ajusta automáticamente el número de columnas de una cuadrícula según el espacio disponible, expandiendo los elementos para rellenar toda la fila. 
+
+¿Cómo funciona auto-fit?
+Se usa dentro de la función repeat() en propiedades como grid-template-columns.
+Crea tantas columnas como entren en el contenedor basándose en un tamaño mínimo definido.
+Si sobran espacios o hay pocos elementos, contrae o colapsa las pistas vacías y estira los elementos existentes para ocupar el ancho total. 
+
+Ejemplo básico de código
+css
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+minmax(200px, 1fr): Cada columna mide un mínimo de 200px y un máximo de 1fr (una fracción del espacio disponible).
+Las columnas se adaptan solas a pantallas grandes o pequeñas sin necesidad de usar media queries. */
+
+/*grid-row-gap
+La propiedad grid-row-gap es una regla de CSS que define el tamaño del espacio (también llamado canal o gutter) entre las filas de un contenedor de cuadrícula (Grid). 
+
+Sin embargo, debes tener en cuenta que grid-row-gap ha sido reemplazada por row-gap en los estándares modernos de CSS. Los navegadores actuales eliminaron el prefijo grid- para que la propiedad pueda utilizarse también en otros módulos de diseño como Flexbox y diseños multi-columna. Aunque la versión antigua con prefijo todavía funciona por motivos de compatibilidad con código antiguo, se recomienda usar siempre row-gap. 
+
+Sintaxis básica
+css
+.contenedor-grid {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  
+  /* Propiedad moderna recomendada *
+  row-gap: 20px; 
+  
+  /* Versión antigua (obsoleta pero compatible) *
+  /* grid-row-gap: 20px; *
+}
+
+Valores aceptados
+La propiedad acepta diferentes tipos de unidades de longitud: 
+
+Unidades fijas: Píxeles (px), rem, em, etc. (ej. row-gap: 15px;).
+Porcentajes: Valores en % relativos al tamaño del contenedor.
+Valores globales: Como normal (el valor por defecto, que suele ser 0), inherit o initial. 
+
+Atajo práctico: La propiedad gap
+Si necesitas configurar tanto el espacio de las filas como el de las columnas a la vez, puedes usar la propiedad abreviada gap (antes llamada grid-gap): 
+
+css
+/* Configura 20px para las filas (row-gap) y 10px para las columnas (column-gap) *
+gap: 20px 10px;
+
+/* Si pones un solo valor, se aplica el mismo tanto a filas como a columnas *
+gap: 15px;  */
+
+/* grid-column-gap
+La propiedad grid-column-gap se utiliza en CSS para definir el ancho del espacio (canal o gutter) entre las columnas de un contenedor CSS Grid Layout. 
+Sin embargo, debes tener en cuenta que esta propiedad está obsoleta. Los navegadores modernos la han renombrado simplemente como column-gap, eliminando el prefijo grid- para que también pueda utilizarse en otros sistemas de diseño como Flexbox y Multi-column Layout. Los navegadores aún mantienen compatibilidad con el nombre antiguo por razones de legado, pero la recomendación actual es utilizar la versión moderna. 
+
+Sintaxis y Valores
+Puedes definir el tamaño del espacio utilizando diferentes unidades de medida: 
+
+css
+.contenedor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  
+  /* Sintaxis estándar (Recomendada) *
+  column-gap: 20px; 
+  
+  /* Sintaxis obsoleta (Legacy) *
+  /* grid-column-gap: 20px; *
+}
+
+Unidades de longitud: Valores fijos como px, em, rem, etc. (ej. column-gap: 1.5rem;).
+Porcentajes: Valores relativos al ancho total del contenedor (ej. column-gap: 5%;).
+normal: Es el valor por defecto y equivale a 0 en contextos de Grid Layout. 
+
+Propiedades relacionadas
+Si necesitas configurar múltiples espacios, te resultará útil conocer sus variantes: 
+
+row-gap (antiguamente grid-row-gap): Controla el espacio vertical entre las filas del contenedor.
+gap (antiguamente grid-gap): Una propiedad abreviada (shorthand) que te permite definir tanto filas como columnas en una sola línea. Si le pasas un solo valor (ej. gap: 15px;), se aplicará a ambos ejes. Si le pasas dos valores (ej. gap: 10px 20px;), el primero corresponderá a las filas y el segundo a las columnas. */
+
+
+/*grid-row-start
+La propiedad grid-row-start de CSS determina la línea horizontal de la cuadrícula (grid line) donde comienza a mostrarse un elemento dentro de un contenedor Grid. Se utiliza para controlar la ubicación exacta y el tamaño vertical de los elementos hijos. 
+
+A continuación se detallan sus valores principales, sintaxis y uso básico:
+Valores aceptados
+Valor	Descripción
+auto	El valor por defecto. El elemento se coloca automáticamente siguiendo el flujo del documento.
+<número>	Un número entero que indica una línea de la cuadrícula específica (por ejemplo, 1, 2, -1). Los números negativos cuentan desde el final de la cuadrícula hacia el principio.
+span <número>	Especifica cuántas filas abarcará el elemento a partir de su posición predeterminada o calculada.
+<nombre-de-línea>	Si has nombrado las líneas de tu cuadrícula en el contenedor principal, puedes usar ese nombre de referencia.
+
+Ejemplo de código básico
+En el siguiente ejemplo, forzamos al segundo elemento (.item-destacado) a saltarse la primera fila y comenzar directamente en la línea de fila 2: 
+
+html
+<div class="contenedor-grid">
+  <div class="item">Elemento 1</div>
+  <div class="item item-destacado">Elemento 2 (Empieza en fila 2)</div>
+  <div class="item">Elemento 3</div>
+</div>
+
+css
+.contenedor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 100px);
+}
+
+.item-destacado {
+  /* El elemento se posicionará a partir de la segunda línea horizontal del grid *
+  grid-row-start: 2; 
+}
+
+Propiedades relacionadas y atajos
+Rara vez se utiliza de forma aislada, ya que suele combinarse con otras propiedades de posicionamiento por líneas: 
+
+grid-row-end: Define la línea donde termina el elemento de la cuadrícula.
+Atajo grid-row: Permite definir el inicio y el fin en una sola línea usando una barra diagonal (/).
+css
+/* Estructura: grid-row: <start> / <end>; *
+grid-row: 2 / 4; */
+
+/* grid-row-end
+La propiedad grid-row-end de CSS determina la línea de cuadrícula (grid line) final de un elemento dentro de un contenedor Grid. Controla de manera directa el tamaño que ocupará dicho elemento verticalmente y dónde dejará de posicionarse. 
+
+Es el complemento directo de grid-row-start y suele agruparse en la propiedad abreviada (shorthand) grid-row. 
+Valores Principales
+A continuación se detallan los valores más comunes que puede tomar: 
+
+auto: El elemento se coloca según el flujo automático predeterminado (normalmente abarca una sola fila). 
+
+Número de línea (<integer>): Un número entero que indica exactamente en qué línea de la cuadrícula termina el elemento.
+Positivo: Se cuenta de arriba hacia abajo (ej. 3 indica que termina en la línea 3).
+Negativo: Se cuenta a la inversa, de abajo hacia arriba (ej. -1 es la última línea del grid explícito). 
+
+span <integer>: Indica cuántas filas debe expandirse el elemento desde su línea de inicio hacia abajo. 
+
+Nombre de línea: Si has definido nombres para las líneas en el contenedor (ej. [footer-start]), puedes usar ese identificador directamente. 
+
+Ejemplos Prácticos
+1. Definir una línea de término exacta
+Si un elemento empieza en la fila 1 y queremos que termine justo antes de la línea 3 (ocupando 2 filas completas): 
+
+YouTube
+·Code Canvas
+css
+.item-destacado {
+  grid-row-start: 1;
+  grid-row-end: 3; /* El elemento se detiene en la línea 3 *
+}
+
+2. Usar un número de filas a expandir (span)
+Si no quieres calcular en qué línea termina, sino simplemente indicarle que ocupe un total de 3 filas partiendo de donde empiece: 
+
+css
+.item-largo {
+  grid-row-end: span 3;
+}
+
+Tabla de Equivalencias (Abreviaturas)
+Puedes simplificar la escritura combinando el inicio y el fin en propiedades de una sola línea: 
+
+Propiedades separadas	Equivalente con grid-row	Equivalente con grid-area
+grid-row-start: 1;
+grid-row-end: 3;	grid-row: 1 / 3;	grid-area: 1 / [col-start] / 3 / [col-end];
+grid-row-start: auto;
+grid-row-end: span 2;	grid-row: span 2;	No aplica directamente
+
+Soporte en Navegadores
+Está completamente soportado por todos los navegadores modernos (Chrome, Firefox, Safari, Edge) desde finales de 2017. */
+
+/* grid-area
+La propiedad grid-area en CSS es una propiedad abreviada (shorthand) que se utiliza en el diseño de cuadrículas (CSS Grid). Sirve para dos propósitos principales: definir la ubicación y tamaño de un elemento mediante números de líneas, o asignarle un nombre para maquetar de forma visual. 
+
+Esta propiedad agrupa las siguientes cuatro reglas individuales en un solo lugar: 
+
+grid-row-start
+grid-column-start
+grid-row-end
+grid-column-end
+1. Sintaxis por valores numéricos (Líneas del Grid)
+Cuando se definen números, el orden de los valores sigue la estructura:
+grid-area: row-start / column-start / row-end / column-end; 
+
+MDN Web Docs
+css
+.item {
+  /* Ubica el elemento desde la fila 2 a la 4, y de la columna 1 a la 3 *
+  grid-area: 2 / 1 / 4 / 3;
+}
+
+También puedes utilizar la palabra clave span para indicarle cuántas celdas debe expandirse: 
+
+css
+.item {
+  /* Inicia en la fila 1 y ocupa 2 filas / Inicia en la columna 2 y ocupa 3 columnas *
+  grid-area: 1 / 2 / span 2 / span 3;
+}
+Usa el código con precaución.
+2. Sintaxis por Nombre (Bento Grid o Layouts Visuales)
+El verdadero potencial de grid-area se aprovecha al asignar un nombre semántico a un elemento. Luego, el contenedor padre distribuye esos nombres mediante la propiedad grid-template-areas. 
+
+Ejemplo Práctico:
+El HTML:
+html
+<div class="container">
+  <header>Header</header>
+  <aside>Sidebar</aside>
+  <main>Contenido Principal</main>
+  <footer>Footer</footer>
+</div>
+
+El CSS:
+css
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto 1fr auto;
+  /* Creamos el mapa visual del diseño *
+  grid-template-areas: 
+    "header  header"
+    "sidebar main"
+    "footer  footer";
+  gap: 10px;
+  height: 100vh;
+}
+
+/* Asignamos cada elemento a su respectiva área del mapa *
+header { grid-area: header; }
+aside  { grid-area: sidebar; }
+main   { grid-area: main; }
+footer { grid-area: footer; }
+
+Comportamiento de los valores omitidos
+Si decides no escribir los 4 valores numéricos, CSS completará el resto siguiendo estas reglas lógicas: 
+
+MDN Web Docs
+Si usas 3 valores: El cuarto (grid-column-end) se define en auto.
+Si usas 2 valores: El tercero y el cuarto (grid-row-end y grid-column-end) se definen en auto.
+Si usas 1 solo número: Todos los extremos restantes pasan a ser auto, actuando el elemento en una sola celda. */
+
+/* grid-column-start
+La propiedad grid-column-start de CSS determina la línea vertical de la cuadrícula (grid line) donde comienza a mostrarse un elemento dentro de un contenedor Grid. Funciona de manera idéntica a grid-row-start, pero se aplica al eje horizontal (columnas).
+A continuación se detallan sus valores principales y uso básico:
+Valores aceptados
+Valor	Descripción
+auto	El valor predeterminado. El elemento se coloca de forma automática según el flujo del grid.
+<número>	Un número entero que indica una línea vertical específica de la cuadrícula (por ejemplo, 1, 3, -1). Los números negativos cuentan desde el borde derecho hacia el izquierdo.
+span <número>	Indica cuántas columnas abarcará el elemento a partir de su posición.
+<nombre-de-línea>	El nombre de una línea vertical si fueron definidas previamente en el contenedor.
+Ejemplo de código básico
+En este ejemplo, forzamos a que un elemento comience exactamente en la línea vertical 2 (la segunda columna):
+html
+<div class="contenedor-grid">
+  <div class="item">Elemento A</div>
+  <div class="item item-movido">Elemento B (Empieza en columna 2)</div>
+</div>
+
+css
+.contenedor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual ancho *
+}
+
+.item-movido {
+  /* El elemento se alineará con la segunda línea vertical del grid *
+  grid-column-start: 2; 
+}
+
+Propiedades relacionadas y atajos
+Esta propiedad se complementa con el resto del sistema de coordenadas de CSS Grid:
+grid-column-end: Define la línea vertical donde termina el elemento.
+Atajo grid-column: Permite definir el inicio y el fin de la columna en una sola declaración usando una barra diagonal (/).
+css
+/* Estructura: grid-column: <start> / <end>; *
+grid-column: 2 / 4; /* Empieza en la línea 2 y termina en la 4 (abarca 2 columnas) */
+
+/*grid-column-end
+La propiedad grid-column-end de CSS determina la línea de cuadrícula (grid line) final de un elemento en sentido horizontal dentro de un contenedor Grid. Controla de manera directa el ancho que ocupará dicho elemento y dónde dejará de posicionarse.
+Es el complemento directo de grid-column-start y se puede agrupar en la propiedad abreviada (shorthand) grid-column.
+Valores Principales
+auto: El elemento se coloca según el flujo automático predeterminado (normalmente abarca una sola columna).
+Número de línea (<integer>): Un número entero que indica exactamente en qué línea vertical termina el elemento.
+Positivo: Se cuenta de izquierda a derecha (ej. 4 indica que termina en la cuarta línea).
+Negativo: Se cuenta a la inversa, de derecha a izquierda (ej. -1 es la última línea del grid explícito).
+span <integer>: Indica cuántas columnas debe expandirse el elemento desde su línea de inicio hacia la derecha.
+Nombre de línea: Si has definido nombres para las líneas de columna en tu grid-template-columns (ej. [sidebar-end]), puedes usar ese identificador directamente.
+Ejemplos Prácticos
+1. Definir una línea de término exacta
+Si un elemento empieza en la columna 1 y quieres que termine justo antes de la línea 4 (ocupando 3 columnas completas):
+css
+.item-ancho {
+  grid-column-start: 1;
+  grid-column-end: 4; /* El elemento se detiene en la línea vertical 4 *
+}
+
+2. Usar un número de columnas a expandir (span)
+Si no quieres calcular el número de la línea final, sino simplemente indicarle que se extienda a lo largo de 2 columnas:
+css
+.banner {
+  grid-column-end: span 2;
+}
+
+Tabla de Equivalencias (Abreviaturas)
+Puedes simplificar tu código combinando el inicio y el fin en una sola línea:
+Propiedades separadas	Equivalente con grid-column	Equivalente con grid-area
+grid-column-start: 1;
+grid-column-end: 4;	grid-column: 1 / 4;	grid-area: [row-start] / 1 / [row-end] / 4;
+grid-column-start: auto;
+grid-column-end: span 3;	grid-column: span 3;	No aplica directamente  */
+
+/* grid-template-area
+La propiedad grid-template-areas en CSS se utiliza en el contenedor padre (display: grid) para definir visualmente la estructura y el mapa de una cuadrícula. Permite nombrar celdas o regiones y acomodar elementos de forma intuitiva, emulando la disposición física del diseño directamente en el código. 
+
+¿Cómo funciona?
+Para usar este sistema se requieren dos pasos fundamentales:
+En el contenedor padre: Se define el mapa de la cuadrícula con grid-template-areas. Cada cadena de texto entre comillas (" ") representa una fila, y cada palabra separada por espacios dentro de las comillas representa una columna.
+En los elementos hijos: Se utiliza la propiedad grid-area para asignar a cada hijo el nombre de la región que le corresponde ocupar. 
+
+Ejemplo Práctico
+Este ejemplo configura una estructura clásica de página web (Cabecera, Menú lateral, Contenido y Pie de página): 
+
+css
+/* 1. Definición en el contenedor *
+.grid-container {
+  display: grid;
+  grid-template-columns: 200px 1fr; /* Dos columnas *
+  grid-template-rows: auto 1fr auto; /* Tres filas *
+  
+  grid-template-areas:
+    "header  header"
+    "sidebar main"
+    "footer  footer";
+}
+
+/* 2. Asignación en los elementos hijos *
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main { grid-area: main; }
+.footer { grid-area: footer; }
+
+Reglas Importantes de Sintaxis
+Forma rectangular: Cada área con el mismo nombre debe formar obligatoriamente una región rectangular regular (no puede tener forma de "L" o "T"). 
+
+Consistencia de columnas: Todas las filas descritas deben tener exactamente la misma cantidad de columnas. 
+
+Celdas vacías (.): Si deseas dejar un espacio o celda vacía en la cuadrícula sin asignar a ningún elemento, se utiliza un punto (.). Por ejemplo: "header header" ". main". */
+
+/* justify-self
+La propiedad CSS justify-self alinea un elemento individual dentro de su contenedor a lo largo del eje horizontal o del eje en línea (inline axis). 
+
+A diferencia de justify-items (que define el comportamiento para todos los elementos hijos desde el contenedor padre), justify-self se aplica directamente al elemento hijo que deseas mover, anulando cualquier regla general de alineación previa. 
+
+Dónde funciona (y dónde NO)
+CSS Grid (Totalmente compatible): Es el escenario principal para esta propiedad. Controla cómo se posiciona un elemento específico dentro de su propia celda o área de la cuadrícula. 
+
+Diseño de Bloques (Block Layout): Se puede aplicar a cajas a nivel de bloque y elementos con posicionamiento absoluto. 
+
+Flexbox (NO compatible): La propiedad justify-self es ignorada por completo en elementos Flex. Si necesitas empujar un elemento individual de forma horizontal en Flexbox, la solución estándar es usar márgenes automáticos (margin-left: auto o margin-right: auto). 
+
+Valores más comunes
+Valor	Descripción
+stretch (Por defecto)	El elemento se estira de forma horizontal para ocupar todo el ancho disponible de su celda.
+start	Alinea el elemento al inicio (normalmente el borde izquierdo) de su área de alineación.
+center	Centra horizontalmente el elemento dentro de su espacio.
+end	Alinea el elemento al final (normalmente el borde derecho) de su área de alineación.
+auto	Hereda de forma automática el valor asignado en la propiedad justify-items del elemento contenedor.
+Puede consultar la documentación técnica completa y detallada en la Guía de Referencia de MDN Web Docs sobre justify-self. Para quienes trabajan con frameworks modernos de utilidades CSS, también se encuentra disponible su implementación directa en la Documentación Oficial de Tailwind CSS.
+
+Ejemplo práctico en CSS Grid
+
+html
+<div class="contenedor-grid">
+  <div class="item-normal">Elemento 1</div>
+  <div class="item-centrado">¡Yo me centro solo!</div>
+  <div class="item-normal">Elemento 3</div>
+</div>
+
+css
+.contenedor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: stretch; /* Por defecto todos se estiran *
+}
+
+.item-centrado {
+  /* Este elemento ignora el "stretch" del padre y se posiciona en el medio *
+  justify-self: center; 
+  background-color: lightgreen;
+} */
+
+
+
+/* align-self
+La propiedad align-self en CSS se utiliza para alinear un elemento individual dentro de un contenedor Flexbox o Grid a lo largo del eje secundario (cross axis). 
+
+Su principal función es sobrescribir la propiedad align-items definida en el contenedor padre, permitiendo que un solo elemento tenga una alineación diferente a la de los demás. 
+
+Valores principales
+auto (por defecto): El elemento hereda el valor de align-items de su contenedor padre.
+flex-start / start: Alinea el elemento al inicio del eje secundario (en layouts horizontales, arriba).
+flex-end / end: Alinea el elemento al final del eje secundario (en layouts horizontales, abajo).
+center: Centra el elemento en el eje secundario.
+stretch: Estira el elemento para que ocupe todo el espacio disponible del contenedor en el eje secundario (siempre que no tenga una altura o ancho fijo que lo impida).
+baseline: Alinea el elemento según la línea de base de su texto. 
+
+Ejemplo de uso (Flexbox)
+html
+<div class="contenedor">
+  <div class="item">1</div>
+  <div class="item especial">2 (Destacado)</div>
+  <div class="item">3</div>
+</div>
+
+css
+.contenedor {
+  display: flex;
+  height: 200px;
+  align-items: flex-start; /* Todos los elementos se alinean arriba *
+}
+
+.item.especial {
+  align-self: center; /* Este elemento específico se centrará verticalmente *
+} */
